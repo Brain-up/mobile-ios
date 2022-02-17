@@ -2,7 +2,7 @@ excluded:
   — Pods
 
 disabled_rules:
-  #— trailing_whitespace
+  - trailing_whitespace
 
 warning_threshold: 5
 
