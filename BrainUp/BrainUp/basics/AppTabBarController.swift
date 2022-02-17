@@ -15,9 +15,7 @@ class AppTabbarController: UITabBarController {
         tabBar.tintColor = .coldViolet
         tabBar.unselectedItemTintColor = .charcoalGrey
         tabBar.backgroundColor = .appWhite
-        // tabBar.addBrainGradient()
-        // tabBar.layer.addSublayer(getTabbarBackground())
-         tabBar.layer.insertSublayer(getTabbarBackground(), at: 0)
+        tabBar.layer.insertSublayer(getTabbarBackground(), at: 0)
     }
     
     required init?(coder: NSCoder) {
