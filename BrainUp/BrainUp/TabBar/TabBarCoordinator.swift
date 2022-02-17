@@ -56,11 +56,12 @@ class TabBarCoordinator: TabCoordinatorProtocol {
     }
     
     private func getController(_ page: TabBarPage) -> UINavigationController {
-        let navController = UINavigationController()
+        let navController = AppNavigationController()
         navController.setNavigationBarHidden(false, animated: false)
         let tabbarItem = UITabBarItem.init(title: nil, image: page.getTabIcon(), tag: page.pageOrderNumber())
         navController.tabBarItem = tabbarItem
         let coordinator = page.getCoordinator().init(navController)
+        coordinator.start()
         childCoordinators.append(coordinator)
         return childCoordinators.last?.navigationController ?? UINavigationController()
     }

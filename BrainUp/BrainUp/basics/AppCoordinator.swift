@@ -42,6 +42,7 @@ class AppCoordinator: Coordinator {
         childCoordinators.append(tabCoordinator)
         tabCoordinator.finishDelegate = self
         tabCoordinator.start()
+        navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
 

@@ -8,5 +8,7 @@
 		<string>OpenSans-Regular.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>

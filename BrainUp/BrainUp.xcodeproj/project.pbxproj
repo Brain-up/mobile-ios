@@ -23,6 +23,7 @@
 		2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D427BA37CE006BCA51 /* ViewController.swift */; };
 		2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */; };
 		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
+		2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */; };
 		2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F027BA69F3004EA327 /* Colors.xcassets */; };
 		2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */; };
 		2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F527BA83AC004EA327 /* OpenSans-Regular.ttf */; };
@@ -51,6 +52,7 @@
 		2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		2CE631EE27BA4C12004EA327 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		2CE631F027BA69F3004EA327 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReenieBeanie-Regular.ttf"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				2C0824D227BD17BE007537CA /* Coordinator.swift */,
 				2C0824D427BD17FE007537CA /* AppCoordinator.swift */,
 				2C0824EC27BE54CD007537CA /* AppTabBarController.swift */,
+				2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */,
 			);
 			path = basics;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,
 				2C0824E927BE22F6007537CA /* StatisticsCoordinator.swift in Sources */,
 				2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */,
+				2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */,
 				2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */,
 				2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */,
 			);
