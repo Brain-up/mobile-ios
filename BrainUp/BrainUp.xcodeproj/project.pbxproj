@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D227BD17BE007537CA /* Coordinator.swift */; };
+		2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D427BD17FE007537CA /* AppCoordinator.swift */; };
+		2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D727BD1928007537CA /* AuthCoordinator.swift */; };
+		2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D927BD19C1007537CA /* AuthVC.swift */; };
+		2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824E027BD2DB4007537CA /* TabBarCoordinator.swift */; };
+		2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824E227BD34E3007537CA /* TabBarPage.swift */; };
+		2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824E427BE21EF007537CA /* ProfileCoordinator.swift */; };
+		2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824E627BE22C9007537CA /* DiagnosticsCoordinator.swift */; };
+		2C0824E927BE22F6007537CA /* StatisticsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */; };
+		2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824EA27BE232C007537CA /* ExersicesCoordinator.swift */; };
+		2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824EC27BE54CD007537CA /* AppTabBarController.swift */; };
+		2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824F027BE6285007537CA /* CAGradientLayer.swift */; };
 		2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */; };
 		2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D427BA37CE006BCA51 /* ViewController.swift */; };
 		2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */; };
@@ -21,6 +33,18 @@
 
 /* Begin PBXFileReference section */
 		1B9AC473CA2DE20CDD0FCD47 /* Pods_BrainUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C0824D227BD17BE007537CA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2C0824D427BD17FE007537CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2C0824D727BD1928007537CA /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		2C0824D927BD19C1007537CA /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		2C0824E027BD2DB4007537CA /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		2C0824E227BD34E3007537CA /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		2C0824E427BE21EF007537CA /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		2C0824E627BE22C9007537CA /* DiagnosticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticsCoordinator.swift; sourceTree = "<group>"; };
+		2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCoordinator.swift; sourceTree = "<group>"; };
+		2C0824EA27BE232C007537CA /* ExersicesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExersicesCoordinator.swift; sourceTree = "<group>"; };
+		2C0824EC27BE54CD007537CA /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
+		2C0824F027BE6285007537CA /* CAGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAGradientLayer.swift; sourceTree = "<group>"; };
 		2C1DE7CD27BA37CE006BCA51 /* BrainUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1DE7D427BA37CE006BCA51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +82,66 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2C0824D127BD179A007537CA /* basics */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824D227BD17BE007537CA /* Coordinator.swift */,
+				2C0824D427BD17FE007537CA /* AppCoordinator.swift */,
+				2C0824EC27BE54CD007537CA /* AppTabBarController.swift */,
+			);
+			path = basics;
+			sourceTree = "<group>";
+		};
+		2C0824D627BD1906007537CA /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824D727BD1928007537CA /* AuthCoordinator.swift */,
+				2C0824D927BD19C1007537CA /* AuthVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2C0824DB27BD21F9007537CA /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824EA27BE232C007537CA /* ExersicesCoordinator.swift */,
+			);
+			path = Exercises;
+			sourceTree = "<group>";
+		};
+		2C0824DC27BD221D007537CA /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		2C0824DD27BD223F007537CA /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824E627BE22C9007537CA /* DiagnosticsCoordinator.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
+		2C0824DE27BD2264007537CA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824E427BE21EF007537CA /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2C0824DF27BD23F5007537CA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2C0824E027BD2DB4007537CA /* TabBarCoordinator.swift */,
+				2C0824E227BD34E3007537CA /* TabBarPage.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		2C1DE7C427BA37CE006BCA51 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +163,13 @@
 		2C1DE7CF27BA37CE006BCA51 /* BrainUp */ = {
 			isa = PBXGroup;
 			children = (
+				2C0824DF27BD23F5007537CA /* TabBar */,
+				2C0824DE27BD2264007537CA /* Profile */,
+				2C0824DD27BD223F007537CA /* Diagnostics */,
+				2C0824DC27BD221D007537CA /* Statistics */,
+				2C0824DB27BD21F9007537CA /* Exercises */,
+				2C0824D627BD1906007537CA /* Auth */,
+				2C0824D127BD179A007537CA /* basics */,
 				2CEE9FA827BCCAF800CDD927 /* extensions */,
 				2CE631F227BA7ED2004EA327 /* fonts */,
 				2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */,
@@ -106,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				2CEE9FA927BCCB2200CDD927 /* UIColor.swift */,
+				2C0824F027BE6285007537CA /* CAGradientLayer.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -237,9 +329,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */,
+				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
+				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
+				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
+				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
+				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
+				2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */,
+				2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */,
+				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,
+				2C0824E927BE22F6007537CA /* StatisticsCoordinator.swift in Sources */,
+				2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */,
 				2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */,
+				2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
