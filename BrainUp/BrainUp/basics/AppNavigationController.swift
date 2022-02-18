@@ -17,9 +17,10 @@ class AppNavigationController: UINavigationController {
             navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             navBarAppearance.largeTitleTextAttributes = [
                 .foregroundColor: UIColor.white,
-                .font: UIFont(name: "Montserrat", size: 18) ?? UIFont.systemFont(ofSize: 18)
+                .font: UIFont.montserratBold(size: 18)
             ]
             navBarAppearance.backgroundColor = .darkViolet
+            navBarAppearance.shadowColor = .clear
             navigationBar.standardAppearance = navBarAppearance
             navigationBar.scrollEdgeAppearance = navBarAppearance
             navigationBar.prefersLargeTitles = true
