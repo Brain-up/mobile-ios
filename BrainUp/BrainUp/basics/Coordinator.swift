@@ -34,8 +34,8 @@ enum CoordinatorType: String {
     case app
     case login
     case tab
-    case exersices = "Упражнения"
-    case statistics = "Статистика"
-    case diagnostics = "Диагностика"
-    case profile = "Профиль"
+    case exersices = "tabBar.item.exersices"
+    case statistics = "tabBar.item.statistics"
+    case diagnostics = "tabBar.item.diagnostics"
+    case profile = "tabBar.item.profile"
 }

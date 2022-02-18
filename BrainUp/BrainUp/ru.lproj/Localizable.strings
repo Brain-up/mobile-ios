@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  BrainUp
+
+  Created by Andrei Trukhan on 18/02/2022.
+  
+*/
+// MARK: - Tab Items
+
+"tabBar.item.exersices" = "Упражнения";
+"tabBar.item.statistics" = "Статистика";
+"tabBar.item.diagnostics" = "Диагностика";
+"tabBar.item.profile" = "Профиль";
+
+// MARK: - Statistic Sreens
+"statiscticType.byWeeks" = "По неделям";
+"statiscticType.byYears" = "По годам";
+
+"emptyStatistic.message" = "Чтобы получить статистику, \nнужно начать выполнять упражнения";
+"emptyStatistic.startExercises.button" = "начать занятия";
+

@@ -15,8 +15,8 @@ protocol EmptyStatisticViewModelProtocol {
 }
 
 struct EmptyStatisticViewModel: EmptyStatisticViewModelProtocol {
-    var message: String = "Чтобы получить статистику, \nнужно начать выполнять упражнения"
-    var buttonTitle: String = "начать занятия".uppercased()
+    var message: String = "emptyStatistic.message".localized
+    var buttonTitle: String = "emptyStatistic.startExercises.button".localized.uppercased()
     var image: UIImage? = UIImage(named: "noStatisticResults")
 
     var startExercisesButtonAction: (() -> Void)?

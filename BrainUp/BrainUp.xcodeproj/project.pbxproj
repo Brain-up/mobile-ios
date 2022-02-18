@@ -10,6 +10,8 @@
 		08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */; };
 		08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA827BE816900F3EF9F /* TopTabView.swift */; };
 		08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */; };
+		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
+		0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890534427BFDE4A00BB27A8 /* Strings.swift */; };
 		08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BB27BEF42600490375 /* GradientButton.swift */; };
 		08CC51BE27BEF4B800490375 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BD27BEF4B800490375 /* UIFont.swift */; };
 		08CC51C327BF964500490375 /* EmptyStatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51C227BF964500490375 /* EmptyStatisticCoordinator.swift */; };
@@ -63,6 +65,10 @@
 		08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewController.swift; sourceTree = "<group>"; };
 		08122DA827BE816900F3EF9F /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
 		08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinator.swift; sourceTree = "<group>"; };
+		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0890534427BFDE4A00BB27A8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		08CC51BB27BEF42600490375 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		08CC51BD27BEF4B800490375 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		08CC51C227BF964500490375 /* EmptyStatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticCoordinator.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 				2C1DE7DE27BA37D0006BCA51 /* Info.plist */,
 				2CE631EE27BA4C12004EA327 /* .swiftlint.yml */,
 				2CE631F027BA69F3004EA327 /* Colors.xcassets */,
+				0890534127BFDD4100BB27A8 /* Localizable.strings */,
 			);
 			path = BrainUp;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 			children = (
 				2CEE9FA927BCCB2200CDD927 /* UIColor.swift */,
 				08CC51BD27BEF4B800490375 /* UIFont.swift */,
+				0890534427BFDE4A00BB27A8 /* Strings.swift */,
 				2C0824F027BE6285007537CA /* CAGradientLayer.swift */,
 			);
 			path = extensions;
@@ -397,6 +405,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 2C1DE7C427BA37CE006BCA51;
 			productRefGroup = 2C1DE7CE27BA37CE006BCA51 /* Products */;
@@ -424,6 +433,7 @@
 				2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */,
 				2CE631F827BA8439004EA327 /* Montserrat-Regular.ttf in Resources */,
 				2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */,
+				0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */,
 				2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */,
 				2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */,
 				2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */,
@@ -501,6 +511,7 @@
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
 				08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */,
+				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
@@ -534,10 +545,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0890534127BFDD4100BB27A8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0890534027BFDD4100BB27A8 /* en */,
+				0890534327BFDD5A00BB27A8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2C1DE7DC27BA37D0006BCA51 /* Base */,
+				0890534227BFDD5A00BB27A8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -583,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -644,6 +666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

@@ -26,8 +26,9 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     var openHelp: (() -> Void)?
 
     private enum StatiscticType: String, CaseIterable {
-        case byWeeks = "По неделям"
-        case byYears = "По годам"
+//        case byWeeks = "По неделям"
+        case byWeeks = "statiscticType.byWeeks"
+        case byYears = "statiscticType.byYears"
     }
 
     private var state: State = .emptyView
@@ -36,7 +37,7 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
 
     private lazy var itemsTopView: [TopTabView] = {
         StatiscticType.allCases.enumerated().map { (index, element) in
-            TopTabView(with: element.rawValue.uppercased(), isActive: index == 0) { [weak self] in
+            TopTabView(with: element.rawValue.localized.uppercased(), isActive: index == 0) { [weak self] in
                 self?.action(for: index)
             }
         }
@@ -70,7 +71,7 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     }
 
     private func prepareViewModel() -> TabBarItemViewModelProtocol {
-        let title = type.rawValue.uppercased()
+        let title = type.rawValue.localized.uppercased()
         let topTabViews: [TopTabView] = state == .statisticValue ? itemsTopView : []
         let rightBarButtons = [UIImage(named: "helpIcon")]
         var viewModel = TabBarItemViewModel(title: title, topTabViews: topTabViews, rightBarButtons: rightBarButtons)
