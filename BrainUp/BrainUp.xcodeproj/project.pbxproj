@@ -10,6 +10,14 @@
 		08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */; };
 		08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA827BE816900F3EF9F /* TopTabView.swift */; };
 		08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */; };
+		082AA33027C1435700E2BA70 /* StatisticWeekItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA32F27C1435700E2BA70 /* StatisticWeekItemsMapper.swift */; };
+		082AA33227C1868E00E2BA70 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33127C1868E00E2BA70 /* Date.swift */; };
+		082AA33427C18CD600E2BA70 /* StatisticYearItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33327C18CD600E2BA70 /* StatisticYearItemsMapper.swift */; };
+		082AA33627C2758B00E2BA70 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33527C2758B00E2BA70 /* GraphicView.swift */; };
+		082AA33827C2E12600E2BA70 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33727C2E12600E2BA70 /* UIView.swift */; };
+		082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33927C2E1DF00E2BA70 /* UITableView.swift */; };
+		082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33C27C3808400E2BA70 /* ColumnView.swift */; };
+		082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33E27C382C900E2BA70 /* ChartCell.swift */; };
 		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
 		0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890534427BFDE4A00BB27A8 /* Strings.swift */; };
 		08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BB27BEF42600490375 /* GradientButton.swift */; };
@@ -71,6 +79,14 @@
 		08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewController.swift; sourceTree = "<group>"; };
 		08122DA827BE816900F3EF9F /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
 		08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinator.swift; sourceTree = "<group>"; };
+		082AA32F27C1435700E2BA70 /* StatisticWeekItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemsMapper.swift; sourceTree = "<group>"; };
+		082AA33127C1868E00E2BA70 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		082AA33327C18CD600E2BA70 /* StatisticYearItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticYearItemsMapper.swift; sourceTree = "<group>"; };
+		082AA33527C2758B00E2BA70 /* GraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
+		082AA33727C2E12600E2BA70 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		082AA33927C2E1DF00E2BA70 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		082AA33C27C3808400E2BA70 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
+		082AA33E27C382C900E2BA70 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -145,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082AA33B27C37EF700E2BA70 /* graph */ = {
+			isa = PBXGroup;
+			children = (
+				082AA33527C2758B00E2BA70 /* GraphicView.swift */,
+				082AA33C27C3808400E2BA70 /* ColumnView.swift */,
+			);
+			path = graph;
+			sourceTree = "<group>";
+		};
 		08CC51BF27BF937200490375 /* TabBarItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +203,8 @@
 			children = (
 				08CC51C627BF965A00490375 /* WeeksStatisticCoordinator.swift */,
 				08CC51CF27BFADEA00490375 /* WeeksStatisticViewController.swift */,
+				082AA33E27C382C900E2BA70 /* ChartCell.swift */,
+				082AA33B27C37EF700E2BA70 /* graph */,
 			);
 			path = WeeksStatistic;
 			sourceTree = "<group>";
@@ -246,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */,
+				082AA32F27C1435700E2BA70 /* StatisticWeekItemsMapper.swift */,
+				082AA33327C18CD600E2BA70 /* StatisticYearItemsMapper.swift */,
 				08CC51D527BFB33300490375 /* EmptyStatistic */,
 				08CC51C827BF969100490375 /* WeeksStatistic */,
 				08CC51C127BF963500490375 /* YearsStatistic */,
@@ -349,6 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				2CEE9FA927BCCB2200CDD927 /* UIColor.swift */,
+				082AA33927C2E1DF00E2BA70 /* UITableView.swift */,
+				082AA33727C2E12600E2BA70 /* UIView.swift */,
+				082AA33127C1868E00E2BA70 /* Date.swift */,
 				08CC51BD27BEF4B800490375 /* UIFont.swift */,
 				0890534427BFDE4A00BB27A8 /* Strings.swift */,
 				2C0824F027BE6285007537CA /* CAGradientLayer.swift */,
@@ -534,23 +566,31 @@
 				08CC51D227BFADF300490375 /* YearsStatisticViewController.swift in Sources */,
 				08CC51C527BF965200490375 /* YearsStatisticCoordinator.swift in Sources */,
 				2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */,
+				082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */,
 				08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */,
 				08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */,
+				082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */,
 				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
+				082AA33627C2758B00E2BA70 /* GraphicView.swift in Sources */,
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
+				082AA33027C1435700E2BA70 /* StatisticWeekItemsMapper.swift in Sources */,
+				082AA33427C18CD600E2BA70 /* StatisticYearItemsMapper.swift in Sources */,
 				08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */,
 				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
+				082AA33827C2E12600E2BA70 /* UIView.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
+				082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */,
 				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
 				2C8DBEE827BF85F3002184BF /* Request.swift in Sources */,
 				2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */,
 				2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */,
 				08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */,
+				082AA33227C1868E00E2BA70 /* Date.swift in Sources */,
 				08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */,
 				2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */,
 				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,

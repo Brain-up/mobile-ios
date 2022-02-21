@@ -26,7 +26,6 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     var openHelp: (() -> Void)?
 
     private enum StatiscticType: String, CaseIterable {
-//        case byWeeks = "По неделям"
         case byWeeks = "statiscticType.byWeeks"
         case byYears = "statiscticType.byYears"
     }
@@ -46,8 +45,25 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    func calculateStartEndDates(for date: Date) -> (start: Date, end: Date) {
+        let currentDate = date.currentDayWithoutTime()
+        let currentWeekday = currentDate.europeanWeekDay()
+        let endDate = currentDate.addDays(count: 7 - currentWeekday)
+        let startDayOfWeek = currentDate.addDays(count: -(currentWeekday - 1))
+        let startDate = startDayOfWeek.addDays(count: -2 * 7) // 7 - length of week
 
+        return (startDate, endDate)
+    }
     func start() {
+        // network test
+        let data = StatisticWeekItemsMapper.map(WeekDataMock.createData(), from: HTTPURLResponse(url: URL(string: "https://web.by")!, statusCode: 200, httpVersion: nil, headerFields: nil)!)
+        switch data {
+        case .success(let array):
+            print(array)
+        case .failure(let error):
+            print("error")
+        }
+
         let viewModel = prepareViewModel()
         let viewController = TabBarItemViewController(viewModel: viewModel)
         navigationController.viewControllers = [viewController]
@@ -122,14 +138,15 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     private func prepareCoordinators() {
         // use data from server
         guard let statisticViewController = statisticViewController else { return }
-        let yearsCoordinator = YearsStatisticCoordinator(
-            rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView)
-        childCoordinators.append(yearsCoordinator)
 
         let weeksCoordinator = WeeksStatisticCoordinator(
             rootViewController: statisticViewController,
             containerView: statisticViewController.containerView)
         childCoordinators.append(weeksCoordinator)
+
+        let yearsCoordinator = YearsStatisticCoordinator(
+            rootViewController: statisticViewController,
+            containerView: statisticViewController.containerView)
+        childCoordinators.append(yearsCoordinator)
     }
 }

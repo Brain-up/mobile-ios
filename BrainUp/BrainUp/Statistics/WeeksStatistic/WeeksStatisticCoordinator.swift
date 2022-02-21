@@ -9,8 +9,8 @@ import UIKit
 
 class WeeksStatisticCoordinator: TopTabItemCoordinator {
     override func start() {
-        let viewController = WeeksStatisticViewController()
-        viewController.view.backgroundColor = .green
+        let viewModel = WeeksStatisticViewModel()
+        let viewController = WeeksStatisticViewController(with: viewModel)
         addToContainer(controller: viewController)
     }
 }
