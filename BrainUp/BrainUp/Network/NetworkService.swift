@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkService {
-    func fetch<T: Codable>(_ request: Request, completion: @escaping (Result<T, Error>) -> Void)
+    func fetch<T: Decodable>(_ request: Request, completion: @escaping (Result<T, Error>) -> Void)
 }

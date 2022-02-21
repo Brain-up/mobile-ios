@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class AlamofireNetworkService: NetworkService {
-    func fetch<T>(_ request: Request, completion: @escaping (Result<T, Error>) -> Void) where T: Decodable, T: Encodable {
+    func fetch<T>(_ request: Request, completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
         AF.request(request.baseURL+request.path, method: request.method.getAFHTTPMethod(),
                    parameters: request.queryItems,
                    encoding: request.encoding.getAFEncoding(),
