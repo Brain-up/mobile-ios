@@ -59,4 +59,12 @@ extension UIColor {
     class var warmViolet: UIColor {
         UIColor(named: "warmViolet") ?? UIColor()
     }
+
+    class var activeGray: UIColor {
+        UIColor(named: "activeGray") ?? UIColor()
+    }
+
+    class var shadowColor: UIColor {
+        UIColor(named: "shadowColor") ?? UIColor()
+    }
 }

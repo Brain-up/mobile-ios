@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */; };
+		08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DA827BE816900F3EF9F /* TopTabView.swift */; };
+		08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */; };
+		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
+		0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890534427BFDE4A00BB27A8 /* Strings.swift */; };
+		08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BB27BEF42600490375 /* GradientButton.swift */; };
+		08CC51BE27BEF4B800490375 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BD27BEF4B800490375 /* UIFont.swift */; };
+		08CC51C327BF964500490375 /* EmptyStatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51C227BF964500490375 /* EmptyStatisticCoordinator.swift */; };
+		08CC51C527BF965200490375 /* YearsStatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51C427BF965200490375 /* YearsStatisticCoordinator.swift */; };
+		08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51C627BF965A00490375 /* WeeksStatisticCoordinator.swift */; };
+		08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51C927BF96A600490375 /* EmptyStatisticViewController.swift */; };
+		08CC51CC27BF9D0E00490375 /* TabBarItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51CB27BF9D0E00490375 /* TabBarItemViewModel.swift */; };
+		08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51CF27BFADEA00490375 /* WeeksStatisticViewController.swift */; };
+		08CC51D227BFADF300490375 /* YearsStatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51D127BFADF300490375 /* YearsStatisticViewController.swift */; };
+		08CC51D427BFB31D00490375 /* EmptyStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51D327BFB31D00490375 /* EmptyStatisticViewModel.swift */; };
+		08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51D627BFB89D00490375 /* ExerciseOpener.swift */; };
+		08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */; };
+		08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */; };
+		08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */; };
 		2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D227BD17BE007537CA /* Coordinator.swift */; };
 		2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D427BD17FE007537CA /* AppCoordinator.swift */; };
 		2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D727BD1928007537CA /* AuthCoordinator.swift */; };
@@ -32,7 +51,39 @@
 		460CC9907405C58627978B83 /* Pods_BrainUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9AC473CA2DE20CDD0FCD47 /* Pods_BrainUp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		08CC51E027BFBB4E00490375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C1DE7C527BA37CE006BCA51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C1DE7CC27BA37CE006BCA51;
+			remoteInfo = BrainUp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewController.swift; sourceTree = "<group>"; };
+		08122DA827BE816900F3EF9F /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
+		08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinator.swift; sourceTree = "<group>"; };
+		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0890534427BFDE4A00BB27A8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		08CC51BB27BEF42600490375 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		08CC51BD27BEF4B800490375 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		08CC51C227BF964500490375 /* EmptyStatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticCoordinator.swift; sourceTree = "<group>"; };
+		08CC51C427BF965200490375 /* YearsStatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsStatisticCoordinator.swift; sourceTree = "<group>"; };
+		08CC51C627BF965A00490375 /* WeeksStatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticCoordinator.swift; sourceTree = "<group>"; };
+		08CC51C927BF96A600490375 /* EmptyStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticViewController.swift; sourceTree = "<group>"; };
+		08CC51CB27BF9D0E00490375 /* TabBarItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewModel.swift; sourceTree = "<group>"; };
+		08CC51CF27BFADEA00490375 /* WeeksStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewController.swift; sourceTree = "<group>"; };
+		08CC51D127BFADF300490375 /* YearsStatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsStatisticViewController.swift; sourceTree = "<group>"; };
+		08CC51D327BFB31D00490375 /* EmptyStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticViewModel.swift; sourceTree = "<group>"; };
+		08CC51D627BFB89D00490375 /* ExerciseOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseOpener.swift; sourceTree = "<group>"; };
+		08CC51DC27BFBB4E00490375 /* BrainUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainUpTests.swift; sourceTree = "<group>"; };
+		08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticCoordinatorTestCase.swift; sourceTree = "<group>"; };
+		08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinatorTestCases.swift; sourceTree = "<group>"; };
 		1B9AC473CA2DE20CDD0FCD47 /* Pods_BrainUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0824D227BD17BE007537CA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2C0824D427BD17FE007537CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -64,6 +115,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		08CC51D927BFBB4E00490375 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C1DE7CA27BA37CE006BCA51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +133,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08CC51BF27BF937200490375 /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */,
+				08CC51CB27BF9D0E00490375 /* TabBarItemViewModel.swift */,
+				08122DA627BE813D00F3EF9F /* TabBarItemViewController.swift */,
+			);
+			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		08CC51C027BF938E00490375 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				08CC51BB27BEF42600490375 /* GradientButton.swift */,
+				08122DA827BE816900F3EF9F /* TopTabView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		08CC51C127BF963500490375 /* YearsStatistic */ = {
+			isa = PBXGroup;
+			children = (
+				08CC51C427BF965200490375 /* YearsStatisticCoordinator.swift */,
+				08CC51D127BFADF300490375 /* YearsStatisticViewController.swift */,
+			);
+			path = YearsStatistic;
+			sourceTree = "<group>";
+		};
+		08CC51C827BF969100490375 /* WeeksStatistic */ = {
+			isa = PBXGroup;
+			children = (
+				08CC51C627BF965A00490375 /* WeeksStatisticCoordinator.swift */,
+				08CC51CF27BFADEA00490375 /* WeeksStatisticViewController.swift */,
+			);
+			path = WeeksStatistic;
+			sourceTree = "<group>";
+		};
+		08CC51D527BFB33300490375 /* EmptyStatistic */ = {
+			isa = PBXGroup;
+			children = (
+				08CC51C227BF964500490375 /* EmptyStatisticCoordinator.swift */,
+				08CC51D327BFB31D00490375 /* EmptyStatisticViewModel.swift */,
+				08CC51C927BF96A600490375 /* EmptyStatisticViewController.swift */,
+			);
+			path = EmptyStatistic;
+			sourceTree = "<group>";
+		};
+		08CC51DD27BFBB4E00490375 /* BrainUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */,
+				08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */,
+				08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */,
+			);
+			path = BrainUpTests;
+			sourceTree = "<group>";
+		};
 		0E8DFA33346F16DD59205D3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +206,9 @@
 				2C0824D427BD17FE007537CA /* AppCoordinator.swift */,
 				2C0824EC27BE54CD007537CA /* AppTabBarController.swift */,
 				2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */,
+				08CC51D627BFB89D00490375 /* ExerciseOpener.swift */,
+				08CC51BF27BF937200490375 /* TabBarItem */,
+				08CC51C027BF938E00490375 /* CommonViews */,
 			);
 			path = basics;
 			sourceTree = "<group>";
@@ -116,6 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */,
+				08CC51D527BFB33300490375 /* EmptyStatistic */,
+				08CC51C827BF969100490375 /* WeeksStatistic */,
+				08CC51C127BF963500490375 /* YearsStatistic */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -149,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1DE7CF27BA37CE006BCA51 /* BrainUp */,
+				08CC51DD27BFBB4E00490375 /* BrainUpTests */,
 				2C1DE7CE27BA37CE006BCA51 /* Products */,
 				0E8DFA33346F16DD59205D3B /* Pods */,
 				37C0B6CC969839992484E2CE /* Frameworks */,
@@ -159,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1DE7CD27BA37CE006BCA51 /* BrainUp.app */,
+				08CC51DC27BFBB4E00490375 /* BrainUpTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +305,7 @@
 				2C1DE7DE27BA37D0006BCA51 /* Info.plist */,
 				2CE631EE27BA4C12004EA327 /* .swiftlint.yml */,
 				2CE631F027BA69F3004EA327 /* Colors.xcassets */,
+				0890534127BFDD4100BB27A8 /* Localizable.strings */,
 			);
 			path = BrainUp;
 			sourceTree = "<group>";
@@ -200,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				2CEE9FA927BCCB2200CDD927 /* UIColor.swift */,
+				08CC51BD27BEF4B800490375 /* UIFont.swift */,
+				0890534427BFDE4A00BB27A8 /* Strings.swift */,
 				2C0824F027BE6285007537CA /* CAGradientLayer.swift */,
 			);
 			path = extensions;
@@ -216,6 +342,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		08CC51DB27BFBB4E00490375 /* BrainUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08CC51E227BFBB4E00490375 /* Build configuration list for PBXNativeTarget "BrainUpTests" */;
+			buildPhases = (
+				08CC51D827BFBB4E00490375 /* Sources */,
+				08CC51D927BFBB4E00490375 /* Frameworks */,
+				08CC51DA27BFBB4E00490375 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08CC51E127BFBB4E00490375 /* PBXTargetDependency */,
+			);
+			name = BrainUpTests;
+			productName = BrainUpTests;
+			productReference = 08CC51DC27BFBB4E00490375 /* BrainUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2C1DE7CC27BA37CE006BCA51 /* BrainUp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C1DE7E127BA37D0006BCA51 /* Build configuration list for PBXNativeTarget "BrainUp" */;
@@ -245,6 +389,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					08CC51DB27BFBB4E00490375 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 2C1DE7CC27BA37CE006BCA51;
+					};
 					2C1DE7CC27BA37CE006BCA51 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -257,6 +405,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 2C1DE7C427BA37CE006BCA51;
 			productRefGroup = 2C1DE7CE27BA37CE006BCA51 /* Products */;
@@ -264,11 +413,19 @@
 			projectRoot = "";
 			targets = (
 				2C1DE7CC27BA37CE006BCA51 /* BrainUp */,
+				08CC51DB27BFBB4E00490375 /* BrainUpTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		08CC51DA27BFBB4E00490375 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C1DE7CB27BA37CE006BCA51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +433,7 @@
 				2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */,
 				2CE631F827BA8439004EA327 /* Montserrat-Regular.ttf in Resources */,
 				2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */,
+				0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */,
 				2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */,
 				2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */,
 				2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */,
@@ -328,24 +486,49 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		08CC51D827BFBB4E00490375 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
+				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
+				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C1DE7C927BA37CE006BCA51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CC51D227BFADF300490375 /* YearsStatisticViewController.swift in Sources */,
+				08CC51C527BF965200490375 /* YearsStatisticCoordinator.swift in Sources */,
 				2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */,
+				08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */,
+				08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */,
 				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
+				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
+				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
+				08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */,
+				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
 				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
 				2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */,
+				08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */,
+				08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */,
 				2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */,
 				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,
+				08CC51CC27BF9D0E00490375 /* TabBarItemViewModel.swift in Sources */,
 				2C0824E927BE22F6007537CA /* StatisticsCoordinator.swift in Sources */,
 				2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */,
+				08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */,
+				08CC51D427BFB31D00490375 /* EmptyStatisticViewModel.swift in Sources */,
+				08CC51BE27BEF4B800490375 /* UIFont.swift in Sources */,
 				2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */,
+				08CC51C327BF964500490375 /* EmptyStatisticCoordinator.swift in Sources */,
 				2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */,
 				2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */,
 			);
@@ -353,11 +536,29 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		08CC51E127BFBB4E00490375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C1DE7CC27BA37CE006BCA51 /* BrainUp */;
+			targetProxy = 08CC51E027BFBB4E00490375 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		0890534127BFDD4100BB27A8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0890534027BFDD4100BB27A8 /* en */,
+				0890534327BFDD5A00BB27A8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2C1DE7DC27BA37D0006BCA51 /* Base */,
+				0890534227BFDD5A00BB27A8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -365,10 +566,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		08CC51E327BFBB4E00490375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrainUp.BrainUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainUp.app/BrainUp";
+			};
+			name = Debug;
+		};
+		08CC51E427BFBB4E00490375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BrainUp.BrainUpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainUp.app/BrainUp";
+			};
+			name = Release;
+		};
 		2C1DE7DF27BA37D0006BCA51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -430,6 +666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -540,6 +777,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		08CC51E227BFBB4E00490375 /* Build configuration list for PBXNativeTarget "BrainUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08CC51E327BFBB4E00490375 /* Debug */,
+				08CC51E427BFBB4E00490375 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2C1DE7C827BA37CE006BCA51 /* Build configuration list for PBXProject "BrainUp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -5,7 +5,6 @@
 //  Created by Evgenii Zhigunov on 2/16/22.
 //
 
-import Foundation
 import UIKit
 
 protocol Coordinator: AnyObject {
@@ -31,6 +30,12 @@ protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: Coordinator)
 }
 
-enum CoordinatorType {
-    case app, login, tab, exersices, statistics, diagnostics, profile
+enum CoordinatorType: String {
+    case app
+    case login
+    case tab
+    case exersices = "tabBar.item.exersices"
+    case statistics = "tabBar.item.statistics"
+    case diagnostics = "tabBar.item.diagnostics"
+    case profile = "tabBar.item.profile"
 }

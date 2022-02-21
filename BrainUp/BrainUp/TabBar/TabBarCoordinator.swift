@@ -60,6 +60,13 @@ class TabBarCoordinator: TabCoordinatorProtocol {
         let tabbarItem = UITabBarItem.init(title: nil, image: page.getTabIcon(), tag: page.pageOrderNumber())
         navController.tabBarItem = tabbarItem
         let coordinator = page.getCoordinator().init(navController)
+
+        if var coordinator = coordinator as? ExerciseOpener {
+            coordinator.openExercise = { [weak self] in
+                self?.openExercise()
+            }
+        }
+
         coordinator.start()
         childCoordinators.append(coordinator)
         return childCoordinators.last?.navigationController ?? UINavigationController()
@@ -69,5 +76,9 @@ class TabBarCoordinator: TabCoordinatorProtocol {
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.exercises.pageOrderNumber()
         navigationController.viewControllers = [tabBarController]
+    }
+
+    private func openExercise() {
+        tabBarController.selectedIndex = TabBarPage.exercises.pageOrderNumber()
     }
 }
