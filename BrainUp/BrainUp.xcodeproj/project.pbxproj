@@ -18,6 +18,7 @@
 		082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33927C2E1DF00E2BA70 /* UITableView.swift */; };
 		082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33C27C3808400E2BA70 /* ColumnView.swift */; };
 		082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33E27C382C900E2BA70 /* ChartCell.swift */; };
+		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
 		0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890534427BFDE4A00BB27A8 /* Strings.swift */; };
 		08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BB27BEF42600490375 /* GradientButton.swift */; };
@@ -87,6 +88,7 @@
 		082AA33927C2E1DF00E2BA70 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		082AA33C27C3808400E2BA70 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		082AA33E27C382C900E2BA70 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				082AA33527C2758B00E2BA70 /* GraphicView.swift */,
 				082AA33C27C3808400E2BA70 /* ColumnView.swift */,
+				08890C6D27C52BB50089804E /* LegendView.swift */,
 			);
 			path = graph;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */,
 				08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */,
 				082AA33227C1868E00E2BA70 /* Date.swift in Sources */,
+				08890C6E27C52BB50089804E /* LegendView.swift in Sources */,
 				08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */,
 				2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */,
 				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,

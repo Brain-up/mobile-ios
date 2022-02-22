@@ -32,6 +32,7 @@ class ColumnView: UIView {
         label.font = UIFont.montserratSemiBold(size: 9)
         return label
     }()
+
     let columnView = UIView()
 
     private let viewModel: ColumnViewModelProtocol
@@ -59,7 +60,7 @@ class ColumnView: UIView {
 
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.distribution = .equalCentering
+        stackView.distribution = .fillProportionally
         stackView.spacing = 0
     }
 
@@ -82,6 +83,5 @@ class ColumnView: UIView {
             columnView.widthAnchor.constraint(equalToConstant: viewModel.columnWidth),
             columnView.heightAnchor.constraint(equalToConstant: viewModel.columnHeight)
         ])
-        columnView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
 }

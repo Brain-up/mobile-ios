@@ -48,6 +48,7 @@ final class WeeksStatisticViewController: UIViewController {
 //        tableView.rowHeight = UITableView.automaticDimension
 //        tableView.estimatedRowHeight = 300
         tableView.backgroundColor = .cyan
+        tableView.separatorStyle = .none
 //        tableView.bounces = false
     }
 

@@ -13,7 +13,10 @@ struct GraphicViewModel: GraphicViewModelProtocol {
     // items creation mock
     let items: [ColumnView] = {
         [UIColor.red, UIColor.blue, UIColor.gray, UIColor.yellow, UIColor.black, UIColor.brown, UIColor.purple].map { item in
-            let viewM = ColumnViewModel(columnHeight: CGFloat.random(in: 10.0...60.0), columnColor: item, timeColor: item, time: ["00:00", "150:00", "1000:00"].randomElement()!)
+            let viewM = ColumnViewModel(columnHeight: CGFloat.random(in: 10.0...80.0),
+                                        columnColor: item,
+                                        timeColor: item,
+                                        time: ["00:00", "150:00", "1000:00"].randomElement()!)
             return ColumnView(with: viewM)
         }
     }()
@@ -39,7 +42,6 @@ class GraphicView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .bottom
         stackView.distribution = .fillEqually
-        stackView.spacing = 8
     }
 
     private func setupConstraints() {
