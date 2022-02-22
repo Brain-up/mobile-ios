@@ -7,18 +7,22 @@
 
 import UIKit
 protocol LegendViewModelProtocol {
-    var items: [(date: String, weekday: String)] { get }
+    var items: [LegendItem] { get }
 }
-
+struct LegendItem {
+    let weekday: String
+    let date: String
+    let isSelected: Bool
+}
 struct LegendViewModel: LegendViewModelProtocol {
-    let items: [(date: String, weekday: String)] = [
-        ("ПН", "31"),
-        ("Вт", "1"),
-        ("Ср", "2"),
-        ("Чт", "3"),
-        ("Пт", "4"),
-        ("Сб", "5"),
-        ("Вс", "6")]
+    let items: [LegendItem] = [
+        LegendItem(weekday: "ПН", date: "31", isSelected: false),
+        LegendItem(weekday: "Вт", date: "1", isSelected: false),
+        LegendItem(weekday: "Ср", date: "2", isSelected: false),
+        LegendItem(weekday: "Чт", date: "25", isSelected: true),
+        LegendItem(weekday: "Пт", date: "4", isSelected: false),
+        LegendItem(weekday: "Сб", date: "5", isSelected: false),
+        LegendItem(weekday: "Вс", date: "6", isSelected: false)]
 }
 
 final class LegendView: UIView {
@@ -84,6 +88,11 @@ final class LegendView: UIView {
             weekDayLabel.text = element.weekday
             let dateLabel = createDateLabel()
             dateLabel.text = element.date
+
+            if element.isSelected {
+                dateLabel.layer.backgroundColor = UIColor.warmViolet.cgColor
+                dateLabel.layer.cornerRadius = 6
+            }
 
             let stackView = createVerticalStack()
             stackView.addArrangedSubview(weekDayLabel)

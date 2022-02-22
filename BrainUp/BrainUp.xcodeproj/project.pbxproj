@@ -19,6 +19,8 @@
 		082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33C27C3808400E2BA70 /* ColumnView.swift */; };
 		082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33E27C382C900E2BA70 /* ChartCell.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
+		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
+		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
 		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
 		0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890534427BFDE4A00BB27A8 /* Strings.swift */; };
 		08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51BB27BEF42600490375 /* GradientButton.swift */; };
@@ -89,6 +91,8 @@
 		082AA33C27C3808400E2BA70 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		082AA33E27C382C900E2BA70 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
+		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
+		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
 		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -206,7 +210,9 @@
 			children = (
 				08CC51C627BF965A00490375 /* WeeksStatisticCoordinator.swift */,
 				08CC51CF27BFADEA00490375 /* WeeksStatisticViewController.swift */,
+				08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */,
 				082AA33E27C382C900E2BA70 /* ChartCell.swift */,
+				08890C6F27C57BE40089804E /* ChartCellViewModel.swift */,
 				082AA33B27C37EF700E2BA70 /* graph */,
 			);
 			path = WeeksStatistic;
@@ -581,6 +587,7 @@
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
 				082AA33027C1435700E2BA70 /* StatisticWeekItemsMapper.swift in Sources */,
 				082AA33427C18CD600E2BA70 /* StatisticYearItemsMapper.swift in Sources */,
+				08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */,
 				08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */,
 				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
@@ -600,6 +607,7 @@
 				2C0824EB27BE232C007537CA /* ExersicesCoordinator.swift in Sources */,
 				08CC51CC27BF9D0E00490375 /* TabBarItemViewModel.swift in Sources */,
 				2C0824E927BE22F6007537CA /* StatisticsCoordinator.swift in Sources */,
+				08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */,
 				2C8DBEEC27BF89B9002184BF /* NetworkService.swift in Sources */,
 				2C8DBEE427BF83B8002184BF /* HTTPMethod.swift in Sources */,
 				2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */,

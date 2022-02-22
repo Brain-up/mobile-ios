@@ -6,23 +6,11 @@
 //
 
 import UIKit
-protocol WeeksStatisticViewModelProtocol {
-    func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol
-    var numberOfRows: Int { get }
-}
-struct WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
-    var numberOfRows: Int {
-        10
-    }
-
-    func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol {
-        return ChartCellViewModel()
-    }
-}
 
 final class WeeksStatisticViewController: UIViewController {
     private let tableView = UITableView()
-    private let viewModel: WeeksStatisticViewModelProtocol
+    private let refreshControl = UIRefreshControl()
+    private var viewModel: WeeksStatisticViewModelProtocol
 
     init(with viewModel: WeeksStatisticViewModelProtocol) {
         self.viewModel = viewModel
@@ -38,20 +26,32 @@ final class WeeksStatisticViewController: UIViewController {
 
         setupUI()
         setupConstraints()
+        setupBindings()
+    }
+    private func setupBindings() {
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            let oldContentHeight: CGFloat = self.tableView.contentSize.height
+            let oldOffsetY: CGFloat = self.tableView.contentOffset.y
+            self.tableView.reloadData()
+            let newContentHeight: CGFloat = self.tableView.contentSize.height
+            self.tableView.contentOffset.y = oldOffsetY + (newContentHeight - oldContentHeight)
+            self.refreshControl.endRefreshing()
+        }
     }
 
     private func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
-//
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 300
-        tableView.backgroundColor = .cyan
-        tableView.separatorStyle = .none
-//        tableView.bounces = false
-    }
 
+        tableView.separatorStyle = .none
+        refreshControl.addTarget(self, action: #selector(loadPreviousData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    @objc func loadPreviousData() {
+        viewModel.loadMoreStatistic()
+    }
     private func setupConstraints() {
         // there is issue: if tableView the first subview, largeTitle will shrimp. This behavior break all our UI composition.
         let crunchView = UIView()

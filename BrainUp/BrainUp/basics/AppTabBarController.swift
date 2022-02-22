@@ -29,7 +29,9 @@ class AppTabbarController: UITabBarController {
     }
 
     private func getTabbarBackground() -> CAGradientLayer {
-        let gradientlayer = CAGradientLayer().getGradientLayer(firstColor: UIColor.warmViolet.withAlphaComponent(0.15).cgColor, secondColor: UIColor.coldViolet.withAlphaComponent(0.15).cgColor)
+        let gradientlayer = CAGradientLayer().getGradientLayer(
+            firstColor: UIColor.warmViolet.withAlphaComponent(0.15).cgColor,
+            secondColor: UIColor.coldViolet.withAlphaComponent(0.15).cgColor)
         let frame = tabBar.bounds
         let maxHeight = frame.height + (UIApplication.shared.windows.first?.safeAreaInsets.bottom  ?? 0)
         gradientlayer.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.width, height: maxHeight)
