@@ -13,6 +13,8 @@ protocol Request {
     var method: HTTPMethod {get}
     var headers: [String: String] {get}
     var queryItems: [String: Any]? { get }
+    // parameters which are included inside of the request body
+    var parameters: [String: Any]? { get }
     var encoding: Encoding {get}
 }
 
@@ -26,7 +28,8 @@ extension Request {
     var headers: [String: String] {
         [:]
     }
-    var queryItems: [String: Any]? {
-        [:]
+    
+    var parameters: [String: Any]? {
+        nil
     }
 }
