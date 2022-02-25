@@ -28,30 +28,17 @@ final class WeeksStatisticViewController: UIViewController {
         setupConstraints()
         setupBindings()
     }
-    private func setupBindings() {
-        viewModel.reloadData = { [weak self] in
-            guard let self = self else { return }
-            let oldContentHeight: CGFloat = self.tableView.contentSize.height
-            let oldOffsetY: CGFloat = self.tableView.contentOffset.y
-            self.tableView.reloadData()
-            let newContentHeight: CGFloat = self.tableView.contentSize.height
-            self.tableView.contentOffset.y = oldOffsetY + (newContentHeight - oldContentHeight)
-            self.refreshControl.endRefreshing()
-        }
-    }
 
     private func setupUI() {
         tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
 
+        tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
         tableView.separatorStyle = .none
-        refreshControl.addTarget(self, action: #selector(loadPreviousData), for: .valueChanged)
+
+        refreshControl.addTarget(self, action: #selector(loadMoreStatistic), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
-    @objc func loadPreviousData() {
-        viewModel.loadMoreStatistic()
-    }
+
     private func setupConstraints() {
         // there is issue: if tableView the first subview, largeTitle will shrimp. This behavior break all our UI composition.
         let crunchView = UIView()
@@ -76,24 +63,36 @@ final class WeeksStatisticViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+
+    private func setupBindings() {
+        viewModel.reloadData = { [weak self] in
+            guard let self = self else { return }
+            let oldContentHeight: CGFloat = self.tableView.contentSize.height
+            let oldOffsetY: CGFloat = self.tableView.contentOffset.y
+            self.tableView.reloadData()
+            let newContentHeight: CGFloat = self.tableView.contentSize.height
+            self.tableView.contentOffset.y = oldOffsetY + (newContentHeight - oldContentHeight)
+            self.refreshControl.endRefreshing()
+        }
+    }
+
+    @objc func loadMoreStatistic() {
+        viewModel.loadMoreStatistic()
+    }
 }
 // MARK: - Table view data source
 extension WeeksStatisticViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         140
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ChartCell.self, forIndexPath: indexPath)
         cell.configure(with: viewModel.item(for: indexPath))
         return cell
-    }
-}
-// MARK: - UITableViewDelegate.
-extension WeeksStatisticViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

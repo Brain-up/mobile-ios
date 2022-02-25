@@ -32,7 +32,7 @@ class TopTabItemCoordinator: Coordinator {
     /// Default initializer
     /// - Parameters:
     ///   - rootViewController: ViewController that will show your embedded viewController
-    ///   - containerView: View inside wich youe embed viewController will be located
+    ///   - containerView: View inside wich your embedded viewController will be located
     init(rootViewController: UIViewController, containerView: UIView) {
         self.rootViewController = rootViewController
         self.containerView = containerView

@@ -15,11 +15,11 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     }
 
     var finishDelegate: CoordinatorFinishDelegate?
-    
+
     var childCoordinators: [Coordinator] = [Coordinator]()
-    
+
     var navigationController: UINavigationController
-    
+
     var type: CoordinatorType {.statistics}
 
     var openExercise: (() -> Void)?
@@ -33,6 +33,9 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     private var state: State = .emptyView
     private var currentIndex: Int = -1
     private var statisticViewController: TabBarItemViewController?
+//    private let networkService: NetworkService
+    // consider to move NetworkService init to init method and property to private let.
+    var networkService: NetworkService = AlamofireNetworkService()
 
     private lazy var itemsTopView: [TopTabView] = {
         StatiscticType.allCases.enumerated().map { (index, element) in
@@ -45,25 +48,13 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    func calculateStartEndDates(for date: Date) -> (start: Date, end: Date) {
-        let currentDate = date.currentDayWithoutTime()
-        let currentWeekday = currentDate.europeanWeekDay()
-        let endDate = currentDate.addDays(count: 7 - currentWeekday)
-        let startDayOfWeek = currentDate.addDays(count: -(currentWeekday - 1))
-        let startDate = startDayOfWeek.addDays(count: -2 * 7) // 7 - length of week
 
-        return (startDate, endDate)
-    }
+//    init(_ navigationController: UINavigationController, networkService: NetworkService) {
+//        self.navigationController = navigationController
+//        self.networkService = networkService
+//    }
+
     func start() {
-        // network test
-        let data = StatisticWeekItemsMapper.map(WeekDataMock.createData(), from: HTTPURLResponse(url: URL(string: "https://web.by")!, statusCode: 200, httpVersion: nil, headerFields: nil)!)
-        switch data {
-        case .success(let array):
-            print(array)
-        case .failure(let error):
-            print("error")
-        }
-
         let viewModel = prepareViewModel()
         let viewController = TabBarItemViewController(viewModel: viewModel)
         navigationController.viewControllers = [viewController]
@@ -92,11 +83,11 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
         let rightBarButtons = [UIImage(named: "helpIcon")]
         var viewModel = TabBarItemViewModel(title: title, topTabViews: topTabViews, rightBarButtons: rightBarButtons)
 
-        viewModel.rightBarbuttonAction = { [weak self] tag in
+        viewModel.rightBarbuttonAction = { [weak self] _ in
+            // mock data
             let helpScreen = UIViewController()
             helpScreen.title = "helpScreen"
             self?.navigationController.pushViewController(helpScreen, animated: true)
-            print(tag)
         }
 
         return viewModel
@@ -141,12 +132,12 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
 
         let weeksCoordinator = WeeksStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView)
+            containerView: statisticViewController.containerView, networkService: networkService)
         childCoordinators.append(weeksCoordinator)
 
         let yearsCoordinator = YearsStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView)
+            containerView: statisticViewController.containerView, networkService: networkService)
         childCoordinators.append(yearsCoordinator)
     }
 }

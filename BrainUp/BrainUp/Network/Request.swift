@@ -12,15 +12,21 @@ protocol Request {
     var path: String {get}
     var method: HTTPMethod {get}
     var headers: [String: String] {get}
-    var queryItems: [String: Any] { get }
+    var queryItems: [String: Any]? { get }
     var encoding: Encoding {get}
+}
+
+extension Request {
+    var baseURL: String {
+        "https://brainup.site/api"
+    }
 }
 
 extension Request {
     var headers: [String: String] {
         [:]
     }
-    var queryItems: [String: Any] {
+    var queryItems: [String: Any]? {
         [:]
     }
 }

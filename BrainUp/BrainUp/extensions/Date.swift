@@ -26,6 +26,15 @@ extension Date {
         dayComponent.day = count
         return calendar.date(byAdding: dayComponent, to: self) ?? self
     }
+    /// Adds months to Date.
+    /// - Parameter count: The number of months. Pass negative value to get Date before passed Date.
+    /// - Returns: Updated Date. If something goes wrong, will return the same Date.
+    func addMounths(count: Int) -> Date {
+        let calendar = Calendar.current
+        var dayComponent = DateComponents()
+        dayComponent.month = count
+        return calendar.date(byAdding: dayComponent, to: self) ?? self
+    }
     
     ///  Current day without time
     /// - Returns: Current Date with time 00:00:00 UTC. If something goes wrong, will return the same Date.

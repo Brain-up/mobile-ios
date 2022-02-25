@@ -16,12 +16,15 @@ protocol WeeksStatisticViewModelProtocol {
 }
 
 class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
-    var items: [ChartCellViewModelProtocol] = [
-        ChartCellViewModel(),
-        ChartCellViewModel(),
-        ChartCellViewModel()
-    ]
+    var items: [ChartCellViewModelProtocol] = []
     var reloadData: (() -> Void)?
+
+    func updateItems(with weekItems: [StatisticDayItem]) {
+        weekItems.forEach { item in
+            items.insert(ChartCellViewModel(), at: 0)
+        }
+        reloadData?()
+    }
 
     func loadMoreStatistic() {
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3) { [weak self] in
@@ -37,6 +40,9 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
     }
 
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol {
-        return ChartCellViewModel()
+        guard indexPath.row < items.count else {
+            return ChartCellViewModel() // empty data
+        }
+        return items[indexPath.row]
     }
 }
