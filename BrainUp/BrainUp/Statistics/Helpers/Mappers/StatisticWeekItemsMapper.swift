@@ -7,9 +7,14 @@
 
 import UIKit
 
-typealias WeekResult = Result<[StatisticDayItem], Error>
+typealias WeekResult = Result<[StatisticWeekItem], Error>
 
-final class StatisticWeekItemsMapper: StatisticItemsMapper {
+protocol StatisticWeekItemsMapperProtocol {
+    func fetch(for range: DateRangeString, with networkServise: NetworkService, completion: @escaping (WeekResult) -> Void)
+    func fetchFutureItems(for range: DateRangeString, completion: @escaping (WeekResult) -> Void) 
+}
+
+final class StatisticWeekItemsMapper: StatisticItemsMapper, StatisticWeekItemsMapperProtocol {
      
     private struct Root: Decodable {
         let data: [Item]
@@ -22,9 +27,9 @@ final class StatisticWeekItemsMapper: StatisticItemsMapper {
     }
 
     private struct Item: Decodable {
-        public let date: String
-        public let exercisingTimeSeconds: Int
-        public let progress: String
+        let date: String
+        let exercisingTimeSeconds: Int
+        let progress: String
 
         var item: StatisticDayItem {
             let minutesFormatter = DateComponentsFormatter()
@@ -42,36 +47,30 @@ final class StatisticWeekItemsMapper: StatisticItemsMapper {
         }
     }
 
-    func fetch(for range: DateRange, with networkServise: NetworkService, completion: @escaping (WeekResult) -> Void) {
+    func fetch(for range: DateRangeString, with networkServise: NetworkService, completion: @escaping (WeekResult) -> Void) {
         networkServise.fetch(StatisticRequest.week(range), model: Root.self) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(root):
-                let resultWitEmptyDays = self.statisticItemsWithEmptyValuesForMissedItems(inside: range, for: root.weekStatistic) { date in
+                let resultWithEmptyDays = self.statisticItemsWithEmptyValuesForMissedItems(inside: range, for: root.weekStatistic) { date in
                     date.addDays(count: 1)
                 }
-                completion(.success(resultWitEmptyDays))
+                let chankedResult = resultWithEmptyDays.chunked(into: 7) // separate dates in weeks
+                let weekResult = chankedResult.map { StatisticWeekItem(days: $0) }
+                completion(.success(weekResult))
             case let .failure(error):
                 completion(.failure(error))
             }
         }
     }
-}
 
-class WeekDataMock {
-    static func createData() -> Data {
-        json.data(using: .utf8)!
+    func fetchFutureItems(for range: DateRangeString, completion: @escaping (WeekResult) -> Void) {
+        let emptyArray = [StatisticDayItem]()
+        let resultWithEmptyDays = statisticItemsWithEmptyValuesForMissedItems(inside: range, for: emptyArray) { date in
+            date.addDays(count: 1)
+        }
+        let chankedResult = resultWithEmptyDays.chunked(into: 7) // separate dates in weeks
+        let weekResult = chankedResult.map { StatisticWeekItem(days: $0) }
+        completion(.success(weekResult))
     }
-    static let json = """
-    {"data":
-[{"date":"2022-02-19","exercisingTimeSeconds":255,"progress":"BAD"},
-{"date":"2022-02-09","exercisingTimeSeconds":61,"progress":"BAD"},
-{"date":"2022-02-11","exercisingTimeSeconds":21,"progress":"BAD"},
-{"date":"2022-01-31","exercisingTimeSeconds":1091,"progress":"GOOD"},
-{"date":"2022-02-08","exercisingTimeSeconds":349,"progress":"BAD"},
-{"date":"2022-02-03","exercisingTimeSeconds":67,"progress":"BAD"},
-{"date":"2022-02-07","exercisingTimeSeconds":113,"progress":"BAD"}],
-"errors":[],
-"meta":[]}
-"""
 }

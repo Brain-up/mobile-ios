@@ -7,11 +7,12 @@
 
 import Foundation
 
-typealias DateRange = (startDate: String, endDate: String)
+typealias DateRangeString = (startDate: String, endDate: String)
+typealias DateRange = (startDate: Date, endDate: Date)
 
 enum StatisticRequest: Request {
-    case week(DateRange)
-    case year(DateRange)
+    case week(DateRangeString)
+    case year(DateRangeString)
 
     private var mainPath: String {
         "/v2/statistics/study/"
@@ -25,7 +26,7 @@ enum StatisticRequest: Request {
         "to"
     }
 
-    private func queryItems(for range: DateRange) -> String {
+    private func queryItems(for range: DateRangeString) -> String {
         "?" + fromKey + "=" + range.startDate + toKey + "=" + range.endDate
     }
 }
@@ -56,11 +57,5 @@ extension StatisticRequest {
 extension StatisticRequest {
     var queryItems: [String: Any]? {
         return nil
-//        switch self {
-//        case let .week(range):
-//            return [fromKey: range.startDate, toKey: range.endDate]
-//        case let .year(range):
-//            return [fromKey: range.startDate, toKey: range.endDate]
-//        }
     }
 }

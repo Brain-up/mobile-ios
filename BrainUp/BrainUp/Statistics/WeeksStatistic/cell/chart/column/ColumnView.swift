@@ -7,23 +7,6 @@
 
 import UIKit
 
-protocol ColumnViewModelProtocol {
-    var columnHeight: CGFloat { get }
-    var columnWidth: CGFloat { get }
-    var columnColor: UIColor { get }
-    var timeColor: UIColor { get }
-
-    var time: String { get }
-}
-
-struct ColumnViewModel: ColumnViewModelProtocol {
-    let columnHeight: CGFloat
-    var columnWidth: CGFloat = 16
-    let columnColor: UIColor
-    let timeColor: UIColor
-    let time: String
-}
-
 class ColumnView: UIView {
     let stackView = UIStackView()
     let timeLabel: UILabel = {
@@ -80,7 +63,7 @@ class ColumnView: UIView {
 
         columnView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            columnView.widthAnchor.constraint(equalToConstant: viewModel.columnWidth),
+            columnView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
             columnView.heightAnchor.constraint(equalToConstant: viewModel.columnHeight)
         ])
     }

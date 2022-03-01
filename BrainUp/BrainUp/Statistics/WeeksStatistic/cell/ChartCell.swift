@@ -10,6 +10,7 @@ import UIKit
 class ChartCell: UITableViewCell {
     private var chartView: GraphicView!
     private var legendView: LegendView!
+
     private let monthLabel: UILabel = {
         let label = UILabel()
         label.textColor = .charcoalGrey
@@ -17,9 +18,16 @@ class ChartCell: UITableViewCell {
         label.font = UIFont.montserratSemiBold(size: 10)
         return label
     }()
+
     private let lineView: UIView = {
         let lineView = UIView()
         lineView.backgroundColor = .activeGray
+        return lineView
+    }()
+
+    private let dashedlineView: UIView = {
+        let config = DashedView.Configuration(color: .lightPink, dashLength: 5, dashGap: 3)
+        let lineView = DashedView(config: config)
         return lineView
     }()
 
@@ -31,6 +39,7 @@ class ChartCell: UITableViewCell {
         chartView.removeFromSuperview()
         legendView.removeFromSuperview()
         monthLabel.removeFromSuperview()
+        dashedlineView.removeFromSuperview()
         lineView.removeFromSuperview()
     }
 
@@ -68,7 +77,7 @@ class ChartCell: UITableViewCell {
         contentView.addSubview(legendView)
         NSLayoutConstraint.activate([
             legendView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 44),
-            legendView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 0),
+            legendView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 2),
             legendView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
             legendView.trailingAnchor.constraint(equalTo: chartView.trailingAnchor)
         ])
@@ -78,7 +87,18 @@ class ChartCell: UITableViewCell {
         NSLayoutConstraint.activate([
             monthLabel.leadingAnchor.constraint(equalTo: lineView.trailingAnchor, constant: 14),
             monthLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            monthLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
+            monthLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
+            monthLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 45)
+        ])
+
+        guard viewModel.shouldShowDashedLine else { return }
+        dashedlineView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(dashedlineView)
+        NSLayoutConstraint.activate([
+            dashedlineView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 32),
+            dashedlineView.bottomAnchor.constraint(equalTo: lineView.bottomAnchor, constant: -viewModel.dashedLineBottonContstant),
+            dashedlineView.heightAnchor.constraint(equalToConstant: 1),
+            dashedlineView.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: 12)
         ])
     }
 }

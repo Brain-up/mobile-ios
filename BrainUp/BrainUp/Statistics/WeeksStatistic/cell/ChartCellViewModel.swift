@@ -11,10 +11,32 @@ protocol ChartCellViewModelProtocol {
     var chartViewModel: GraphicViewModelProtocol { get }
     var legendViewModel: LegendViewModelProtocol { get }
     var monthLabel: String { get }
+    var maxTimeValueInSec: Int { get }
+    var shouldShowDashedLine: Bool { get }
+    var dashedLineBottonContstant: Double { get }
 }
 
 struct ChartCellViewModel: ChartCellViewModelProtocol {
-    let chartViewModel: GraphicViewModelProtocol = GraphicViewModel()
-    let legendViewModel: LegendViewModelProtocol = LegendViewModel()
-    let monthLabel: String = "Месяц"
+    private let minimumGreatTimeThreshold = 20 * 60 // 20 minutes in sec
+    private let maxHeightOfBar: Double = 80
+
+    let chartViewModel: GraphicViewModelProtocol
+    let legendViewModel: LegendViewModelProtocol
+    let monthLabel: String
+    let maxTimeValueInSec: Int
+
+    var shouldShowDashedLine: Bool {
+        maxTimeValueInSec > minimumGreatTimeThreshold
+    }
+
+    var dashedLineBottonContstant: Double {
+        maxHeightOfBar * Double(minimumGreatTimeThreshold) / Double(maxTimeValueInSec)
+    }
+
+    init(week: StatisticWeekItem, monthLabel: String) {
+        self.monthLabel = monthLabel
+        self.chartViewModel = GraphicViewModel(week: week, maxHeightOfBar: maxHeightOfBar)
+        self.legendViewModel = LegendViewModel(week: week)
+        self.maxTimeValueInSec = week.maxTimeValue
+    }
 }

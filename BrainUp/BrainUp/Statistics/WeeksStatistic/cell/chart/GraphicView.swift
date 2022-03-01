@@ -6,21 +6,7 @@
 //
 
 import UIKit
-protocol GraphicViewModelProtocol {
-    var items: [ColumnView] { get }
-}
-struct GraphicViewModel: GraphicViewModelProtocol {
-    // items creation mock
-    let items: [ColumnView] = {
-        [UIColor.red, UIColor.blue, UIColor.gray, UIColor.yellow, UIColor.black, UIColor.brown, UIColor.purple].map { item in
-            let viewM = ColumnViewModel(columnHeight: CGFloat.random(in: 10.0...80.0),
-                                        columnColor: item,
-                                        timeColor: item,
-                                        time: ["00:00", "150:00", "1000:00"].randomElement()!)
-            return ColumnView(with: viewM)
-        }
-    }()
-}
+
 class GraphicView: UIView {
     private let stackView = UIStackView()
     private let viewModel: GraphicViewModelProtocol
@@ -53,7 +39,7 @@ class GraphicView: UIView {
             stackView.topAnchor.constraint(equalTo: self.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        viewModel.items.forEach { stackView.addArrangedSubview($0) }
+        viewModel.items.forEach { stackView.addArrangedSubview(ColumnView(with: $0)) }
     }
 
 }

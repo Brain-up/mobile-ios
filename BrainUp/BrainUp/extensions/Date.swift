@@ -6,9 +6,40 @@
 //
 
 import Foundation
+
 extension Date {
+    func weekdayLocalizedName() -> String {
+        let prefLanguage = Locale.preferredLanguages[0]
+        var calendar = Calendar.current
+        calendar.locale = NSLocale(localeIdentifier: prefLanguage) as Locale
+        let currentWeekday = calendar.dateComponents([.weekday], from: self).weekday ?? 1
+        let name = calendar.shortWeekdaySymbols[currentWeekday - 1].uppercased()
+        return name
+    }
+
+    func monthLocalizedName() -> String {
+        let calendar = Calendar.current
+        let monthSymbols = LocalizedMonthName.allCases
+        let currentMonth = calendar.dateComponents([.month], from: self).month ?? 1
+        let name = monthSymbols[currentMonth - 1].rawValue.localized
+        return name
+    }
+
+    func dayNumber() -> String {
+        let dayFormatter = DateFormatter()
+        dayFormatter.calendar = Calendar.current
+        dayFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dayFormatter.dateFormat = "dd"
+        
+        return dayFormatter.string(from: self)
+    }
+
+    func isFutureDay() -> Bool {
+        return self.currentDayWithoutTime() > Date().currentDayWithoutTime()
+    }
+
     func isTheCurrentDay() -> Bool {
-        return isTheSameDay(with: Date())
+        return isTheSameDay(with: Date().currentDayWithoutTime())
     }
 
     func isTheSameDay(with anotherDay: Date) -> Bool {
@@ -54,4 +85,19 @@ extension Date {
         }
         return currentWeekday
     }
+}
+
+enum LocalizedMonthName: String, CaseIterable {
+    case january = "monthName.january"
+    case february = "monthName.february"
+    case march = "monthName.march"
+    case april = "monthName.april"
+    case may = "monthName.may"
+    case june = "monthName.june"
+    case july = "monthName.july"
+    case august = "monthName.august"
+    case september = "monthName.september"
+    case october = "monthName.october"
+    case november = "monthName.november"
+    case december = "monthName.december"
 }

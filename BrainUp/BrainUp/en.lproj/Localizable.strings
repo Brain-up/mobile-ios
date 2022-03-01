@@ -19,3 +19,17 @@
 
 "emptyStatistic.message" = "If you want to see statistic, you need to start doing exercises";
 "emptyStatistic.startExercises.button" = "Start Exercises";
+// MARK: - Month names in infinitive
+
+"monthName.january" = "January";
+"monthName.february" = "February";
+"monthName.march" = "March";
+"monthName.april" = "April";
+"monthName.may" = "May";
+"monthName.june" = "June";
+"monthName.july" = "July";
+"monthName.august" = "August";
+"monthName.september" = "September";
+"monthName.october" = "October";
+"monthName.november" = "November";
+"monthName.december" = "December";

@@ -8,6 +8,8 @@
 import UIKit
 
 final class WeeksStatisticViewController: UIViewController {
+    private let rowHeight: CGFloat = 140
+
     private let tableView = UITableView()
     private let refreshControl = UIRefreshControl()
     private var viewModel: WeeksStatisticViewModelProtocol
@@ -35,7 +37,7 @@ final class WeeksStatisticViewController: UIViewController {
         tableView.register(ChartCell.self, forCellReuseIdentifier: ChartCell.identifier)
         tableView.separatorStyle = .none
 
-        refreshControl.addTarget(self, action: #selector(loadMoreStatistic), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(loadPastStatistic), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
 
@@ -69,15 +71,18 @@ final class WeeksStatisticViewController: UIViewController {
             guard let self = self else { return }
             let oldContentHeight: CGFloat = self.tableView.contentSize.height
             let oldOffsetY: CGFloat = self.tableView.contentOffset.y
+
             self.tableView.reloadData()
+
             let newContentHeight: CGFloat = self.tableView.contentSize.height
             self.tableView.contentOffset.y = oldOffsetY + (newContentHeight - oldContentHeight)
+
             self.refreshControl.endRefreshing()
-        }
+         }
     }
 
-    @objc func loadMoreStatistic() {
-        viewModel.loadMoreStatistic()
+    @objc func loadPastStatistic() {
+        viewModel.loadPastStatistic()
     }
 }
 // MARK: - Table view data source
@@ -87,12 +92,13 @@ extension WeeksStatisticViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        140
+        rowHeight
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ChartCell.self, forIndexPath: indexPath)
-        cell.configure(with: viewModel.item(for: indexPath))
+        let cellViewModel = viewModel.item(for: indexPath)
+        cell.configure(with: cellViewModel)
         return cell
     }
 }

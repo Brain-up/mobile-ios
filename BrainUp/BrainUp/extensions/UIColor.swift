@@ -71,4 +71,16 @@ extension UIColor {
     class var yellowWarm: UIColor {
         UIColor(named: "yellowWarm") ?? UIColor()
     }
+
+    class var darkPink: UIColor {
+        UIColor(named: "darkPink") ?? UIColor()
+    }
+
+    class var yellowWarmDark: UIColor {
+        UIColor(named: "yellowWarmDark") ?? UIColor()
+    }
+
+    class var lightPink: UIColor {
+        UIColor(named: "lightPink") ?? UIColor()
+    }
 }

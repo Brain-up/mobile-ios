@@ -10,13 +10,17 @@ import Foundation
 protocol StatisticDateHelperProtocol {
     static var dateDayFormatter: DateFormatter { get }
     static var dateMonthFormatter: DateFormatter { get }
-    static func calculateStartEndDates(for date: Date) -> (DateRange)
+    static func calculateStartEndDates(for date: Date) -> (DateRangeString, DateRange)
+    static func calculateStartEndDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange)
 }
 
 class StatisticDateHelper: StatisticDateHelperProtocol {
+    private static let weekLength = 7
+    private static let numberOfWeeksToAdd = 2
+    
     static var dateDayFormatter: DateFormatter {
         let dayFormatter = DateFormatter()
-        dayFormatter.calendar = Calendar(identifier: .iso8601)
+        dayFormatter.calendar = Calendar.current
         dayFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dayFormatter.dateFormat = "yyyy-MM-dd"
         return dayFormatter
@@ -24,22 +28,33 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
 
     static var dateMonthFormatter: DateFormatter {
         let dayFormatter = DateFormatter()
-        dayFormatter.calendar = Calendar(identifier: .iso8601)
+        dayFormatter.calendar = Calendar.current
         dayFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         dayFormatter.dateFormat = "yyyy-MM"
         return dayFormatter
     }
 
-    static func calculateStartEndDates(for date: Date) -> (DateRange) {
+    static func calculateStartEndDates(for date: Date) -> (DateRangeString, DateRange) {
         let currentDate = date.currentDayWithoutTime()
         let currentWeekday = currentDate.europeanWeekDay()
-        let endDate = currentDate.addDays(count: 7 - currentWeekday)
+        let endDate = currentDate.addDays(count: weekLength - currentWeekday)
+
         let startDayOfWeek = currentDate.addDays(count: -(currentWeekday - 1))
-        let startDate = startDayOfWeek.addDays(count: -2 * 7) // 7 - length of week
+        let startDate = startDayOfWeek.addDays(count: -numberOfWeeksToAdd * weekLength)
         
         let startDateString = dateDayFormatter.string(from: startDate)
         let endDateString = dateDayFormatter.string(from: endDate)
 
-        return (startDateString, endDateString)
+        return ((startDateString, endDateString), (startDate, endDate))
+    }
+
+    static func calculateStartEndDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange) {
+        let startDate = date.currentDayWithoutTime()
+        let endDate = startDate.addDays(count: numberOfWeeksToAdd * weekLength - 1)
+        
+        let startDateString = dateDayFormatter.string(from: startDate)
+        let endDateString = dateDayFormatter.string(from: endDate)
+
+        return ((startDateString, endDateString), (startDate, endDate))
     }
 }

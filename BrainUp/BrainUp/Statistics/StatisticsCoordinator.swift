@@ -129,15 +129,15 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     private func prepareCoordinators() {
         // use data from server
         guard let statisticViewController = statisticViewController else { return }
-
+        // TODO: - replace mocks with service
         let weeksCoordinator = WeeksStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView, networkService: networkService)
+            containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .week))
         childCoordinators.append(weeksCoordinator)
 
         let yearsCoordinator = YearsStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView, networkService: networkService)
+            containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .year))
         childCoordinators.append(yearsCoordinator)
     }
 }

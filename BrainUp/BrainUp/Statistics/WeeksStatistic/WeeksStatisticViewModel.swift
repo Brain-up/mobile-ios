@@ -12,37 +12,63 @@ protocol WeeksStatisticViewModelProtocol {
     var reloadData: (() -> Void)? { get set }
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol
 
-    func loadMoreStatistic()
+    func loadPastStatistic()
+    func loadFeatureStatistic()
 }
 
 class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
-    var items: [ChartCellViewModelProtocol] = []
+    private(set) var dataRangeOfLoadedData: DateRange = (Date(), Date())
+    private var items: [ChartCellViewModelProtocol] = []
     var reloadData: (() -> Void)?
+    var loadPastData: ((Date) -> Void)?
+    var loadFeatureData: ((Date) -> Void)?
 
-    func updateItems(with weekItems: [StatisticDayItem]) {
-        weekItems.forEach { item in
-            items.insert(ChartCellViewModel(), at: 0)
+    func updateItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
+        update(dataRangeOfLoadedData)
+        weekItems.reversed().forEach { item in
+            items.insert(ChartCellViewModel(week: item, monthLabel: item.monthLabel), at: 0)
         }
         reloadData?()
     }
 
-    func loadMoreStatistic() {
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3) { [weak self] in
-            self?.items.insert(ChartCellViewModel(), at: 0)
-            self?.items.insert(ChartCellViewModel(), at: 0)
-            self?.items.insert(ChartCellViewModel(), at: 0)
-            self?.reloadData?()
+    func addEmptyItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
+        update(dataRangeOfLoadedData)
+        weekItems.forEach { item in
+            items.append(ChartCellViewModel(week: item, monthLabel: item.monthLabel))
         }
+        reloadData?()
     }
 
     var numberOfRows: Int {
         items.count
     }
 
+    func loadPastStatistic() {
+        loadPastData?(dataRangeOfLoadedData.startDate)
+    }
+
+    func loadFeatureStatistic() {
+        loadFeatureData?(dataRangeOfLoadedData.endDate)
+    }
+
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol {
         guard indexPath.row < items.count else {
-            return ChartCellViewModel() // empty data
+            return items[0] // empty data
+        }
+        if indexPath.row == items.count - 1 {
+            loadFeatureStatistic()
         }
         return items[indexPath.row]
+    }
+
+    private func update(_ dataRangeOfLoadedData: DateRange) {
+        if dataRangeOfLoadedData.startDate < self.dataRangeOfLoadedData.startDate {
+            self.dataRangeOfLoadedData.startDate = dataRangeOfLoadedData.startDate
+            return
+        }
+        if dataRangeOfLoadedData.endDate > self.dataRangeOfLoadedData.endDate {
+            self.dataRangeOfLoadedData.endDate = dataRangeOfLoadedData.endDate
+            return
+        }
     }
 }

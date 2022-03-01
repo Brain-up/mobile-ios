@@ -7,30 +7,40 @@
 
 import UIKit
 
-enum StatisticProgress: RawRepresentable, CaseIterable {
-    init?(rawValue: (progressName: String, color: UIColor)) {
-        return nil
-    }
+enum StatisticProgress: String, CaseIterable {
 
-    case great
-    case good
-    case bad
-    case unspecified
+    case great = "GREAT"
+    case good = "GOOD"
+    case bad = "BAD"
+    case unspecified = "unspecified"
 
-    var rawValue: (progressName: String, color: UIColor) {
+    var barColor: UIColor {
         switch self {
         case .great:
-            return (progressName: "GREAT", color: UIColor.brainGreen)
+            return UIColor.brainGreen
         case .good:
-            return (progressName: "GOOD", color: UIColor.yellowWarm)
+            return UIColor.yellowWarm
         case .bad:
-            return (progressName: "BAD", color: UIColor.brainPink)
+            return UIColor.brainPink
         case .unspecified:
-            return (progressName: "unspecified", color: UIColor.clear)
+            return UIColor.clear
+        }
+    }
+
+    var timeColor: UIColor {
+        switch self {
+        case .great:
+            return UIColor.darkGreen
+        case .good:
+            return UIColor.yellowWarmDark
+        case .bad:
+            return UIColor.darkPink
+        case .unspecified:
+            return UIColor.clear
         }
     }
 
     static func matchedCase(for string: String) -> StatisticProgress {
-        allCases.filter { $0.rawValue.progressName == string }.first ?? .unspecified
+        allCases.filter { $0.rawValue == string }.first ?? .unspecified
     }
 }

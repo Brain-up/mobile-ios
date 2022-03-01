@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol EmptyStatisticViewModelProtocol {
     var message: String { get }
     var buttonTitle: String { get }

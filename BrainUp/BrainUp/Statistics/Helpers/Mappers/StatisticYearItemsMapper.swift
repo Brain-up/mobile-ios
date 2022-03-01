@@ -9,7 +9,11 @@ import Foundation
 
 typealias YearResult = Result<[StatisticMonthItem], Error>
 
-final class StatisticYearItemsMapper: StatisticItemsMapper {
+protocol StatisticYearItemsMapperProtocol {
+    func fetch(for range: DateRangeString, with networkServise: NetworkService, completion: @escaping (YearResult) -> Void)
+}
+
+final class StatisticYearItemsMapper: StatisticItemsMapper, StatisticYearItemsMapperProtocol {
      
     private struct Root: Decodable {
         let data: [Item]
@@ -38,7 +42,7 @@ final class StatisticYearItemsMapper: StatisticItemsMapper {
         }
     }
 
-    func fetch(for range: DateRange, with networkServise: NetworkService, completion: @escaping (YearResult) -> Void) {
+    func fetch(for range: DateRangeString, with networkServise: NetworkService, completion: @escaping (YearResult) -> Void) {
         networkServise.fetch(StatisticRequest.year(range), model: Root.self) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -52,12 +56,4 @@ final class StatisticYearItemsMapper: StatisticItemsMapper {
             }
         }
     }
-}
-
-class YearDataMock {
-    static func createData() -> Data {
-        json.data(using: .utf8)!
-    }
-    static let json = """
-"""
 }

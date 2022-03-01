@@ -8,17 +8,17 @@
 import Foundation
 
 class StatisticItemsMapper {
-    func statisticItemsWithEmptyValuesForMissedItems<T>(inside range: DateRange, for weeks: [T], increaseDateBy action: (Date) -> Date) -> [T] where T: EmptyDateItem {
+    func statisticItemsWithEmptyValuesForMissedItems<T>(inside range: DateRangeString, for dates: [T], increaseDateBy action: (Date) -> Date) -> [T] where T: EmptyDateItem {
         guard let startDate = StatisticDateHelper.dateDayFormatter.date(from: range.startDate),
-              let endDate = StatisticDateHelper.dateDayFormatter.date(from: range.startDate),
+              let endDate = StatisticDateHelper.dateDayFormatter.date(from: range.endDate),
               startDate < endDate else {
-                  return weeks
+                  return dates
               }
 
         var result = [EmptyDateItem]()
         var hashMap = [Date: Int]()
         // create hashMap -> ["value": "index"]
-        weeks.enumerated().forEach {
+        dates.enumerated().forEach {
             hashMap[$0.element.date] = $0.offset
         }
 
@@ -27,7 +27,7 @@ class StatisticItemsMapper {
         while date <= endDate {
             // if our hashMap contains element for current data -> add to result array
             if let index = hashMap[date] {
-                result.append(weeks[index])
+                result.append(dates[index])
             } else {
                 // else add to result array empty item
                 result.append(T.emptyItem(for: date))
@@ -35,7 +35,7 @@ class StatisticItemsMapper {
             // increase date by 1 day
             date = action(date)
         }
-        guard let result = result as? [T] else { return weeks }
+        guard let result = result as? [T] else { return dates }
         return result
     }
 }
