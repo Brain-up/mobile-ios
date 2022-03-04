@@ -22,7 +22,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        if !isAuth {
+        if isAuth {
             goToTabbar()
         } else {
             goToAuth()

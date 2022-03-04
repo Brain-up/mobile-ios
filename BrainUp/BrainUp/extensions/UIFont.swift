@@ -20,4 +20,11 @@ extension UIFont {
         UIFont(name: "Montserrat-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
+    class func openSansRegular(size: CGFloat) -> UIFont {
+        UIFont(name: "OpenSans-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    class func reenieBeanie(size: CGFloat) -> UIFont {
+        UIFont(name: "ReenieBeanie", size: size) ?? UIFont.systemFont(ofSize: size)
+    }
 }
