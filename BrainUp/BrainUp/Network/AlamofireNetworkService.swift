@@ -20,7 +20,7 @@ class AlamofireNetworkService: NetworkService {
                     do {
                         let result = try JSONDecoder().decode(T.self, from: data ?? Data())
                         completion(Result.success(result))
-                    } catch (let error) {
+                    } catch let error {
                         completion(Result.failure(error as Error))
                     }
                 case .failure(let error):

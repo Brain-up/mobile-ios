@@ -44,6 +44,10 @@
 		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
 		2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */; };
 		2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5727BF9CE5002C90F5 /* Encoding.swift */; };
+		2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220327C7A48C00B6260C /* LogoImageView.swift */; };
+		2C3B220627C7A5A900B6260C /* LogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220527C7A5A900B6260C /* LogoLabel.swift */; };
+		2C3B220827C7ADC300B6260C /* AppTextFieldWithClear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220727C7ADC300B6260C /* AppTextFieldWithClear.swift */; };
+		2C3B220A27C7B5BD00B6260C /* AppTextFieldPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220927C7B5BD00B6260C /* AppTextFieldPassword.swift */; };
 		2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */; };
 		2C8DBEE227BF813B002184BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8DBEE127BF813B002184BF /* Alamofire */; };
 		2C8DBEE427BF83B8002184BF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEE327BF83B8002184BF /* HTTPMethod.swift */; };
@@ -53,6 +57,7 @@
 		2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */; };
 		2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F527BA83AC004EA327 /* OpenSans-Regular.ttf */; };
 		2CE631F827BA8439004EA327 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F627BA841A004EA327 /* Montserrat-Regular.ttf */; };
+		2CE7DC3927C5063A003404C7 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE7DC3827C5063A003404C7 /* AppTextField.swift */; };
 		2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE9FA927BCCB2200CDD927 /* UIColor.swift */; };
 		460CC9907405C58627978B83 /* Pods_BrainUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9AC473CA2DE20CDD0FCD47 /* Pods_BrainUp.framework */; };
 /* End PBXBuildFile section */
@@ -111,6 +116,10 @@
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		2C38BA5727BF9CE5002C90F5 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
+		2C3B220327C7A48C00B6260C /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
+		2C3B220527C7A5A900B6260C /* LogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabel.swift; sourceTree = "<group>"; };
+		2C3B220727C7ADC300B6260C /* AppTextFieldWithClear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldWithClear.swift; sourceTree = "<group>"; };
+		2C3B220927C7B5BD00B6260C /* AppTextFieldPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldPassword.swift; sourceTree = "<group>"; };
 		2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		2C8DBEE327BF83B8002184BF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		2C8DBEE727BF85F3002184BF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -120,6 +129,7 @@
 		2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReenieBeanie-Regular.ttf"; sourceTree = "<group>"; };
 		2CE631F527BA83AC004EA327 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		2CE631F627BA841A004EA327 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		2CE7DC3827C5063A003404C7 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		2CEE9FA927BCCB2200CDD927 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D5C802AB4498D4351354B4D4 /* Pods-BrainUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainUp.release.xcconfig"; path = "Target Support Files/Pods-BrainUp/Pods-BrainUp.release.xcconfig"; sourceTree = "<group>"; };
 		DE54A60FC2B7F8B70A6F844C /* Pods-BrainUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainUp.debug.xcconfig"; path = "Target Support Files/Pods-BrainUp/Pods-BrainUp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +170,9 @@
 			children = (
 				08CC51BB27BEF42600490375 /* GradientButton.swift */,
 				08122DA827BE816900F3EF9F /* TopTabView.swift */,
+				2CE7DC3827C5063A003404C7 /* AppTextField.swift */,
+				2C3B220727C7ADC300B6260C /* AppTextFieldWithClear.swift */,
+				2C3B220927C7B5BD00B6260C /* AppTextFieldPassword.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -230,6 +243,8 @@
 			children = (
 				2C0824D727BD1928007537CA /* AuthCoordinator.swift */,
 				2C0824D927BD19C1007537CA /* AuthVC.swift */,
+				2C3B220327C7A48C00B6260C /* LogoImageView.swift */,
+				2C3B220527C7A5A900B6260C /* LogoLabel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -538,6 +553,7 @@
 				08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */,
 				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
+				2CE7DC3927C5063A003404C7 /* AppTextField.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
@@ -545,10 +561,12 @@
 				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
+				2C3B220827C7ADC300B6260C /* AppTextFieldWithClear.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
 				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
 				2C8DBEE827BF85F3002184BF /* Request.swift in Sources */,
 				2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */,
+				2C3B220627C7A5A900B6260C /* LogoLabel.swift in Sources */,
 				2C0824E327BD34E3007537CA /* TabBarPage.swift in Sources */,
 				08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */,
 				08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */,
@@ -560,12 +578,14 @@
 				2C8DBEE427BF83B8002184BF /* HTTPMethod.swift in Sources */,
 				2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */,
 				2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */,
+				2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */,
 				08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */,
 				08CC51D427BFB31D00490375 /* EmptyStatisticViewModel.swift in Sources */,
 				08CC51BE27BEF4B800490375 /* UIFont.swift in Sources */,
 				2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */,
 				08CC51C327BF964500490375 /* EmptyStatisticCoordinator.swift in Sources */,
 				2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */,
+				2C3B220A27C7B5BD00B6260C /* AppTextFieldPassword.swift in Sources */,
 				2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
