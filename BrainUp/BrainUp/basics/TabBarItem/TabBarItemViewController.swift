@@ -83,7 +83,7 @@ final class TabBarItemViewController: UIViewController {
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             stackView.bottomAnchor.constraint(equalTo: containerView.topAnchor)
         ])
     }

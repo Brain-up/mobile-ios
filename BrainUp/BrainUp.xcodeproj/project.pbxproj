@@ -18,6 +18,9 @@
 		082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33927C2E1DF00E2BA70 /* UITableView.swift */; };
 		082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33C27C3808400E2BA70 /* ColumnView.swift */; };
 		082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33E27C382C900E2BA70 /* ChartCell.swift */; };
+		082ED54227D62F160056A560 /* YearCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082ED54127D62F160056A560 /* YearCollectionHeaderView.swift */; };
+		082ED54427D62F380056A560 /* YearCollectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082ED54327D62F380056A560 /* YearCollectionFooterView.swift */; };
+		082ED54627D62F4D0056A560 /* YearCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082ED54527D62F4D0056A560 /* YearCollectionViewCell.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -103,6 +106,9 @@
 		082AA33927C2E1DF00E2BA70 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		082AA33C27C3808400E2BA70 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
 		082AA33E27C382C900E2BA70 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		082ED54127D62F160056A560 /* YearCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCollectionHeaderView.swift; sourceTree = "<group>"; };
+		082ED54327D62F380056A560 /* YearCollectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCollectionFooterView.swift; sourceTree = "<group>"; };
+		082ED54527D62F4D0056A560 /* YearCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCollectionViewCell.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -204,6 +210,16 @@
 			path = chart;
 			sourceTree = "<group>";
 		};
+		082ED54027D62F090056A560 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				082ED54127D62F160056A560 /* YearCollectionHeaderView.swift */,
+				082ED54327D62F380056A560 /* YearCollectionFooterView.swift */,
+				082ED54527D62F4D0056A560 /* YearCollectionViewCell.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		08890C7327C81F1D0089804E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +304,7 @@
 			children = (
 				08CC51C427BF965200490375 /* YearsStatisticCoordinator.swift */,
 				08CC51D127BFADF300490375 /* YearsStatisticViewController.swift */,
+				082ED54027D62F090056A560 /* Elements */,
 			);
 			path = YearsStatistic;
 			sourceTree = "<group>";
@@ -665,6 +682,7 @@
 				2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */,
 				082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */,
 				08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */,
+				082ED54427D62F380056A560 /* YearCollectionFooterView.swift in Sources */,
 				08890C8627C977150089804E /* Array.swift in Sources */,
 				08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */,
 				082AA33F27C382C900E2BA70 /* ChartCell.swift in Sources */,
@@ -710,9 +728,11 @@
 				08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */,
 				08CC51D427BFB31D00490375 /* EmptyStatisticViewModel.swift in Sources */,
 				08CC51BE27BEF4B800490375 /* UIFont.swift in Sources */,
+				082ED54627D62F4D0056A560 /* YearCollectionViewCell.swift in Sources */,
 				08890C7B27C832110089804E /* StatisticDayItem.swift in Sources */,
 				2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */,
 				08890C8A27CA69790089804E /* DashedView.swift in Sources */,
+				082ED54227D62F160056A560 /* YearCollectionHeaderView.swift in Sources */,
 				08CC51C327BF964500490375 /* EmptyStatisticCoordinator.swift in Sources */,
 				08890C9027CAD3AF0089804E /* LegendViewModel.swift in Sources */,
 				08890C8E27CAD38B0089804E /* ColumnViewModel.swift in Sources */,
