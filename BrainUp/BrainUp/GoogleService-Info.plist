@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>242077211273-tih9f17j7m9v7dls2n80ome809bvvqc7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.242077211273-tih9f17j7m9v7dls2n80ome809bvvqc7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDS1ZPZRIZYrb1z8DOzGK4_QWAl6XJ5LHY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>242077211273</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.BrainUp.spb</string>
+	<key>PROJECT_ID</key>
+	<string>brainupspb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>brainupspb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:242077211273:ios:1176dada3f7e5a32b08458</string>
+	<key>DATABASE_URL</key>
+	<string>https://brainupspb-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
