@@ -19,3 +19,8 @@
 "emptyStatistic.message" = "Чтобы получить статистику, \nнужно начать выполнять упражнения";
 "emptyStatistic.startExercises.button" = "начать занятия";
 
+// MARK: - Auth Screen
+"auth.Username" = "Имя пользователя";
+"auth.Password" = "Пароль";
+"auth.Login" = "ВОЙТИ";
+"auth.Registration" = "ЗАРЕГИСТРИРОВАТЬСЯ";
