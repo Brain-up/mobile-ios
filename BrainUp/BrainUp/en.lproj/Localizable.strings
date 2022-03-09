@@ -19,3 +19,9 @@
 
 "emptyStatistic.message" = "If you want to see statistic, you need to start doing exercises";
 "emptyStatistic.startExercises.button" = "Start Exercises";
+
+// MARK: - Auth Screen
+"auth.Username" = "Username";
+"auth.Password" = "Password";
+"auth.Login" = "LOGIN";
+"auth.Registration" = "REGISTRATION";

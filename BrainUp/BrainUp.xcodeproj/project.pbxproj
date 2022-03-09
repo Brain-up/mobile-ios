@@ -44,6 +44,10 @@
 		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
 		2C1DF6EB27D88B24000717F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6EA27D88B24000717F7 /* FirebaseAuth */; };
 		2C1DF6EF27D8B776000717F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */; };
+		2C1DF6F127D8B992000717F7 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F027D8B992000717F7 /* AuthVM.swift */; };
+		2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F227D8C377000717F7 /* LogoView.swift */; };
+		2C1DF6F527D8D151000717F7 /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F427D8D151000717F7 /* BasicVC.swift */; };
+		2C1DF6F727D8E11C000717F7 /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */; };
 		2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */; };
 		2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5727BF9CE5002C90F5 /* Encoding.swift */; };
 		2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220327C7A48C00B6260C /* LogoImageView.swift */; };
@@ -117,6 +121,10 @@
 		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C1DF6F027D8B992000717F7 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		2C1DF6F227D8C377000717F7 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		2C1DF6F427D8D151000717F7 /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
+		2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
 		2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		2C38BA5727BF9CE5002C90F5 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		2C3B220327C7A48C00B6260C /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 				2CE7DC3827C5063A003404C7 /* AppTextField.swift */,
 				2C3B220727C7ADC300B6260C /* AppTextFieldWithClear.swift */,
 				2C3B220927C7B5BD00B6260C /* AppTextFieldPassword.swift */,
+				2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 		2C0824D127BD179A007537CA /* basics */ = {
 			isa = PBXGroup;
 			children = (
+				2C1DF6F427D8D151000717F7 /* BasicVC.swift */,
 				2C0824D227BD17BE007537CA /* Coordinator.swift */,
 				2C0824D427BD17FE007537CA /* AppCoordinator.swift */,
 				2C0824EC27BE54CD007537CA /* AppTabBarController.swift */,
@@ -249,6 +259,8 @@
 				2C0824D927BD19C1007537CA /* AuthVC.swift */,
 				2C3B220327C7A48C00B6260C /* LogoImageView.swift */,
 				2C3B220527C7A5A900B6260C /* LogoLabel.swift */,
+				2C1DF6F027D8B992000717F7 /* AuthVM.swift */,
+				2C1DF6F227D8C377000717F7 /* LogoView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -562,10 +574,12 @@
 				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
 				2CE7DC3927C5063A003404C7 /* AppTextField.swift in Sources */,
+				2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
 				08CC51BC27BEF42600490375 /* GradientButton.swift in Sources */,
+				2C1DF6F127D8B992000717F7 /* AuthVM.swift in Sources */,
 				0890534527BFDE4A00BB27A8 /* Strings.swift in Sources */,
 				2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
@@ -586,6 +600,7 @@
 				2C8DBEE427BF83B8002184BF /* HTTPMethod.swift in Sources */,
 				2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */,
 				2C0824E527BE21EF007537CA /* ProfileCoordinator.swift in Sources */,
+				2C1DF6F727D8E11C000717F7 /* WhiteButton.swift in Sources */,
 				2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */,
 				08122DA927BE816900F3EF9F /* TopTabView.swift in Sources */,
 				08CC51D427BFB31D00490375 /* EmptyStatisticViewModel.swift in Sources */,
@@ -595,6 +610,7 @@
 				2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */,
 				2C3B220A27C7B5BD00B6260C /* AppTextFieldPassword.swift in Sources */,
 				2C0824F127BE6285007537CA /* CAGradientLayer.swift in Sources */,
+				2C1DF6F527D8D151000717F7 /* BasicVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

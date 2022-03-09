@@ -27,6 +27,8 @@ class AuthCoordinator: Coordinator {
     
     private func goToAuth() {
         let loginVC = AuthVC()
+        let model = AuthVM(view: loginVC)
+        loginVC.model = model
         navigationController.setViewControllers([loginVC], animated: true)
     }
 }

@@ -67,4 +67,7 @@ extension UIColor {
     class var shadowColor: UIColor {
         UIColor(named: "shadowColor") ?? UIColor()
     }
+    class var buttonBorder: UIColor {
+        UIColor(named: "buttonBorder") ?? UIColor()
+    }
 }
