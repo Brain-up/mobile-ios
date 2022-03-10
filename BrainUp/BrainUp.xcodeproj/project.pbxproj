@@ -43,11 +43,14 @@
 		2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */; };
 		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
 		2C1DF6EB27D88B24000717F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6EA27D88B24000717F7 /* FirebaseAuth */; };
-		2C1DF6EF27D8B776000717F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */; };
+		2C1DF6EF27D8B776000717F7 /* GoogleService-Info1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6EE27D8B776000717F7 /* GoogleService-Info1.plist */; };
 		2C1DF6F127D8B992000717F7 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F027D8B992000717F7 /* AuthVM.swift */; };
 		2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F227D8C377000717F7 /* LogoView.swift */; };
 		2C1DF6F527D8D151000717F7 /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F427D8D151000717F7 /* BasicVC.swift */; };
 		2C1DF6F727D8E11C000717F7 /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */; };
+		2C1DF6F927D9DFB3000717F7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F827D9DFB3000717F7 /* Token.swift */; };
+		2C1DF6FD27D9E66F000717F7 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6FC27D9E66F000717F7 /* KeychainSwift */; };
+		2C1DF6FF27DA1F10000717F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */; };
 		2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */; };
 		2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5727BF9CE5002C90F5 /* Encoding.swift */; };
 		2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220327C7A48C00B6260C /* LogoImageView.swift */; };
@@ -120,11 +123,13 @@
 		2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C1DF6EE27D8B776000717F7 /* GoogleService-Info1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info1.plist"; sourceTree = "<group>"; };
 		2C1DF6F027D8B992000717F7 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		2C1DF6F227D8C377000717F7 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		2C1DF6F427D8D151000717F7 /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
 		2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
+		2C1DF6F827D9DFB3000717F7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		2C38BA5727BF9CE5002C90F5 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		2C3B220327C7A48C00B6260C /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
@@ -160,6 +165,7 @@
 			files = (
 				460CC9907405C58627978B83 /* Pods_BrainUp.framework in Frameworks */,
 				2C1DF6EB27D88B24000717F7 /* FirebaseAuth in Frameworks */,
+				2C1DF6FD27D9E66F000717F7 /* KeychainSwift in Frameworks */,
 				2C8DBEE227BF813B002184BF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +252,7 @@
 				2C0824EC27BE54CD007537CA /* AppTabBarController.swift */,
 				2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */,
 				08CC51D627BFB89D00490375 /* ExerciseOpener.swift */,
+				2C1DF6F827D9DFB3000717F7 /* Token.swift */,
 				08CC51BF27BF937200490375 /* TabBarItem */,
 				08CC51C027BF938E00490375 /* CommonViews */,
 			);
@@ -343,8 +350,9 @@
 				2CEE9FA827BCCAF800CDD927 /* extensions */,
 				2CE631F227BA7ED2004EA327 /* fonts */,
 				2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */,
-				2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */,
+				2C1DF6EE27D8B776000717F7 /* GoogleService-Info1.plist */,
 				2C1DE7D427BA37CE006BCA51 /* ViewController.swift */,
+				2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */,
 				2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */,
 				2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */,
 				2C1DE7DE27BA37D0006BCA51 /* Info.plist */,
@@ -435,6 +443,7 @@
 			packageProductDependencies = (
 				2C8DBEE127BF813B002184BF /* Alamofire */,
 				2C1DF6EA27D88B24000717F7 /* FirebaseAuth */,
+				2C1DF6FC27D9E66F000717F7 /* KeychainSwift */,
 			);
 			productName = BrainUp;
 			productReference = 2C1DE7CD27BA37CE006BCA51 /* BrainUp.app */;
@@ -472,6 +481,7 @@
 			packageReferences = (
 				2C8DBEE027BF813B002184BF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				2C1DF6E927D88B24000717F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2C1DF6FB27D9E66F000717F7 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 2C1DE7CE27BA37CE006BCA51 /* Products */;
 			projectDirPath = "";
@@ -499,10 +509,11 @@
 				2CE631F827BA8439004EA327 /* Montserrat-Regular.ttf in Resources */,
 				2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */,
 				0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */,
+				2C1DF6FF27DA1F10000717F7 /* GoogleService-Info.plist in Resources */,
 				2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */,
 				2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */,
 				2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */,
-				2C1DF6EF27D8B776000717F7 /* GoogleService-Info.plist in Resources */,
+				2C1DF6EF27D8B776000717F7 /* GoogleService-Info1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +596,7 @@
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
 				2C3B220827C7ADC300B6260C /* AppTextFieldWithClear.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
+				2C1DF6F927D9DFB3000717F7 /* Token.swift in Sources */,
 				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
 				2C8DBEE827BF85F3002184BF /* Request.swift in Sources */,
 				2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */,
@@ -895,6 +907,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		2C1DF6FB27D9E66F000717F7 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2C8DBEE027BF813B002184BF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -910,6 +930,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C1DF6E927D88B24000717F7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		2C1DF6FC27D9E66F000717F7 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C1DF6FB27D9E66F000717F7 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 		2C8DBEE127BF813B002184BF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
