@@ -42,6 +42,8 @@
 		2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D427BA37CE006BCA51 /* ViewController.swift */; };
 		2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */; };
 		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
+		2C1DF70227DB3F6F000717F7 /* SplachVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF70127DB3F6F000717F7 /* SplachVC.swift */; };
+		2C1DF70427DB3F84000717F7 /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF70327DB3F84000717F7 /* SplashVM.swift */; };
 		2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */; };
 		2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5727BF9CE5002C90F5 /* Encoding.swift */; };
 		2C8DBEDE27BE6A7B002184BF /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */; };
@@ -109,6 +111,8 @@
 		2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1DF70127DB3F6F000717F7 /* SplachVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplachVC.swift; sourceTree = "<group>"; };
+		2C1DF70327DB3F84000717F7 /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		2C38BA5727BF9CE5002C90F5 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		2C8DBEDD27BE6A7B002184BF /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 		2C1DE7CF27BA37CE006BCA51 /* BrainUp */ = {
 			isa = PBXGroup;
 			children = (
+				2C1DF70027DB3F5A000717F7 /* Splash */,
 				2C8DBEDF27BF8080002184BF /* Network */,
 				2C0824DF27BD23F5007537CA /* TabBar */,
 				2C0824DE27BD2264007537CA /* Profile */,
@@ -321,6 +326,15 @@
 				0890534127BFDD4100BB27A8 /* Localizable.strings */,
 			);
 			path = BrainUp;
+			sourceTree = "<group>";
+		};
+		2C1DF70027DB3F5A000717F7 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DF70127DB3F6F000717F7 /* SplachVC.swift */,
+				2C1DF70327DB3F84000717F7 /* SplashVM.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		2C8DBEDF27BF8080002184BF /* Network */ = {
@@ -536,7 +550,9 @@
 				2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */,
 				08122DAF27BEDDE100F3EF9F /* TopTabItemCoordinator.swift in Sources */,
 				08CC51CA27BF96A600490375 /* EmptyStatisticViewController.swift in Sources */,
+				2C1DF70227DB3F6F000717F7 /* SplachVC.swift in Sources */,
 				2C0824ED27BE54CD007537CA /* AppTabBarController.swift in Sources */,
+				2C1DF70427DB3F84000717F7 /* SplashVM.swift in Sources */,
 				2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
