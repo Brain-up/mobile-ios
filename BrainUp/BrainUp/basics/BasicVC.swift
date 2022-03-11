@@ -17,14 +17,6 @@ protocol BasicViewInterface: AnyObject {
 class BasicVC: UIViewController {
     private var loader: UIActivityIndicatorView?
 
-    override func loadView() {
-        super.loadView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
 
 extension BasicVC: BasicViewInterface {

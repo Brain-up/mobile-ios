@@ -45,14 +45,14 @@
 		2C1DF70227DB3F6F000717F7 /* SplachVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF70127DB3F6F000717F7 /* SplachVC.swift */; };
 		2C1DF70427DB3F84000717F7 /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF70327DB3F84000717F7 /* SplashVM.swift */; };
 		2C1DF6EB27D88B24000717F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6EA27D88B24000717F7 /* FirebaseAuth */; };
-		2C1DF6EF27D8B776000717F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */; };
+		2C1DF6EF27D8B776000717F7 /* GoogleService-Info_release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6EE27D8B776000717F7 /* GoogleService-Info_release.plist */; };
 		2C1DF6F127D8B992000717F7 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F027D8B992000717F7 /* AuthVM.swift */; };
 		2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F227D8C377000717F7 /* LogoView.swift */; };
 		2C1DF6F527D8D151000717F7 /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F427D8D151000717F7 /* BasicVC.swift */; };
 		2C1DF6F727D8E11C000717F7 /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */; };
 		2C1DF6F927D9DFB3000717F7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F827D9DFB3000717F7 /* Token.swift */; };
 		2C1DF6FD27D9E66F000717F7 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6FC27D9E66F000717F7 /* KeychainSwift */; };
-		2C1DF6FF27DA1F10000717F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */; };
+		2C1DF6FF27DA1F10000717F7 /* GoogleService-Info_debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DF6FE27DA1F10000717F7 /* GoogleService-Info_debug.plist */; };
 		2C38BA5427BF9C0D002C90F5 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */; };
 		2C38BA5827BF9CE5002C90F5 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C38BA5727BF9CE5002C90F5 /* Encoding.swift */; };
 		2C3B220427C7A48C00B6260C /* LogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B220327C7A48C00B6260C /* LogoImageView.swift */; };
@@ -125,6 +125,7 @@
 		2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1DF6EE27D8B776000717F7 /* GoogleService-Info_release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_release.plist"; sourceTree = "<group>"; };
 		2C1DF70127DB3F6F000717F7 /* SplachVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplachVC.swift; sourceTree = "<group>"; };
 		2C1DF70327DB3F84000717F7 /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		2C1DF6EE27D8B776000717F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,7 +134,7 @@
 		2C1DF6F427D8D151000717F7 /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
 		2C1DF6F627D8E11C000717F7 /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
 		2C1DF6F827D9DFB3000717F7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C1DF6FE27DA1F10000717F7 /* GoogleService-Info_debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_debug.plist"; sourceTree = "<group>"; };
 		2C38BA5327BF9C0D002C90F5 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		2C38BA5727BF9CE5002C90F5 /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		2C3B220327C7A48C00B6260C /* LogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImageView.swift; sourceTree = "<group>"; };
@@ -355,9 +356,9 @@
 				2CEE9FA827BCCAF800CDD927 /* extensions */,
 				2CE631F227BA7ED2004EA327 /* fonts */,
 				2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */,
-				2C1DF6EE27D8B776000717F7 /* GoogleService-Info1.plist */,
+				2C1DF6EE27D8B776000717F7 /* GoogleService-Info_release.plist */,
 				2C1DE7D427BA37CE006BCA51 /* ViewController.swift */,
-				2C1DF6FE27DA1F10000717F7 /* GoogleService-Info.plist */,
+				2C1DF6FE27DA1F10000717F7 /* GoogleService-Info_debug.plist */,
 				2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */,
 				2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */,
 				2C1DE7DE27BA37D0006BCA51 /* Info.plist */,
@@ -523,11 +524,11 @@
 				2CE631F827BA8439004EA327 /* Montserrat-Regular.ttf in Resources */,
 				2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */,
 				0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */,
-				2C1DF6FF27DA1F10000717F7 /* GoogleService-Info.plist in Resources */,
+				2C1DF6FF27DA1F10000717F7 /* GoogleService-Info_debug.plist in Resources */,
 				2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */,
 				2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */,
 				2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */,
-				2C1DF6EF27D8B776000717F7 /* GoogleService-Info1.plist in Resources */,
+				2C1DF6EF27D8B776000717F7 /* GoogleService-Info_release.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

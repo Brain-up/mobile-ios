@@ -20,19 +20,23 @@ class AuthVM: AuthVMProtocol {
     
     init(view: BasicViewInterface) {
         self.view = view
+        // TODO: Create AuthProvider protocol & inject it
         authStateHandle = Auth.auth().addStateDidChangeListener { _, user in
-            if user != nil {
-                user?.getIDToken(completion: { token, error in
-                    if error == nil {
-                        Token.shared.save(token ?? "")
-                    }
-                })
-            }
+            guard let authUser = user else { return }
+            authUser.getIDToken(completion: { token, error in
+                if error == nil {
+                    Token.shared.save(token ?? "")
+                } else {
+                    view.showError(errorMessage: error?.localizedDescription)
+                }
+            })
         }
     }
     
     func auth(login: String, password: String) {
+        view?.showLoading()
         Auth.auth().signIn(withEmail: login, password: password) {[weak self] _, error in
+            self?.view?.hideLoading()
             if error != nil {
                 self?.view?.showError(errorMessage: error?.localizedDescription)
             }
@@ -41,7 +45,9 @@ class AuthVM: AuthVMProtocol {
     }
     
     func register(login: String, password: String) {
+        view?.showLoading()
         Auth.auth().createUser(withEmail: login, password: password) {[weak self] _, error in
+            self?.view?.hideLoading()
             if error != nil {
                 self?.view?.showError(errorMessage: error?.localizedDescription)
             }
