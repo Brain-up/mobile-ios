@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let filePath = Bundle.main.path(forResource: "GoogleService-Info_debug", ofType: "plist") ?? ""
+        if let options = FirebaseOptions.init(contentsOfFile: filePath) {
+            FirebaseApp.configure(options: options)
+        } else {
+            print("Firebase Config not found")
+        }
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let navController = UINavigationController()
         coordinator = AppCoordinator(navController)
