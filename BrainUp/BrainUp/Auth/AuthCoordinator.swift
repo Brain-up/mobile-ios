@@ -39,7 +39,7 @@ class AuthCoordinator: Coordinator {
     
     private func goToSplash() {
         let splashVC = SplashVC()
-        let model  = SplashVM(delegate: self)
+        let model  = SplashVM(view: splashVC, delegate: self)
         splashVC.model = model
         navigationController.setViewControllers([splashVC], animated: true)
     }

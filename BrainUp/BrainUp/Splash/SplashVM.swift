@@ -13,12 +13,19 @@ protocol SplashVMProtocol: AnyObject {
 
 class SplashVM: SplashVMProtocol {
     weak var delegate: SplashDelegate?
+    weak var view: BasicViewInterface?
     
-    init(delegate: SplashDelegate) {
+    init(view: BasicViewInterface, delegate: SplashDelegate) {
+        self.view = view
         self.delegate = delegate
     }
     
     func checkIsAuth() {
-        delegate?.onUserAuthorized()
+        view?.showLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            self.view?.hideLoading()
+            self.delegate?.onUserAuthorized()
+        }
+        
     }
 }
