@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+protocol SplashDelegate: AnyObject {
+    func onUserAuthorized()
+    func onUserUnauthorized()
+}
+
 class AuthCoordinator: Coordinator {
     var finishDelegate: CoordinatorFinishDelegate?
     
@@ -22,11 +27,29 @@ class AuthCoordinator: Coordinator {
     }
     
     func start() {
-        self.goToAuth()
+        self.goToSplash()
     }
     
     private func goToAuth() {
         let loginVC = AuthVC()
         navigationController.setViewControllers([loginVC], animated: true)
+    }
+    
+    private func goToSplash() {
+        let splashVC = SplashVC()
+        let model  = SplashVM(delegate: self)
+        splashVC.model = model
+        navigationController.setViewControllers([splashVC], animated: true)
+    }
+}
+
+extension AuthCoordinator: SplashDelegate {
+    
+    func onUserAuthorized() {
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
+    
+    func onUserUnauthorized() {
+        self.goToAuth()
     }
 }
