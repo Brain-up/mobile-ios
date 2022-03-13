@@ -11,6 +11,7 @@ protocol StatisticDateHelperProtocol {
     static var dateDayFormatter: DateFormatter { get }
     static var dateMonthFormatter: DateFormatter { get }
     static func calculateStartEndDates(for date: Date) -> (DateRangeString, DateRange)
+    static func calculateStartEndYearDates(for date: Date) -> (DateRangeString, DateRange)
     static func calculateStartEndDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange)
 }
 
@@ -41,6 +42,17 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
 
         let startDayOfWeek = currentDate.addDays(count: -(currentWeekday - 1))
         let startDate = startDayOfWeek.addDays(count: -numberOfWeeksToAdd * weekLength)
+        
+        let startDateString = dateDayFormatter.string(from: startDate)
+        let endDateString = dateDayFormatter.string(from: endDate)
+
+        return ((startDateString, endDateString), (startDate, endDate))
+    }
+
+    static func calculateStartEndYearDates(for date: Date) -> (DateRangeString, DateRange) {
+        let currentDate = date.currentDayWithoutTime()
+        let endDate = currentDate.lastDayOfCurrentYear()
+        let startDate = currentDate.firstDayOfCurrentYear()
         
         let startDateString = dateDayFormatter.string(from: startDate)
         let endDateString = dateDayFormatter.string(from: endDate)

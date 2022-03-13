@@ -7,6 +7,8 @@
 		<string>ReenieBeanie-Regular.ttf</string>
 		<string>OpenSans-Regular.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
 	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleDefault</string>

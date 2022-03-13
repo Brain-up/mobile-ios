@@ -10,8 +10,8 @@ import Foundation
 protocol WeeksStatisticViewModelProtocol {
     var numberOfRows: Int { get }
     var reloadData: (() -> Void)? { get set }
-    func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol
 
+    func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol
     func loadPastStatistic()
     func loadFeatureStatistic()
 }
@@ -25,13 +25,14 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
 
     func updateItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
         update(dataRangeOfLoadedData)
+        // there we should replace data
         weekItems.reversed().forEach { item in
             items.insert(ChartCellViewModel(week: item, monthLabel: item.monthLabel), at: 0)
         }
         reloadData?()
     }
 
-    func addEmptyItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
+    func addFutureItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
         update(dataRangeOfLoadedData)
         weekItems.forEach { item in
             items.append(ChartCellViewModel(week: item, monthLabel: item.monthLabel))

@@ -76,6 +76,7 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
             // save data to use it in prepareCoordinators
         }
     }
+//    store viewmodel with state in coordinator(weak year). update ui with saved state scrollyo in viewwill appear
 
     private func prepareViewModel() -> TabBarItemViewModelProtocol {
         let title = type.rawValue.localized.uppercased()
@@ -138,6 +139,11 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
         let yearsCoordinator = YearsStatisticCoordinator(
             rootViewController: statisticViewController,
             containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .year))
+
+        yearsCoordinator.openMonthStatistic = { [weak self] in
+            // update weekCoordinator with needed date
+            self?.action(for: 0)
+        }
         childCoordinators.append(yearsCoordinator)
     }
 }

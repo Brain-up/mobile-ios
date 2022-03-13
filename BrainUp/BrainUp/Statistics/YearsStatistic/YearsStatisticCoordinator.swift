@@ -9,9 +9,11 @@ import UIKit
 
 class YearsStatisticCoordinator: TopTabItemCoordinator {
     private let networkService: NetworkService
+    private let viewModel = YearsStatisticViewModel()
     // property injection for test purpose. If we consider separate architecture in modules, we could inject this properties inside init method.
     var mapper = StatisticYearItemsMapper()
     var helper: StatisticDateHelperProtocol.Type = StatisticDateHelper.self
+    var openMonthStatistic: (() -> Void)?
 
     init(rootViewController: UIViewController, containerView: UIView, networkService: NetworkService) {
         self.networkService = networkService
@@ -23,8 +25,53 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
     }
 
     override func start() {
-        let viewController = YearsStatisticViewController()
-        viewController.view.backgroundColor = .blue
+        viewModel.openMonthStatistic = openMonthStatistic
+        viewModel.loadPastData = { [weak self] firstYearLoadedData in
+            guard let self = self else { return }
+            let lastDayOfNewData = firstYearLoadedData.addYears(count: -1)
+            self.fetchStatistic(for: lastDayOfNewData)
+        }
+
+        viewModel.loadFeatureData = { [weak self] lastDayOfLoadedData in
+            guard let self = self else { return }
+            let firstDayOfNewData = lastDayOfLoadedData.addDays(count: 1)
+            self.fetchStatistic(for: firstDayOfNewData)
+        }
+        let today = Date()
+        fetchStatistic(for: today)
+        let viewController = YearsStatisticViewController(with: viewModel)
         addToContainer(controller: viewController)
     }
+
+    private func fetchStatistic(for date: Date) {
+        if date.isFutureDay() {
+            fetchEmptyStatistic(for: date)
+            return
+        }
+
+        let (dateRangeString, dateRange) = helper.calculateStartEndYearDates(for: date)
+        mapper.fetch(for: dateRangeString, with: networkService) { [weak self] result in
+            switch result {
+            case let .success(items):
+                self?.viewModel.updateItems(with: items, dataRangeOfLoadedData: dateRange)
+            case .failure:
+                // error handler?
+                break
+            }
+        }
+    }
+
+    private func fetchEmptyStatistic(for date: Date) {
+        let (dateRangeString, dateRange) = helper.calculateStartEndDatesForFutureItems(for: date)
+        mapper.fetchFutureItems(for: dateRangeString) { [weak self] result in
+            switch result {
+            case let .success(items):
+                self?.viewModel.addFutureItems(with: items, dataRangeOfLoadedData: dateRange)
+            case .failure:
+                // error handler?
+                break
+            }
+        }
+    }
+
 }

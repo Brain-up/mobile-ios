@@ -42,10 +42,21 @@ extension Date {
         return isTheSameDay(with: Date().currentDayWithoutTime())
     }
 
+    func isTheCurrentMonth() -> Bool {
+        return isTheSameMonth(with: Date().currentMonth())
+    }
+
     func isTheSameDay(with anotherDay: Date) -> Bool {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: self, to: anotherDay)
         return components.day == 0
+    }
+
+    func isTheSameMonth(with anotherDay: Date) -> Bool {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
+        let components = calendar.dateComponents([.month], from: self.currentMonth(), to: anotherDay)
+        return components.month == 0
     }
     
     /// Adds days to Date.
@@ -60,11 +71,26 @@ extension Date {
     /// Adds months to Date.
     /// - Parameter count: The number of months. Pass negative value to get Date before passed Date.
     /// - Returns: Updated Date. If something goes wrong, will return the same Date.
-    func addMounths(count: Int) -> Date {
+    func addMonths(count: Int) -> Date {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
+        let currentDay = calendar.dateComponents([.year, .month, .day], from: self).date ?? self
+        let nextMonth = calendar.date(byAdding: .month,
+                                       value: count,
+                                       to: currentDay,
+                                       wrappingComponents: false)
+        return nextMonth ?? self
+    }
+
+    /// Adds years to Date.
+    /// - Parameter count: The number of years. Pass negative value to get Date before passed Date.
+    /// - Returns: Updated Date. If something goes wrong, will return the same Date.
+    func addYears(count: Int) -> Date {
         let calendar = Calendar.current
-        var dayComponent = DateComponents()
-        dayComponent.month = count
-        return calendar.date(byAdding: dayComponent, to: self) ?? self
+        
+        var yearComponent = DateComponents()
+        yearComponent.year = count
+        return calendar.date(byAdding: yearComponent, to: self) ?? self
     }
     
     ///  Current day without time
@@ -72,6 +98,13 @@ extension Date {
     func currentDayWithoutTime() -> Date {
         let calendar = Calendar.current
         var dateComponents = calendar.dateComponents([.year, .month, .day], from: self)
+        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
+        return calendar.date(from: dateComponents) ?? self
+    }
+
+    func currentMonth() -> Date {
+        let calendar = Calendar.current
+        var dateComponents = calendar.dateComponents([.year, .month], from: self)
         dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
         return calendar.date(from: dateComponents) ?? self
     }
@@ -84,6 +117,30 @@ extension Date {
             currentWeekday -= 1
         }
         return currentWeekday
+    }
+
+    func year() -> String {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self)
+        return "\(year)"
+    }
+
+    func lastDayOfCurrentYear() -> Date {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self)
+        let endOfYear = Calendar.current.date(from: DateComponents(year: year, month: 12, day: 31)) ?? self
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: endOfYear)
+        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
+        return calendar.date(from: dateComponents) ?? self
+    }
+
+    func firstDayOfCurrentYear() -> Date {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: self)
+        let endOfYear = calendar.date(from: DateComponents(year: year, month: 1, day: 1)) ?? self
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: endOfYear)
+        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
+        return calendar.date(from: dateComponents) ?? self
     }
 }
 

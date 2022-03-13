@@ -8,39 +8,37 @@
 import UIKit
 
 final class YearsStatisticViewController: UIViewController {
-    let data = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.gray, UIColor.red, UIColor.yellow, UIColor.green, UIColor.gray, UIColor.red, UIColor.yellow, UIColor.green, UIColor.gray]
-
     private var collectionView: UICollectionView!
-    private let headerHeight: CGFloat = 56
-    private let horizontalInset: CGFloat = 24
-    private let bottomInset: CGFloat = 0
-    private var footerHeight: CGFloat = 0
-    private var itemSize: CGSize = .zero
+    private let refreshControl = UIRefreshControl()
 
-    private let flowLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 16
-        layout.minimumLineSpacing = 16
-        layout.scrollDirection = .vertical
-        return layout
-    }()
+    private var viewModel: YearsStatisticViewModelProtocol
+
+    init(with viewModel: YearsStatisticViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+
+        setupUI()
         setupConstraints()
+        setupBindings()
     }
 
-    private func setupCollectionView() {
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: horizontalInset, bottom: bottomInset, right: horizontalInset)
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+    private func setupUI() {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewModel.flowLayout)
 
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .appWhite
-        collectionView.register(YearCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: YearCollectionViewCell.identifier)
+        collectionView.register(YearCollectionCell.self,
+                                     forCellWithReuseIdentifier: YearCollectionCell.identifier)
         collectionView.register(YearCollectionHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: YearCollectionHeaderView.identifier)
@@ -48,6 +46,9 @@ final class YearsStatisticViewController: UIViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: YearCollectionFooterView.identifier)
         collectionView.isPagingEnabled = true
+
+        refreshControl.addTarget(self, action: #selector(loadPastStatistic), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
     }
 
     private func setupConstraints() {
@@ -73,32 +74,52 @@ final class YearsStatisticViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+
+    private func setupBindings() {
+        viewModel.reloadData = { [weak self] sectionsSet in
+            guard let self = self, let openedSectionIndex = sectionsSet.last else { return }
+            self.refreshControl.endRefreshing()
+            self.collectionView.performBatchUpdates {
+                self.collectionView.insertSections(sectionsSet)
+            } completion: { _ in
+                self.collectionView.scrollToItem(at: IndexPath(item: 5, section: openedSectionIndex), at: .centeredVertically, animated: false)
+                
+            }
+         }
+
+        viewModel.disableLoadOldData = { [weak self] in
+            self?.collectionView.refreshControl = nil
+        }
+    }
+
+    @objc func loadPastStatistic() {
+        viewModel.loadPastStatistic()
+    }
 }
 
 extension YearsStatisticViewController: UICollectionViewDelegate {
-    // if the user clicks on a cell, display a message
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+        viewModel.openMonthStatistic(for: indexPath)
     }
 }
 
 extension YearsStatisticViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: YearCollectionViewCell.identifier,
+            withReuseIdentifier: YearCollectionCell.identifier,
             for: indexPath)
-                as? YearCollectionViewCell  else { return UICollectionViewCell() }
-        let data = self.data[indexPath.item]
-        cell.setupCell(colour: data)
+                as? YearCollectionCell  else { return UICollectionViewCell() }
+        let cellViewModel = viewModel.item(for: indexPath)
+        cell.configure(with: cellViewModel)
         return cell
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        viewModel.sectionCount
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        viewModel.itemsCount
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -109,8 +130,10 @@ extension YearsStatisticViewController: UICollectionViewDataSource {
                 withReuseIdentifier: YearCollectionHeaderView.identifier,
                 for: indexPath)
                     as? YearCollectionHeaderView else { return UICollectionReusableView() }
-            headerView.configure(with: data[indexPath.section].description)
+            let title = viewModel.headerTitle(for: indexPath)
+            headerView.configure(with: title)
             return headerView
+
         case UICollectionView.elementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
@@ -123,11 +146,11 @@ extension YearsStatisticViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: headerHeight)
+        return CGSize(width: collectionView.frame.width, height: viewModel.headerHeight)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: footerHeight)
+        return CGSize(width: collectionView.frame.width, height: viewModel.footerHeight)
     }
 }
 
@@ -135,32 +158,6 @@ extension YearsStatisticViewController: UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard itemSize == .zero else { return itemSize }
-        let width = collectionView.bounds.width - horizontalInset * 2
-        let height = collectionView.bounds.height - headerHeight
-        let maxNumberOfItems: CGFloat = 4
-        let minItemHeight: CGFloat = 86
-        let aspectRatio: CGFloat = 1.3
-        let spacing: CGFloat = flowLayout.minimumInteritemSpacing
-
-        let availableHeight = height - spacing * (maxNumberOfItems - 1)
-        let availableWidth = width - spacing * (maxNumberOfItems - 1)
-        // try to layout elements in grid 3x4
-        var itemHeight = floor(availableHeight / maxNumberOfItems)
-        var itemWidth = floor(itemHeight / aspectRatio)
-
-        footerHeight = height - (itemHeight * maxNumberOfItems + spacing * (maxNumberOfItems - 1))
-
-        if itemHeight < minItemHeight || itemWidth * maxNumberOfItems <= availableWidth {
-            // layout elements in grid 4x3
-            itemWidth = floor(availableWidth / maxNumberOfItems)
-            itemHeight = floor(itemWidth * aspectRatio)
-            footerHeight = height - (itemHeight * 3 + spacing * 2) // 3 items in colomn 2 spaces between
-        }
-
-        itemSize = CGSize(width: itemWidth, height: itemHeight)
-        return itemSize
+        viewModel.itemSize(for: collectionView)
     }
 }
-
-

@@ -26,7 +26,14 @@ class NetworkServiceMock: NetworkService {
         case .year:
             data = YearDataMock.createData()
         }
-        let result = try? JSONDecoder().decode(T.self, from: data)
+//        let result = try? JSONDecoder().decode(T.self, from: data)
+        var result: T?
+        do {
+            result = try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            print(error)
+        }
+//        let result = try? JSONDecoder().decode(T.self, from: data)
         completion(Result.success(result!))
     }
 }

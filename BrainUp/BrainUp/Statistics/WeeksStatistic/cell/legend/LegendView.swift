@@ -49,7 +49,7 @@ final class LegendView: UIView {
 
             if element.isSelected {
                 dateLabel.layer.backgroundColor = UIColor.warmViolet.cgColor
-                dateLabel.layer.cornerRadius = 6
+                dateLabel.layer.cornerRadius = 7
             }
 
             if element.isFutureDay {
@@ -82,7 +82,7 @@ final class LegendView: UIView {
     }
 
     private func createDateLabel() -> UILabel {
-        let label = UILabel()
+        let label = PaddingLabel(top: 0.5, bottom: 0.5, left: 2.5, right: 2.5)
         label.textAlignment = .center
         label.font = UIFont.montserratSemiBold(size: 10)
         label.textColor = .charcoalGrey // mouse gray

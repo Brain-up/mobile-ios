@@ -13,11 +13,11 @@ extension UIFont {
     }
 
     class func montserratBold(size: CGFloat) -> UIFont {
-        UIFont(name: "Montserrat-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
+        UIFont(name: "Montserrat-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
 
     class func montserratSemiBold(size: CGFloat) -> UIFont {
-        UIFont(name: "Montserrat-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
+        UIFont(name: "Montserrat-SemiBold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
 }

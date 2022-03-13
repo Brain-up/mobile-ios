@@ -26,6 +26,7 @@ struct StatisticMonthItem: Equatable, EmptyDateItem {
     }
 
     static func emptyItem(for date: Date) -> EmptyDateItem {
-        StatisticMonthItem(date: date, exercisingTimeHours: "", exercisingDays: 0, progress: .unspecified)
+        let progress: StatisticProgress = date.isFutureDay() ? .future : .empty
+        return StatisticMonthItem(date: date, exercisingTimeHours: "", exercisingDays: 0, progress: progress)
     }
 }

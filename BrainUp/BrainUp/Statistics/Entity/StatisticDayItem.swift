@@ -21,6 +21,6 @@ struct StatisticDayItem: Equatable, EmptyDateItem {
     }
 
     static func emptyItem(for date: Date) -> EmptyDateItem {
-        StatisticDayItem(date: date, exercisingTimeMinutes: "", exercisingTimeSeconds: 0, progress: .unspecified)
+        StatisticDayItem(date: date, exercisingTimeMinutes: "", exercisingTimeSeconds: 0, progress: .empty)
     }
 }

@@ -31,8 +31,9 @@ class WeeksStatisticCoordinator: TopTabItemCoordinator {
         }
 
         viewModel.loadFeatureData = { [weak self] lastDayOfLoadedData in
+            guard let self = self else { return }
             let firstDayOfNewData = lastDayOfLoadedData.addDays(count: 1)
-            self?.fetchStatistic(for: firstDayOfNewData)
+            self.fetchStatistic(for: firstDayOfNewData)
         }
 
         let today = Date()
@@ -64,7 +65,7 @@ class WeeksStatisticCoordinator: TopTabItemCoordinator {
         mapper.fetchFutureItems(for: dateRangeString) { [weak self] result in
             switch result {
             case let .success(items):
-                self?.viewModel.addEmptyItems(with: items, dataRangeOfLoadedData: dateRange)
+                self?.viewModel.addFutureItems(with: items, dataRangeOfLoadedData: dateRange)
             case .failure:
                 // error handler?
                 break

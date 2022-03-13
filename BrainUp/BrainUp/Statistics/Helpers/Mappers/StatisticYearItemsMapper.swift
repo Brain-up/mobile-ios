@@ -26,7 +26,7 @@ final class StatisticYearItemsMapper: StatisticItemsMapper, StatisticYearItemsMa
     }
 
     private struct Item: Decodable {
-        public let date: Date
+        public let date: String
         public let exercisingTimeSeconds: Int
         public let exercisingDays: Int
         public let progress: String
@@ -35,8 +35,11 @@ final class StatisticYearItemsMapper: StatisticItemsMapper, StatisticYearItemsMa
             let formatter = DateComponentsFormatter()
             formatter.allowedUnits = [.hour, .minute, .second]
             formatter.unitsStyle = .positional
+            formatter.zeroFormattingBehavior = .pad
 
-            let timeInHours = formatter.string(from: TimeInterval(exercisingTimeSeconds))!
+            let date = StatisticDateHelper.dateMonthFormatter.date(from: date) ?? Date()
+            
+            let timeInHours = formatter.string(from: TimeInterval(exercisingTimeSeconds)) ?? ""
             let easyToChangeProgress = StatisticProgress.matchedCase(for: progress)
             return StatisticMonthItem(date: date, exercisingTimeHours: timeInHours, exercisingDays: exercisingDays, progress: easyToChangeProgress)
         }
@@ -47,13 +50,21 @@ final class StatisticYearItemsMapper: StatisticItemsMapper, StatisticYearItemsMa
             guard let self = self else { return }
             switch result {
             case let .success(root):
-                let resultWitEmptyDays = self.statisticItemsWithEmptyValuesForMissedItems(inside: range, for: root.yearStatistic) { date in
-                    date.addMounths(count: 1)
+                let resultWitEmptyMonth = self.statisticItemsWithEmptyValuesForMissedItems(inside: range, for: root.yearStatistic) { date in
+                    date.addMonths(count: 1)
                 }
-                completion(.success(resultWitEmptyDays))
+                completion(.success(resultWitEmptyMonth))
             case let .failure(error):
                 completion(.failure(error))
             }
         }
+    }
+
+    func fetchFutureItems(for range: DateRangeString, completion: @escaping (YearResult) -> Void) {
+        let emptyArray = [StatisticMonthItem]()
+        let resultWitEmptyMonth = statisticItemsWithEmptyValuesForMissedItems(inside: range, for: emptyArray) { date in
+            date.addMonths(count: 1)
+        }
+        completion(.success(resultWitEmptyMonth))
     }
 }
