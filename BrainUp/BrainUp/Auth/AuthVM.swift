@@ -17,15 +17,18 @@ protocol AuthVMProtocol: AnyObject {
 class AuthVM: AuthVMProtocol {
     private weak var view: BasicViewInterface?
     private var authStateHandle: AuthStateDidChangeListenerHandle!
+    private weak var delegate: AuthDelegate?
     
-    init(view: BasicViewInterface) {
+    init(view: BasicViewInterface, delegate: AuthDelegate) {
         self.view = view
+        self.delegate = delegate
         // TODO: Create AuthProvider protocol & inject it
         authStateHandle = Auth.auth().addStateDidChangeListener { _, user in
             guard let authUser = user else { return }
             authUser.getIDToken(completion: { token, error in
                 if error == nil {
                     Token.shared.save(token ?? "")
+                    delegate.onSuccessAuthrized()
                 } else {
                     view.showError(errorMessage: error?.localizedDescription)
                 }

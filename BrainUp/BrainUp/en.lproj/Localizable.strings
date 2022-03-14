@@ -25,3 +25,7 @@
 "auth.Password" = "Password";
 "auth.Login" = "LOGIN";
 "auth.Registration" = "REGISTRATION";
+
+// MARK: - Basics
+"basic.error" = "Error";
+"basic.cancel" = "Cancel";

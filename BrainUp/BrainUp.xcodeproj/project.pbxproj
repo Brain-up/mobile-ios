@@ -41,7 +41,6 @@
 		2C1DE7D127BA37CE006BCA51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */; };
 		2C1DE7D527BA37CE006BCA51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D427BA37CE006BCA51 /* ViewController.swift */; };
 		2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */; };
-		2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */; };
 		2C1DF6EB27D88B24000717F7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1DF6EA27D88B24000717F7 /* FirebaseAuth */; };
 		2C1DF6F127D8B992000717F7 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F027D8B992000717F7 /* AuthVM.swift */; };
 		2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DF6F227D8C377000717F7 /* LogoView.swift */; };
@@ -88,7 +87,6 @@
 		08122DA827BE816900F3EF9F /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
 		08122DAE27BEDDE100F3EF9F /* TopTabItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinator.swift; sourceTree = "<group>"; };
 		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0890534227BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0890534327BFDD5A00BB27A8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0890534427BFDE4A00BB27A8 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		08CC51BB27BEF42600490375 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		2C1DE7D027BA37CE006BCA51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1DE7D427BA37CE006BCA51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2C1DE7DC27BA37D0006BCA51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DE7DE27BA37D0006BCA51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C1DF6F027D8B992000717F7 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		2C1DF6F227D8C377000717F7 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -359,7 +356,6 @@
 				2C1DF6FE27DA1F10000717F7 /* GoogleService-Info_debug.plist */,
 				2CA0466527DB6C1E0048A5CF /* GoogleService-Info_release.plist */,
 				2C1DE7D927BA37D0006BCA51 /* Assets.xcassets */,
-				2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */,
 				2C1DE7DE27BA37D0006BCA51 /* Info.plist */,
 				2CE631EE27BA4C12004EA327 /* .swiftlint.yml */,
 				2CE631F027BA69F3004EA327 /* Colors.xcassets */,
@@ -525,7 +521,6 @@
 				2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */,
 				0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */,
 				2C1DF6FF27DA1F10000717F7 /* GoogleService-Info_debug.plist in Resources */,
-				2C1DE7DD27BA37D0006BCA51 /* LaunchScreen.storyboard in Resources */,
 				2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */,
 				2C1DE7DA27BA37D0006BCA51 /* Assets.xcassets in Resources */,
 			);
@@ -660,15 +655,6 @@
 				0890534327BFDD5A00BB27A8 /* ru */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2C1DE7DB27BA37D0006BCA51 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C1DE7DC27BA37D0006BCA51 /* Base */,
-				0890534227BFDD5A00BB27A8 /* ru */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -837,7 +823,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -865,7 +850,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
