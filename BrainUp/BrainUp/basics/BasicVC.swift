@@ -39,7 +39,10 @@ extension BasicVC: BasicViewInterface {
     }
     
     func showError(errorMessage: String?) {
-        
+        let alert = UIAlertController(title: "basic.error".localized, message: errorMessage, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "basic.cancel".localized, style: .cancel, handler: nil)
+        alert.addAction(dismissAction)
+        present(alert, animated: true, completion: nil)
     }
     
     func hideError() {

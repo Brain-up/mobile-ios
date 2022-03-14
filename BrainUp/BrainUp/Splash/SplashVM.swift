@@ -39,8 +39,10 @@ class SplashVM: SplashVMProtocol {
     func checkIsAuth() {
         view?.showLoading()
         if Token.shared.isEmpty() {
+            view?.hideLoading()
             delegate?.onUserUnauthorized()
         } else {
+            view?.hideLoading()
             delegate?.onUserAuthorized()
         }
         

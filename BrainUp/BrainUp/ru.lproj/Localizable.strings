@@ -24,3 +24,7 @@
 "auth.Password" = "Пароль";
 "auth.Login" = "ВОЙТИ";
 "auth.Registration" = "ЗАРЕГИСТРИРОВАТЬСЯ";
+
+// MARK: - Basics
+"basic.error" = "Ошибка";
+"basic.cancel" = "Отмена";
