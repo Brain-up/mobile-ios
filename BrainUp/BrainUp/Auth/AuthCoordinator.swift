@@ -13,6 +13,10 @@ protocol SplashDelegate: AnyObject {
     func onUserUnauthorized()
 }
 
+protocol AuthDelegate: AnyObject {
+    func onSuccessAuthrized()
+}
+
 class AuthCoordinator: Coordinator {
     var finishDelegate: CoordinatorFinishDelegate?
     
@@ -32,14 +36,14 @@ class AuthCoordinator: Coordinator {
     
     private func goToAuth() {
         let loginVC = AuthVC()
-        let model = AuthVM(view: loginVC)
+        let model = AuthVM(view: loginVC, delegate: self)
         loginVC.model = model
         navigationController.setViewControllers([loginVC], animated: true)
     }
     
     private func goToSplash() {
         let splashVC = SplashVC()
-        let model  = SplashVM(delegate: self)
+        let model  = SplashVM(view: splashVC, delegate: self)
         splashVC.model = model
         navigationController.setViewControllers([splashVC], animated: true)
     }
@@ -53,5 +57,11 @@ extension AuthCoordinator: SplashDelegate {
     
     func onUserUnauthorized() {
         self.goToAuth()
+    }
+}
+
+extension AuthCoordinator: AuthDelegate {
+    func onSuccessAuthrized() {
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }
 }
