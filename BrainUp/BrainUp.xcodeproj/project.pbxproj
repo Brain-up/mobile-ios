@@ -66,7 +66,8 @@
 		2CA0466A27DF5C340048A5CF /* BasicVCMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466927DF5C340048A5CF /* BasicVCMock.swift */; };
 		2CA0466C27DF5D4C0048A5CF /* BaseVCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */; };
 		2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466D27DF64B80048A5CF /* TokenMock.swift */; };
-		2CA0467027DF65D60048A5CF /* TokenTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466F27DF65D60048A5CF /* TokenTestCase.swift */; };
+		2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */; };
+		2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467127DF72830048A5CF /* TokenTestCase.swift */; };
 		2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F027BA69F3004EA327 /* Colors.xcassets */; };
 		2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */; };
 		2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F527BA83AC004EA327 /* OpenSans-Regular.ttf */; };
@@ -149,7 +150,8 @@
 		2CA0466927DF5C340048A5CF /* BasicVCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVCMock.swift; sourceTree = "<group>"; };
 		2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCTestCase.swift; sourceTree = "<group>"; };
 		2CA0466D27DF64B80048A5CF /* TokenMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenMock.swift; sourceTree = "<group>"; };
-		2CA0466F27DF65D60048A5CF /* TokenTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTestCase.swift; sourceTree = "<group>"; };
+		2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProtocolTestCase.swift; sourceTree = "<group>"; };
+		2CA0467127DF72830048A5CF /* TokenTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTestCase.swift; sourceTree = "<group>"; };
 		2CE631EE27BA4C12004EA327 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		2CE631F027BA69F3004EA327 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReenieBeanie-Regular.ttf"; sourceTree = "<group>"; };
@@ -400,7 +402,8 @@
 			children = (
 				2CA0466827DF5C190048A5CF /* Mock */,
 				2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */,
-				2CA0466F27DF65D60048A5CF /* TokenTestCase.swift */,
+				2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */,
+				2CA0467127DF72830048A5CF /* TokenTestCase.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -607,7 +610,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
-				2CA0467027DF65D60048A5CF /* TokenTestCase.swift in Sources */,
+				2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */,
+				2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
 				2CA0466A27DF5C340048A5CF /* BasicVCMock.swift in Sources */,
 				2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */,

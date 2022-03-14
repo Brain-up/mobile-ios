@@ -8,19 +8,19 @@
 import XCTest
 @testable import BrainUp
 
-class TokenTestCase: XCTestCase {
-    var token: TokenProtocol = Token.shared
+class TokenProtocolTestCase: XCTestCase {
+    var token: TokenProtocol = TokenMock()
     let testToken = "123"
     
     func testSaveToken() {
-        token.reject()
+        token = TokenMock()
         XCTAssertTrue(token.isEmpty())
         token.save(testToken)
         XCTAssertFalse(token.isEmpty())
     }
     
     func testRejectToken() {
-        token.reject()
+        token = TokenMock()
         XCTAssertTrue(token.isEmpty())
         token.save(testToken)
         XCTAssertFalse(token.isEmpty())
@@ -29,7 +29,7 @@ class TokenTestCase: XCTestCase {
     }
     
     func testGetToken() {
-        token.reject()
+        token = TokenMock()
         XCTAssertTrue(token.isEmpty())
         token.save(testToken)
         XCTAssertFalse(token.isEmpty())
