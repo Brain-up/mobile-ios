@@ -67,6 +67,12 @@
 		2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466D27DF64B80048A5CF /* TokenMock.swift */; };
 		2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */; };
 		2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467127DF72830048A5CF /* TokenTestCase.swift */; };
+		2CA0467727E4849A0048A5CF /* UIFontTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */; };
+		2CA0467927E4898E0048A5CF /* UIColorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */; };
+		2CA0467C27E4ACBE0048A5CF /* RequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467B27E4ACBE0048A5CF /* RequestTestCase.swift */; };
+		2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467D27E4AD3E0048A5CF /* RequestMock.swift */; };
+		2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0468027E4B07A0048A5CF /* LogoViewTestCase.swift */; };
+		2CA0468327E4B30F0048A5CF /* LogoLabelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0468227E4B30F0048A5CF /* LogoLabelTestCase.swift */; };
 		2CE631F127BA69F3004EA327 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F027BA69F3004EA327 /* Colors.xcassets */; };
 		2CE631F427BA7F12004EA327 /* ReenieBeanie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */; };
 		2CE631F727BA8435004EA327 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CE631F527BA83AC004EA327 /* OpenSans-Regular.ttf */; };
@@ -149,6 +155,12 @@
 		2CA0466D27DF64B80048A5CF /* TokenMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenMock.swift; sourceTree = "<group>"; };
 		2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProtocolTestCase.swift; sourceTree = "<group>"; };
 		2CA0467127DF72830048A5CF /* TokenTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTestCase.swift; sourceTree = "<group>"; };
+		2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontTestCase.swift; sourceTree = "<group>"; };
+		2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTestCase.swift; sourceTree = "<group>"; };
+		2CA0467B27E4ACBE0048A5CF /* RequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTestCase.swift; sourceTree = "<group>"; };
+		2CA0467D27E4AD3E0048A5CF /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
+		2CA0468027E4B07A0048A5CF /* LogoViewTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewTestCase.swift; sourceTree = "<group>"; };
+		2CA0468227E4B30F0048A5CF /* LogoLabelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLabelTestCase.swift; sourceTree = "<group>"; };
 		2CE631EE27BA4C12004EA327 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		2CE631F027BA69F3004EA327 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2CE631F327BA7F00004EA327 /* ReenieBeanie-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ReenieBeanie-Regular.ttf"; sourceTree = "<group>"; };
@@ -236,6 +248,9 @@
 		08CC51DD27BFBB4E00490375 /* BrainUpTests */ = {
 			isa = PBXGroup;
 			children = (
+				2CA0467F27E4B0610048A5CF /* Auth */,
+				2CA0467A27E4ACA30048A5CF /* Network */,
+				2CA0467527E47F4F0048A5CF /* Extensions */,
 				2CA0466727DF5C020048A5CF /* Basics */,
 				08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */,
 				08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */,
@@ -411,6 +426,33 @@
 				2CA0466D27DF64B80048A5CF /* TokenMock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		2CA0467527E47F4F0048A5CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */,
+				2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CA0467A27E4ACA30048A5CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0467B27E4ACBE0048A5CF /* RequestTestCase.swift */,
+				2CA0467D27E4AD3E0048A5CF /* RequestMock.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2CA0467F27E4B0610048A5CF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0468027E4B07A0048A5CF /* LogoViewTestCase.swift */,
+				2CA0468227E4B30F0048A5CF /* LogoLabelTestCase.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		2CE631F227BA7ED2004EA327 /* fonts */ = {
@@ -604,12 +646,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA0467727E4849A0048A5CF /* UIFontTestCase.swift in Sources */,
+				2CA0467C27E4ACBE0048A5CF /* RequestTestCase.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
 				2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */,
+				2CA0468327E4B30F0048A5CF /* LogoLabelTestCase.swift in Sources */,
 				2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */,
+				2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
 				2CA0466A27DF5C340048A5CF /* BasicVCMock.swift in Sources */,
 				2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */,
+				2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */,
+				2CA0467927E4898E0048A5CF /* UIColorTestCase.swift in Sources */,
 				2CA0466C27DF5D4C0048A5CF /* BaseVCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
