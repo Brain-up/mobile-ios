@@ -55,8 +55,8 @@ extension Date {
     func isTheSameMonth(with anotherDay: Date) -> Bool {
         var calendar = Calendar.current
         calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
-        let components = calendar.dateComponents([.month], from: self.currentMonth(), to: anotherDay)
-        return components.month == 0
+        let components = calendar.dateComponents([.month, .year], from: self.currentMonth(), to: anotherDay)
+        return components.month == 0 && components.year == 0
     }
     
     /// Adds days to Date.
@@ -103,7 +103,8 @@ extension Date {
     }
 
     func currentMonth() -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
         var dateComponents = calendar.dateComponents([.year, .month], from: self)
         dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
         return calendar.date(from: dateComponents) ?? self

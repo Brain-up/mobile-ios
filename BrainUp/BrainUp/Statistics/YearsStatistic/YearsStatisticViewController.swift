@@ -131,7 +131,7 @@ extension YearsStatisticViewController: UICollectionViewDataSource {
                 for: indexPath)
                     as? YearCollectionHeaderView else { return UICollectionReusableView() }
             let title = viewModel.headerTitle(for: indexPath)
-            headerView.configure(with: title)
+            headerView.configure(with: title, fontSize: viewModel.headerFontSize)
             return headerView
 
         case UICollectionView.elementKindSectionFooter:

@@ -62,7 +62,7 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
     }
 
     private func fetchEmptyStatistic(for date: Date) {
-        let (dateRangeString, dateRange) = helper.calculateStartEndDatesForFutureItems(for: date)
+        let (dateRangeString, dateRange) = helper.calculateStartEndYearDatesForFutureItems(for: date)
         mapper.fetchFutureItems(for: dateRangeString) { [weak self] result in
             switch result {
             case let .success(items):

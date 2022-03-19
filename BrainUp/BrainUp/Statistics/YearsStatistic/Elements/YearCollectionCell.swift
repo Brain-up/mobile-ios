@@ -6,58 +6,7 @@
 //
 
 import UIKit
-protocol YearCollectionCellViewModelProtocol {
-    var monthName: String { get }
-    var timeDuration: String { get }
-    var dayDuration: NSAttributedString { get }
-    var image: UIImage? { get }
-    var isSelected: Bool { get }
-    var fontSize: CGFloat { get }
-}
 
-struct YearCollectionCellViewModel: YearCollectionCellViewModelProtocol {
-    let monthName: String
-    let timeDuration: String
-    let image: UIImage?
-    let isSelected: Bool
-    let fontSize: CGFloat
-
-    private(set) var dayDuration: NSAttributedString = NSAttributedString()
-
-    init(monthName: String, timeDuration: String, days: Int, image: UIImage?, isSelected: Bool, isSmallSize: Bool) {
-        self.monthName = monthName
-        self.timeDuration = timeDuration
-        self.image = image
-        self.isSelected = isSelected
-        self.fontSize = isSmallSize ? 10 : 14
-        dayDuration = dayDuration(for: days)
-    }
-
-    private func dayDuration(for number: Int) -> NSAttributedString {
-        let baseString = baseDaysString(for: number)
-        let daysString = String(number)
-        let updatedString = baseString.replacingOccurrences(of: "{count}", with: daysString)
-        let daysRange = (updatedString as NSString).range(of: daysString)
-
-        let attributedString = NSMutableAttributedString(string: updatedString, attributes: [.font: UIFont.montserratRegular(size: fontSize)])
-
-        attributedString.setAttributes([.font: UIFont.montserratSemiBold(size: fontSize)], range: daysRange)
-        return attributedString
-    }
-
-    private func baseDaysString(for number: Int) -> String {
-        guard number != 11 else { return "за {count} дней" }
-        let lastNumber = number % 10
-        switch lastNumber {
-        case 1:
-            return "за {count} день"
-        case 2, 3, 4:
-            return "за {count} дня"
-        default:
-            return "за {count} дней"
-        }
-    }
-}
 class YearCollectionCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -85,6 +34,10 @@ class YearCollectionCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+    }
+
+    override func prepareForReuse() {
+        monthNameLabel.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     required init?(coder: NSCoder) {

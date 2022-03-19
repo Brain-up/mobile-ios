@@ -57,6 +57,7 @@
 		08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */; };
 		08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */; };
 		08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */; };
+		08EB762227E6150100FF6B09 /* YearCollectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB762127E6150100FF6B09 /* YearCollectionCellViewModel.swift */; };
 		2C0824D327BD17BE007537CA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D227BD17BE007537CA /* Coordinator.swift */; };
 		2C0824D527BD17FE007537CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D427BD17FE007537CA /* AppCoordinator.swift */; };
 		2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0824D727BD1928007537CA /* AuthCoordinator.swift */; };
@@ -152,6 +153,7 @@
 		08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainUpTests.swift; sourceTree = "<group>"; };
 		08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatisticCoordinatorTestCase.swift; sourceTree = "<group>"; };
 		08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabItemCoordinatorTestCases.swift; sourceTree = "<group>"; };
+		08EB762127E6150100FF6B09 /* YearCollectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearCollectionCellViewModel.swift; sourceTree = "<group>"; };
 		1B9AC473CA2DE20CDD0FCD47 /* Pods_BrainUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrainUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0824D227BD17BE007537CA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2C0824D427BD17FE007537CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				082ED54127D62F160056A560 /* YearCollectionHeaderView.swift */,
 				082ED54327D62F380056A560 /* YearCollectionFooterView.swift */,
 				082ED54527D62F4D0056A560 /* YearCollectionCell.swift */,
+				08EB762127E6150100FF6B09 /* YearCollectionCellViewModel.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				082AA33827C2E12600E2BA70 /* UIView.swift in Sources */,
 				2CEE9FAA27BCCB2200CDD927 /* UIColor.swift in Sources */,
 				2C0824DA27BD19C1007537CA /* AuthVC.swift in Sources */,
+				08EB762227E6150100FF6B09 /* YearCollectionCellViewModel.swift in Sources */,
 				082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */,
 				2C0824E727BE22C9007537CA /* DiagnosticsCoordinator.swift in Sources */,
 				2C8DBEE827BF85F3002184BF /* Request.swift in Sources */,

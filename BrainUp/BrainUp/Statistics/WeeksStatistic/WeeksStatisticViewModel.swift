@@ -19,6 +19,7 @@ protocol WeeksStatisticViewModelProtocol {
 class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
     private(set) var dataRangeOfLoadedData: DateRange = (Date(), Date())
     private var items: [ChartCellViewModelProtocol] = []
+    private let lastShowedYear = 2018
     var reloadData: (() -> Void)?
     var loadPastData: ((Date) -> Void)?
     var loadFeatureData: ((Date) -> Void)?
@@ -54,7 +55,7 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
 
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol {
         guard indexPath.row < items.count else {
-            return items[0] // empty data
+            return ChartCellViewModel(week: StatisticWeekItem(days: []), monthLabel: Date().monthLocalizedName())
         }
         if indexPath.row == items.count - 1 {
             loadFeatureStatistic()

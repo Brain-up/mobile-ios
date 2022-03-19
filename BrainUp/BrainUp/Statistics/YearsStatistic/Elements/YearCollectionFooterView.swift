@@ -18,6 +18,6 @@ class YearCollectionFooterView: UICollectionReusableView {
     }
 
     private func setupUI() {
-        backgroundColor = .darkPink
+        backgroundColor = .appWhite
     }
 }

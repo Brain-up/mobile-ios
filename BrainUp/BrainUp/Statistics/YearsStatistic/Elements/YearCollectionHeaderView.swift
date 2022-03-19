@@ -10,14 +10,14 @@ import UIKit
 class YearCollectionHeaderView: UICollectionReusableView {
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.montserratSemiBold(size: 10)
         label.textColor = .charcoalGrey
         label.textAlignment = .center
         return label
     }()
 
-    func configure(with title: String) {
+    func configure(with title: String, fontSize: CGFloat) {
         titleLabel.text = title
+        titleLabel.font = UIFont.montserratSemiBold(size: fontSize)
     }
 
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ class YearCollectionHeaderView: UICollectionReusableView {
     }
 
     private func setupUI() {
-        backgroundColor = .gray
+        backgroundColor = .appWhite
         setupLabel()
     }
 

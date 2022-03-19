@@ -12,8 +12,8 @@ protocol YearsStatisticViewModelProtocol {
     var itemsCount: Int { get }
     var footerHeight: CGFloat { get }
     var headerHeight: CGFloat { get }
-//    var horizontalInset: CGFloat { get }
     var flowLayout: UICollectionViewFlowLayout { get }
+    var headerFontSize: CGFloat { get }
     var reloadData: ((_ sectionsSet: IndexSet) -> Void)? { get set }
     var disableLoadOldData: (() -> Void)? { get set }
 
@@ -29,6 +29,7 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     let flowLayout: UICollectionViewFlowLayout
     let headerHeight: CGFloat = 56
     let horizontalInset: CGFloat = 24
+    private let lastShowedYear = 2018
     private(set) var footerHeight: CGFloat = 0
     private var itemSize: CGSize = .zero
     private var isSmallGrid: Bool = true
@@ -43,14 +44,18 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     var loadFeatureData: ((Date) -> Void)?
     var openMonthStatistic: (() -> Void)?
 
-    private var data: [(sectionTitle: String, cellItem: [YearCollectionCellViewModelProtocol])] = []
+    private var items: [(sectionTitle: String, cellItem: [YearCollectionCellViewModelProtocol])] = []
 
     var sectionCount: Int {
-        data.count
+        items.count
     }
 
     var itemsCount: Int {
-        12
+        12 // the number of month in year
+    }
+
+    var headerFontSize: CGFloat {
+        isSmallGrid ? 10 : 14
     }
     
     init() {
@@ -60,48 +65,46 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: horizontalInset, bottom: 0, right: horizontalInset)
         flowLayout = layout
-//        data = [createCellItems(sectionTitle: "2022")]
     }
 
     func updateItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
         update(dataRangeOfLoadedData)
+        let needToAddFutureYear = items.isEmpty
         let sectionTitle = dataRangeOfLoadedData.startDate.year()
-        let items = monthItems.map { item in
+        if Int(sectionTitle) == lastShowedYear { disableLoadOldData?() }
+        let monthItems = monthItems.map { item in
             YearCollectionCellViewModel(monthName: item.date.monthLocalizedName().uppercased(),
                                         timeDuration: item.exercisingTimeHours,
                                         days: item.exercisingDays, image: item.progress.monthImage,
                                         isSelected: item.date.isTheCurrentMonth(),
                                                             isSmallSize: isSmallGrid)
         }
-        data.append((sectionTitle, items))
+        items.insert((sectionTitle, monthItems), at: 0)
         reloadData?([0])
+        if needToAddFutureYear { loadFeatureStatistic() }
     }
 
     func addFutureItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
         update(dataRangeOfLoadedData)
-//        monthItems.forEach { item in
-//            items.append(ChartCellViewModel(week: item, monthLabel: item.monthLabel))
-//        }
-//        reloadData?()
-    }
-
-    private func createCellItems(sectionTitle: String) -> (sectionTitle: String, cellItem: [YearCollectionCellViewModelProtocol]) {
-        let items = LocalizedMonthName.allCases.enumerated().map { index, month in
-            YearCollectionCellViewModel(monthName: month.rawValue.localized.uppercased(),
-                                                            timeDuration: "1:23:\(index)",
-                                                            days: index, image: StatisticProgress.bad.monthImage,
-                                                            isSelected: true,
+        let sectionTitle = dataRangeOfLoadedData.endDate.year()
+        let monthItems = monthItems.map { item in
+            YearCollectionCellViewModel(monthName: item.date.monthLocalizedName().uppercased(),
+                                        timeDuration: item.exercisingTimeHours,
+                                        days: item.exercisingDays,
+                                        image: item.progress.monthImage,
+                                        isSelected: item.date.isTheCurrentMonth(),
                                                             isSmallSize: isSmallGrid)
         }
-        return (sectionTitle, items)
+        items.append((sectionTitle, monthItems))
+        reloadData?([(items.count - 1)])
     }
 
     func item(for indexPath: IndexPath) -> YearCollectionCellViewModelProtocol {
-        data[indexPath.section].cellItem[indexPath.item]
+        items[indexPath.section].cellItem[indexPath.item]
     }
 
     func headerTitle(for indexPath: IndexPath) -> String {
-        return data[indexPath.section].sectionTitle
+        return items[indexPath.section].sectionTitle
     }
 
     func itemSize(for collectionView: UICollectionView) -> CGSize {
@@ -134,17 +137,11 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     }
     
     func loadPastStatistic() {
-        let items1 = createCellItems(sectionTitle: "2021")
-        let items2 = createCellItems(sectionTitle: "2020")
-        data.insert(items1, at: 0)
-        data.insert(items2, at: 0)
-
-        reloadData?([0, 1])
-        disableLoadOldData?()
+        loadPastData?(dataRangeOfLoadedData.startDate)
     }
     
     func loadFeatureStatistic() {
-        //
+        loadFeatureData?(dataRangeOfLoadedData.endDate)
     }
     
     func openMonthStatistic(for indexPath: IndexPath) {
@@ -154,11 +151,9 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     private func update(_ dataRangeOfLoadedData: DateRange) {
         if dataRangeOfLoadedData.startDate < self.dataRangeOfLoadedData.startDate {
             self.dataRangeOfLoadedData.startDate = dataRangeOfLoadedData.startDate
-            return
         }
         if dataRangeOfLoadedData.endDate > self.dataRangeOfLoadedData.endDate {
             self.dataRangeOfLoadedData.endDate = dataRangeOfLoadedData.endDate
-            return
         }
     }
 }

@@ -17,6 +17,11 @@
 "statiscticType.byWeeks" = "By weeks";
 "statiscticType.byYears" = "By years";
 
+"statisctic.singular_day_spent" = "in {count} day";
+"statisctic.day_end_by_one_spent" = "in {count} days";
+"statisctic.two_trhee_four_days_spent" = "in {count} days";
+"statisctic.plural_days_spent" = "in {count} days";
+
 "emptyStatistic.message" = "If you want to see statistic, you need to start doing exercises";
 "emptyStatistic.startExercises.button" = "Start Exercises";
 // MARK: - Month names in infinitive

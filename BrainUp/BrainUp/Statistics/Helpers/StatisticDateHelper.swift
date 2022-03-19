@@ -13,6 +13,7 @@ protocol StatisticDateHelperProtocol {
     static func calculateStartEndDates(for date: Date) -> (DateRangeString, DateRange)
     static func calculateStartEndYearDates(for date: Date) -> (DateRangeString, DateRange)
     static func calculateStartEndDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange)
+    static func calculateStartEndYearDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange)
 }
 
 class StatisticDateHelper: StatisticDateHelperProtocol {
@@ -51,6 +52,18 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
 
     static func calculateStartEndYearDates(for date: Date) -> (DateRangeString, DateRange) {
         let currentDate = date.currentDayWithoutTime()
+        let endDate = currentDate.lastDayOfCurrentYear()
+        let startDate = currentDate.firstDayOfCurrentYear()
+        
+        let startDateString = dateDayFormatter.string(from: startDate)
+        let endDateString = dateDayFormatter.string(from: endDate)
+
+        return ((startDateString, endDateString), (startDate, endDate))
+    }
+
+    static func calculateStartEndYearDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange) {
+        // we expct here to get last day og the year
+        let currentDate = date.currentDayWithoutTime().addDays(count: 1)
         let endDate = currentDate.lastDayOfCurrentYear()
         let startDate = currentDate.firstDayOfCurrentYear()
         
