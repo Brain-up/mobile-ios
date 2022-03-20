@@ -30,6 +30,24 @@ final class YearsStatisticViewController: UIViewController {
         setupBindings()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let visibleSectionIndexPath = collectionView.indexPathsForVisibleItems.first else { return }
+        viewModel.saveState(for: visibleSectionIndexPath)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // set view alpha to 0 before showing, just to add some additional time collection view to perform scroll to last saved state
+        view.alpha = 0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.scrollToItem(at: viewModel.lastActiveSection, at: .centeredVertically, animated: false)
+        view.alpha = 1
+    }
+
     private func setupUI() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewModel.flowLayout)
 
@@ -83,7 +101,6 @@ final class YearsStatisticViewController: UIViewController {
                 self.collectionView.insertSections(sectionsSet)
             } completion: { _ in
                 self.collectionView.scrollToItem(at: IndexPath(item: 5, section: openedSectionIndex), at: .centeredVertically, animated: false)
-                
             }
          }
 

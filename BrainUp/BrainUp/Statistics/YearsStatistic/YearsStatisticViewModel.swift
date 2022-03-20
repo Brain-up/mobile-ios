@@ -14,6 +14,7 @@ protocol YearsStatisticViewModelProtocol {
     var headerHeight: CGFloat { get }
     var flowLayout: UICollectionViewFlowLayout { get }
     var headerFontSize: CGFloat { get }
+    var lastActiveSection: IndexPath { get }
     var reloadData: ((_ sectionsSet: IndexSet) -> Void)? { get set }
     var disableLoadOldData: (() -> Void)? { get set }
 
@@ -23,17 +24,21 @@ protocol YearsStatisticViewModelProtocol {
     func loadPastStatistic()
     func loadFeatureStatistic()
     func openMonthStatistic(for indexPath: IndexPath)
+    func saveState(for indexPath: IndexPath)
 }
 
 final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     let flowLayout: UICollectionViewFlowLayout
     let headerHeight: CGFloat = 56
-    let horizontalInset: CGFloat = 24
-    private let lastShowedYear = 2018
     private(set) var footerHeight: CGFloat = 0
+    private(set) var dataRangeOfLoadedData: DateRange = (Date(), Date())
+
+    private let horizontalInset: CGFloat = 24
+    private let lastShowedYear = 2018
     private var itemSize: CGSize = .zero
     private var isSmallGrid: Bool = true
-    private(set) var dataRangeOfLoadedData: DateRange = (Date(), Date())
+
+    private(set) var lastActiveSection = IndexPath(item: 0, section: 0)
 
     // MARK: - Controller bindings
     var reloadData: ((IndexSet) -> Void)?
@@ -100,7 +105,7 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     }
 
     func item(for indexPath: IndexPath) -> YearCollectionCellViewModelProtocol {
-        items[indexPath.section].cellItem[indexPath.item]
+        return items[indexPath.section].cellItem[indexPath.item]
     }
 
     func headerTitle(for indexPath: IndexPath) -> String {
@@ -134,6 +139,12 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
 
         itemSize = CGSize(width: itemWidth, height: itemHeight)
         return itemSize
+    }
+
+    func saveState(for indexPath: IndexPath) {
+        var middleOfCollection = indexPath
+        middleOfCollection.item = 5
+        lastActiveSection = middleOfCollection
     }
     
     func loadPastStatistic() {

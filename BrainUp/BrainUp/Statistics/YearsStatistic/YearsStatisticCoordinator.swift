@@ -10,6 +10,8 @@ import UIKit
 class YearsStatisticCoordinator: TopTabItemCoordinator {
     private let networkService: NetworkService
     private let viewModel = YearsStatisticViewModel()
+    private var dataIsFetched = false
+    private var state = false
     // property injection for test purpose. If we consider separate architecture in modules, we could inject this properties inside init method.
     var mapper = StatisticYearItemsMapper()
     var helper: StatisticDateHelperProtocol.Type = StatisticDateHelper.self
@@ -37,13 +39,16 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
             let firstDayOfNewData = lastDayOfLoadedData.addDays(count: 1)
             self.fetchStatistic(for: firstDayOfNewData)
         }
-        let today = Date()
-        fetchStatistic(for: today)
+        if !dataIsFetched {
+            let today = Date()
+            fetchStatistic(for: today)
+        }
         let viewController = YearsStatisticViewController(with: viewModel)
         addToContainer(controller: viewController)
     }
 
     private func fetchStatistic(for date: Date) {
+        dataIsFetched = true
         if date.isFutureDay() {
             fetchEmptyStatistic(for: date)
             return
