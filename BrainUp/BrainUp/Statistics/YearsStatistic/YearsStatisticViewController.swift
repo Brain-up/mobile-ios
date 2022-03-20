@@ -94,7 +94,7 @@ final class YearsStatisticViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel.reloadData = { [weak self] sectionsSet in
+        viewModel.insertData = { [weak self] sectionsSet in
             guard let self = self, let openedSectionIndex = sectionsSet.last else { return }
             self.refreshControl.endRefreshing()
             self.collectionView.performBatchUpdates {
@@ -102,6 +102,10 @@ final class YearsStatisticViewController: UIViewController {
             } completion: { _ in
                 self.collectionView.scrollToItem(at: IndexPath(item: 5, section: openedSectionIndex), at: .centeredVertically, animated: false)
             }
+         }
+
+        viewModel.reloadData = { [weak self] in
+            self?.collectionView.reloadData()
          }
 
         viewModel.disableLoadOldData = { [weak self] in

@@ -15,7 +15,8 @@ protocol YearsStatisticViewModelProtocol {
     var flowLayout: UICollectionViewFlowLayout { get }
     var headerFontSize: CGFloat { get }
     var lastActiveSection: IndexPath { get }
-    var reloadData: ((_ sectionsSet: IndexSet) -> Void)? { get set }
+    var insertData: ((_ sectionsSet: IndexSet) -> Void)? { get set }
+    var reloadData: (() -> Void)? { get set }
     var disableLoadOldData: (() -> Void)? { get set }
 
     func item(for indexPath: IndexPath) -> YearCollectionCellViewModelProtocol
@@ -41,7 +42,8 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     private(set) var lastActiveSection = IndexPath(item: 0, section: 0)
 
     // MARK: - Controller bindings
-    var reloadData: ((IndexSet) -> Void)?
+    var insertData: ((IndexSet) -> Void)?
+    var reloadData: (() -> Void)?
     var disableLoadOldData: (() -> Void)?
 
     // MARK: - Coordinator bindings
@@ -72,7 +74,7 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
         flowLayout = layout
     }
 
-    func updateItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
+    func insertItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
         update(dataRangeOfLoadedData)
         let needToAddFutureYear = items.isEmpty
         let sectionTitle = dataRangeOfLoadedData.startDate.year()
@@ -85,8 +87,24 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
                                                             isSmallSize: isSmallGrid)
         }
         items.insert((sectionTitle, monthItems), at: 0)
-        reloadData?([0])
+        insertData?([0])
         if needToAddFutureYear { loadFeatureStatistic() }
+    }
+
+    func updateItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
+        let sectionTitle = dataRangeOfLoadedData.startDate.year()
+        let itemsIndex = items.firstIndex { $0.sectionTitle == sectionTitle }
+        guard let itemsIndex = itemsIndex else { return }
+        let monthItems = monthItems.map { item in
+            YearCollectionCellViewModel(monthName: item.date.monthLocalizedName().uppercased(),
+                                        timeDuration: item.exercisingTimeHours,
+                                        days: item.exercisingDays, image: item.progress.monthImage,
+                                        isSelected: item.date.isTheCurrentMonth(),
+                                                            isSmallSize: isSmallGrid)
+        }
+        items.remove(at: itemsIndex)
+        items.insert((sectionTitle, monthItems), at: itemsIndex)
+        reloadData?()
     }
 
     func addFutureItems(with monthItems: [StatisticMonthItem], dataRangeOfLoadedData: DateRange) {
@@ -101,7 +119,7 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
                                                             isSmallSize: isSmallGrid)
         }
         items.append((sectionTitle, monthItems))
-        reloadData?([(items.count - 1)])
+        insertData?([(items.count - 1)])
     }
 
     func item(for indexPath: IndexPath) -> YearCollectionCellViewModelProtocol {

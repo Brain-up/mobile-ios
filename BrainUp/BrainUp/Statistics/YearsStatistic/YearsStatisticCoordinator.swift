@@ -31,24 +31,21 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
         viewModel.loadPastData = { [weak self] firstYearLoadedData in
             guard let self = self else { return }
             let lastDayOfNewData = firstYearLoadedData.addYears(count: -1)
-            self.fetchStatistic(for: lastDayOfNewData)
+            self.fetchStatistic(for: lastDayOfNewData, isUpdating: false)
         }
 
         viewModel.loadFeatureData = { [weak self] lastDayOfLoadedData in
             guard let self = self else { return }
             let firstDayOfNewData = lastDayOfLoadedData.addDays(count: 1)
-            self.fetchStatistic(for: firstDayOfNewData)
+            self.fetchStatistic(for: firstDayOfNewData, isUpdating: false)
         }
-        if !dataIsFetched {
-            let today = Date()
-            fetchStatistic(for: today)
-        }
+        let today = Date()
+        fetchStatistic(for: today, isUpdating: dataIsFetched)
         let viewController = YearsStatisticViewController(with: viewModel)
         addToContainer(controller: viewController)
     }
 
-    private func fetchStatistic(for date: Date) {
-        dataIsFetched = true
+    private func fetchStatistic(for date: Date, isUpdating: Bool) {
         if date.isFutureDay() {
             fetchEmptyStatistic(for: date)
             return
@@ -58,7 +55,12 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
         mapper.fetch(for: dateRangeString, with: networkService) { [weak self] result in
             switch result {
             case let .success(items):
-                self?.viewModel.updateItems(with: items, dataRangeOfLoadedData: dateRange)
+                if isUpdating {
+                    self?.viewModel.updateItems(with: items, dataRangeOfLoadedData: dateRange)
+                    return
+                }
+                self?.viewModel.insertItems(with: items, dataRangeOfLoadedData: dateRange)
+                self?.dataIsFetched = true
             case .failure:
                 // error handler?
                 break

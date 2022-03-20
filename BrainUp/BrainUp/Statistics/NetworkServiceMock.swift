@@ -12,6 +12,7 @@ class NetworkServiceMock: NetworkService {
         case week
         case year
     }
+    static var count = 0
 
     private let type: RequestType
 
@@ -63,7 +64,16 @@ class WeekDataMock {
 }
 class YearDataMock {
     static func createData() -> Data {
-        json.data(using: .utf8)!
+        if NetworkServiceMock.count == 0 {
+            NetworkServiceMock.count += 1
+            return json.data(using: .utf8)!
+        } else if NetworkServiceMock.count == 1 {
+            NetworkServiceMock.count += 1
+            return json1.data(using: .utf8)!
+        } else {
+            NetworkServiceMock.count = 0
+            return json2.data(using: .utf8)!
+        }
     }
     static let json = """
 {"data":
@@ -78,6 +88,40 @@ class YearDataMock {
         {"date":"2021-12","exercisingTimeSeconds":2733,"exercisingDays":2,"progress":"BAD"},
         {"date":"2022-01","exercisingTimeSeconds":20200,"exercisingDays":30,"progress":"GREAT"},
         {"date":"2022-02","exercisingTimeSeconds":930,"exercisingDays":22,"progress":"GOOD"}
+    ],
+"errors":[],
+"meta":[]}
+"""
+    static let json1 = """
+{"data":
+    [
+        {"date":"2021-1","exercisingTimeSeconds":2733,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-2","exercisingTimeSeconds":270,"exercisingDays":48,"progress":"GOOD"},
+        {"date":"2021-3","exercisingTimeSeconds":1432,"exercisingDays":48,"progress":"GREAT"},
+        {"date":"2021-4","exercisingTimeSeconds":2733,"exercisingDays":48,"progress":"GREAT"},
+        {"date":"2021-5","exercisingTimeSeconds":234,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-6","exercisingTimeSeconds":2733,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-7","exercisingTimeSeconds":754,"exercisingDays":22,"progress":"GREAT"},
+        {"date":"2021-12","exercisingTimeSeconds":2733,"exercisingDays":2,"progress":"BAD"},
+        {"date":"2022-01","exercisingTimeSeconds":11,"exercisingDays":3,"progress":"BAD"},
+        {"date":"2022-02","exercisingTimeSeconds":11,"exercisingDays":4,"progress":"BAD"}
+    ],
+"errors":[],
+"meta":[]}
+"""
+    static let json2 = """
+{"data":
+    [
+        {"date":"2021-1","exercisingTimeSeconds":2733,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-2","exercisingTimeSeconds":270,"exercisingDays":48,"progress":"GOOD"},
+        {"date":"2021-3","exercisingTimeSeconds":1432,"exercisingDays":48,"progress":"GREAT"},
+        {"date":"2021-4","exercisingTimeSeconds":2733,"exercisingDays":48,"progress":"GREAT"},
+        {"date":"2021-5","exercisingTimeSeconds":234,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-6","exercisingTimeSeconds":2733,"exercisingDays":1,"progress":"BAD"},
+        {"date":"2021-7","exercisingTimeSeconds":754,"exercisingDays":22,"progress":"GREAT"},
+        {"date":"2021-12","exercisingTimeSeconds":2733,"exercisingDays":2,"progress":"BAD"},
+        {"date":"2022-01","exercisingTimeSeconds":20,"exercisingDays":1,"progress":"GOOD"},
+        {"date":"2022-02","exercisingTimeSeconds":1,"exercisingDays":1,"progress":"BAD"}
     ],
 "errors":[],
 "meta":[]}
