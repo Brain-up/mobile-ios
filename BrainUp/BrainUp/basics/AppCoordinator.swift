@@ -15,18 +15,13 @@ class AppCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = [Coordinator]()
     
     var navigationController: UINavigationController
-    private var isAuth: Bool = false
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        if !isAuth {
-            goToTabbar()
-        } else {
-            goToAuth()
-        }
+        goToAuth()
     }
     
     private func goToAuth() {

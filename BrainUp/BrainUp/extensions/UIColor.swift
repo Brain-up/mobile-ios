@@ -83,4 +83,8 @@ extension UIColor {
     class var lightPink: UIColor {
         UIColor(named: "lightPink") ?? UIColor()
     }
+
+    class var buttonBorder: UIColor {
+        UIColor(named: "buttonBorder") ?? UIColor()
+    }
 }

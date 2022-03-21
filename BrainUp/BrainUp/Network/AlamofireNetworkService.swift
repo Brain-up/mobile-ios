@@ -11,7 +11,7 @@ import Alamofire
 class AlamofireNetworkService: NetworkService {
     func fetch<T>(_ request: Request, model: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
         AF.request(request.baseURL+request.path, method: request.method.getAFHTTPMethod(),
-                   parameters: request.queryItems,
+                   parameters: request.parameters,
                    encoding: request.encoding.getAFEncoding(),
                    headers: getAFHeaders(from: request.headers))
             .response {response in
@@ -20,7 +20,7 @@ class AlamofireNetworkService: NetworkService {
                     do {
                         let result = try JSONDecoder().decode(T.self, from: data ?? Data())
                         completion(Result.success(result))
-                    } catch {
+                    } catch let error {
                         completion(Result.failure(error as Error))
                     }
                 case .failure(let error):

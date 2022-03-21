@@ -38,3 +38,13 @@
 "monthName.october" = "October";
 "monthName.november" = "November";
 "monthName.december" = "December";
+
+// MARK: - Auth Screen
+"auth.Username" = "Username";
+"auth.Password" = "Password";
+"auth.Login" = "LOGIN";
+"auth.Registration" = "REGISTRATION";
+
+// MARK: - Basics
+"basic.error" = "Error";
+"basic.cancel" = "Cancel";

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>899741994482-eftru8a62fbqtcaucvm45sl5r3n7bulc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.899741994482-eftru8a62fbqtcaucvm45sl5r3n7bulc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARekY2vUuGX-5YaGJ0w6v5RpSO_yWdEqE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>899741994482</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.BrainUp.spb</string>
+	<key>PROJECT_ID</key>
+	<string>brainup-spb-dev-bb6d0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>brainup-spb-dev-bb6d0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:899741994482:ios:0e780497c0e9b5d39b6f6b</string>
+</dict>
+</plist>
