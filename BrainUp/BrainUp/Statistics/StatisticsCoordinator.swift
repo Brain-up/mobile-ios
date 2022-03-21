@@ -140,8 +140,9 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
             rootViewController: statisticViewController,
             containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .year))
 
-        yearsCoordinator.openMonthStatistic = { [weak self] in
+        yearsCoordinator.openMonthStatistic = { [weak self] startDateOfMonth in
             // update weekCoordinator with needed date
+            weeksCoordinator.startDateToOpen = startDateOfMonth
             self?.action(for: 0)
         }
         childCoordinators.append(yearsCoordinator)

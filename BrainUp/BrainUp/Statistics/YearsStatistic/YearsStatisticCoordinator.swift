@@ -11,11 +11,10 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
     private let networkService: NetworkService
     private let viewModel = YearsStatisticViewModel()
     private var dataIsFetched = false
-    private var state = false
     // property injection for test purpose. If we consider separate architecture in modules, we could inject this properties inside init method.
     var mapper = StatisticYearItemsMapper()
     var helper: StatisticDateHelperProtocol.Type = StatisticDateHelper.self
-    var openMonthStatistic: (() -> Void)?
+    var openMonthStatistic: ((_ startDateOfMonth: Date) -> Void)?
 
     init(rootViewController: UIViewController, containerView: UIView, networkService: NetworkService) {
         self.networkService = networkService
@@ -56,10 +55,10 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
             switch result {
             case let .success(items):
                 if isUpdating {
-                    self?.viewModel.updateItems(with: items, dataRangeOfLoadedData: dateRange)
+                    self?.viewModel.updateItems(with: items, dateRangeOfLoadedData: dateRange)
                     return
                 }
-                self?.viewModel.insertItems(with: items, dataRangeOfLoadedData: dateRange)
+                self?.viewModel.insertItems(with: items, dateRangeOfLoadedData: dateRange)
                 self?.dataIsFetched = true
             case .failure:
                 // error handler?
@@ -73,7 +72,7 @@ class YearsStatisticCoordinator: TopTabItemCoordinator {
         mapper.fetchFutureItems(for: dateRangeString) { [weak self] result in
             switch result {
             case let .success(items):
-                self?.viewModel.addFutureItems(with: items, dataRangeOfLoadedData: dateRange)
+                self?.viewModel.addFutureItems(with: items, dateRangeOfLoadedData: dateRange)
             case .failure:
                 // error handler?
                 break

@@ -46,9 +46,12 @@ extension Date {
         return isTheSameMonth(with: Date().currentMonth())
     }
 
-    func isTheSameDay(with anotherDay: Date) -> Bool {
+    func isTheSameDay(with anotherDay: Date?) -> Bool {
+        guard let anotherDay = anotherDay else {
+            return false
+        }
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: self, to: anotherDay)
+        let components = calendar.dateComponents([.day], from: self.currentDayWithoutTime(), to: anotherDay.currentDayWithoutTime())
         return components.day == 0
     }
 
@@ -63,7 +66,8 @@ extension Date {
     /// - Parameter count: The number of days. Pass negative value to get Date before passed Date.
     /// - Returns: Updated Date. If something goes wrong, will return the same Date.
     func addDays(count: Int) -> Date {
-        let calendar = Calendar.current
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
         var dayComponent = DateComponents()
         dayComponent.day = count
         return calendar.date(byAdding: dayComponent, to: self) ?? self
@@ -129,7 +133,7 @@ extension Date {
     func lastDayOfCurrentYear() -> Date {
         let calendar = Calendar.current
         let year = calendar.component(.year, from: self)
-        let endOfYear = Calendar.current.date(from: DateComponents(year: year, month: 12, day: 31)) ?? self
+        let endOfYear = calendar.date(from: DateComponents(year: year, month: 12, day: 31)) ?? self
         var dateComponents = calendar.dateComponents([.year, .month, .day], from: endOfYear)
         dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
         return calendar.date(from: dateComponents) ?? self

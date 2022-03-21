@@ -22,6 +22,18 @@ final class WeeksStatisticViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // set view alpha to 0 before showing, just to add some additional time for collection view to perform scroll to last saved state
+        view.alpha = 0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.scrollToRow(at: viewModel.lastActiveCell, at: .top, animated: false)
+        view.alpha = 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +41,12 @@ final class WeeksStatisticViewController: UIViewController {
         setupUI()
         setupConstraints()
         setupBindings()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let topVisibleCellIndexPath = tableView.indexPathsForVisibleRows?.first else { return }
+        viewModel.saveState(for: topVisibleCellIndexPath)
     }
 
     private func setupUI() {
@@ -67,7 +85,7 @@ final class WeeksStatisticViewController: UIViewController {
     }
 
     private func setupBindings() {
-        viewModel.reloadData = { [weak self] in
+        viewModel.insertData = { [weak self] in
             guard let self = self else { return }
             let oldContentHeight: CGFloat = self.tableView.contentSize.height
             let oldOffsetY: CGFloat = self.tableView.contentOffset.y
@@ -79,6 +97,15 @@ final class WeeksStatisticViewController: UIViewController {
 
             self.refreshControl.endRefreshing()
          }
+        viewModel.reloadData = { [weak self] in
+            self?.tableView.reloadData()
+         }
+        viewModel.updateAndShowCell = { [weak self] index in
+            self?.tableView.reloadData()
+            guard let topVisibleCellIndexPath = self?.tableView.indexPathsForVisibleRows?.first, topVisibleCellIndexPath != index else { return }
+            
+            self?.tableView.scrollToRow(at: index, at: .top, animated: true)
+        }
     }
 
     @objc func loadPastStatistic() {

@@ -14,6 +14,7 @@ protocol ChartCellViewModelProtocol {
     var maxTimeValueInSec: Int { get }
     var shouldShowDashedLine: Bool { get }
     var dashedLineBottonContstant: Double { get }
+    var firstDayOfWeek: Date { get }
 }
 
 struct ChartCellViewModel: ChartCellViewModelProtocol {
@@ -24,6 +25,7 @@ struct ChartCellViewModel: ChartCellViewModelProtocol {
     let legendViewModel: LegendViewModelProtocol
     let monthLabel: String
     let maxTimeValueInSec: Int
+    let firstDayOfWeek: Date
 
     var shouldShowDashedLine: Bool {
         maxTimeValueInSec > minimumGreatTimeThreshold
@@ -38,5 +40,6 @@ struct ChartCellViewModel: ChartCellViewModelProtocol {
         self.chartViewModel = GraphicViewModel(week: week, maxHeightOfBar: maxHeightOfBar)
         self.legendViewModel = LegendViewModel(week: week)
         self.maxTimeValueInSec = week.maxTimeValue
+        self.firstDayOfWeek = week.firstDayOfWeek
     }
 }

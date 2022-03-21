@@ -8,7 +8,19 @@
 import Foundation
 
 typealias DateRangeString = (startDate: String, endDate: String)
-typealias DateRange = (startDate: Date, endDate: Date)
+struct DateRange: Equatable {
+    var startDate: Date
+    var endDate: Date
+
+    mutating func update(_ dateRange: DateRange) {
+        if dateRange.startDate < startDate {
+            startDate = dateRange.startDate
+        }
+        if dateRange.endDate > endDate {
+           endDate = dateRange.endDate
+        }
+    }
+}
 
 enum StatisticRequest: Request {
     case week(DateRangeString)

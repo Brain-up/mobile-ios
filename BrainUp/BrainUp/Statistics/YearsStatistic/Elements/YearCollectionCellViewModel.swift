@@ -8,6 +8,7 @@
 import UIKit
 
 protocol YearCollectionCellViewModelProtocol {
+    var startDate: Date { get }
     var monthName: String { get }
     var timeDuration: String { get }
     var dayDuration: NSAttributedString { get }
@@ -17,6 +18,7 @@ protocol YearCollectionCellViewModelProtocol {
 }
 
 struct YearCollectionCellViewModel: YearCollectionCellViewModelProtocol {
+    let startDate: Date
     let monthName: String
     let timeDuration: String
     let image: UIImage?
@@ -25,8 +27,9 @@ struct YearCollectionCellViewModel: YearCollectionCellViewModelProtocol {
 
     private(set) var dayDuration: NSAttributedString = NSAttributedString()
 
-    init(monthName: String, timeDuration: String, days: Int, image: UIImage?, isSelected: Bool, isSmallSize: Bool) {
-        self.monthName = monthName
+    init(startDate: Date, timeDuration: String, days: Int, image: UIImage?, isSelected: Bool, isSmallSize: Bool) {
+        self.startDate = startDate
+        self.monthName = startDate.monthLocalizedName().uppercased()
         self.timeDuration = timeDuration
         self.image = image
         self.isSelected = isSelected

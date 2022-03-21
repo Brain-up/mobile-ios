@@ -22,6 +22,18 @@ final class YearsStatisticViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // set view alpha to 0 before showing, just to add some additional time for collection view to perform scroll to last saved state
+        view.alpha = 0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.scrollToItem(at: viewModel.lastActiveSection, at: .centeredVertically, animated: false)
+        view.alpha = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,18 +46,6 @@ final class YearsStatisticViewController: UIViewController {
         super.viewWillDisappear(animated)
         guard let visibleSectionIndexPath = collectionView.indexPathsForVisibleItems.first else { return }
         viewModel.saveState(for: visibleSectionIndexPath)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // set view alpha to 0 before showing, just to add some additional time collection view to perform scroll to last saved state
-        view.alpha = 0
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        collectionView.scrollToItem(at: viewModel.lastActiveSection, at: .centeredVertically, animated: false)
-        view.alpha = 1
     }
 
     private func setupUI() {
