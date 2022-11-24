@@ -12,7 +12,7 @@ struct StatisticWeekItem: Equatable {
     let maxTimeValue: Int
     let firstDayOfWeek: Date
 
-    init(days: [StatisticDayItem], dateDayFormatter: DateFormatter) {
+    init(days: [StatisticDayItem]) {
         self.days = days
         let maxTime = days.sorted { $0.exercisingTimeSeconds > $1.exercisingTimeSeconds }.first?.exercisingTimeSeconds ?? 0
         self.maxTimeValue = maxTime == 0 ? 1 : maxTime

@@ -25,6 +25,8 @@
 		082ED54A27D6AD620056A560 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */; };
 		082F5A2727DD393500D3ECA9 /* YearsStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */; };
 		082F5A2927DE24DE00D3ECA9 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */; };
+		08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */; };
+		08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -133,6 +135,8 @@
 		082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsStatisticViewModel.swift; sourceTree = "<group>"; };
 		082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendViewModelTestCase.swift; sourceTree = "<group>"; };
+		08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemTestCase.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -260,6 +264,15 @@
 			path = Elements;
 			sourceTree = "<group>";
 		};
+		08884764292F9ED1004EBEF6 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */,
+				08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
 		08890C7327C81F1D0089804E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */,
+				08884764292F9ED1004EBEF6 /* Statistic */,
 				08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */,
 				08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */,
 			);
@@ -738,9 +752,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
 				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
+				08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,7 +42,7 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
 
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol {
         guard indexPath.row < items.count else {
-            let week = StatisticWeekItem(days: [], dateDayFormatter: StatisticDateHelper.dateDayFormatter)
+            let week = StatisticWeekItem(days: [])
             return ChartCellViewModel(week: week, monthLabel: Date().monthLocalizedName())
         }
         if indexPath.row == items.count - 1 {

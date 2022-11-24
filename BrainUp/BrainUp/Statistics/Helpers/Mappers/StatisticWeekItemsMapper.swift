@@ -56,7 +56,7 @@ final class StatisticWeekItemsMapper: StatisticItemsMapper, StatisticWeekItemsMa
                     date.addDays(count: 1)
                 }
                 let chankedResult = resultWithEmptyDays.chunked(into: 7) // separate dates in weeks
-                let weekResult = chankedResult.map { StatisticWeekItem(days: $0, dateDayFormatter: StatisticDateHelper.dateDayFormatter) }
+                let weekResult = chankedResult.map { StatisticWeekItem(days: $0) }
                 completion(.success(weekResult))
             case let .failure(error):
                 completion(.failure(error))
@@ -70,7 +70,7 @@ final class StatisticWeekItemsMapper: StatisticItemsMapper, StatisticWeekItemsMa
             date.addDays(count: 1)
         }
         let chankedResult = resultWithEmptyDays.chunked(into: 7) // separate dates in weeks
-        let weekResult = chankedResult.map { StatisticWeekItem(days: $0, dateDayFormatter: StatisticDateHelper.dateDayFormatter) }
+        let weekResult = chankedResult.map { StatisticWeekItem(days: $0) }
         completion(.success(weekResult))
     }
 }
