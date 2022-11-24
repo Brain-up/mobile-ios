@@ -49,7 +49,7 @@ final class YearsStatisticViewModel: YearsStatisticViewModelProtocol {
     let flowLayout: UICollectionViewFlowLayout
     let headerHeight: CGFloat = 56
     private(set) var footerHeight: CGFloat = 0
-    private(set) var lastActiveSection = IndexPath(item: 0, section: 0)
+    private(set) var lastActiveSection = IndexPath(item: -1, section: -1)
 
     var sectionCount: Int {
         items.count

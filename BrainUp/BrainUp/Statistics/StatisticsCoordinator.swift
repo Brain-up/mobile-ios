@@ -76,7 +76,6 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
             // save data to use it in prepareCoordinators
         }
     }
-//    store viewmodel with state in coordinator(weak year). update ui with saved state scrollyo in viewwill appear
 
     private func prepareViewModel() -> TabBarItemViewModelProtocol {
         let title = type.rawValue.localized.uppercased()
@@ -133,12 +132,12 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
         // TODO: - replace mocks with service
         let weeksCoordinator = WeeksStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .week))
+            containerView: statisticViewController.containerView, networkService: networkService)
         childCoordinators.append(weeksCoordinator)
 
         let yearsCoordinator = YearsStatisticCoordinator(
             rootViewController: statisticViewController,
-            containerView: statisticViewController.containerView, networkService: NetworkServiceMock(type: .year))
+            containerView: statisticViewController.containerView, networkService: networkService)
 
         yearsCoordinator.openMonthStatistic = { [weak self] startDateOfMonth in
             // update weekCoordinator with needed date

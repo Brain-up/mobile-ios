@@ -28,6 +28,7 @@ enum StatisticRequest: Request {
 
     private var mainPath: String {
         "/v2/statistics/study/"
+//        "/statistics/study/"
     }
 
     private var fromKey: String {
@@ -39,7 +40,7 @@ enum StatisticRequest: Request {
     }
 
     private func queryItems(for range: DateRangeString) -> String {
-        "?" + fromKey + "=" + range.startDate + toKey + "=" + range.endDate
+        "?" + fromKey + "=" + range.startDate + "&" + toKey + "=" + range.endDate
     }
 }
 

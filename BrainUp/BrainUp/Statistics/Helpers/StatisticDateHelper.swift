@@ -26,7 +26,7 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
         let dayFormatter = DateFormatter()
         dayFormatter.calendar = Calendar.current
         dayFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        dayFormatter.dateFormat = "yyyy-MM-dd"
+        dayFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return dayFormatter
     }
 

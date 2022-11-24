@@ -18,6 +18,8 @@ class AlamofireNetworkService: NetworkService {
                 switch response.result {
                 case .success(let data):
                     do {
+                        let result1 = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+                        print(result1)
                         let result = try JSONDecoder().decode(T.self, from: data ?? Data())
                         completion(Result.success(result))
                     } catch let error {
@@ -29,12 +31,14 @@ class AlamofireNetworkService: NetworkService {
             }
             
     }
-    
+
     private func getAFHeaders(from headers: [String: String]) -> Alamofire.HTTPHeaders {
         var afHeaders = Alamofire.HTTPHeaders()
+        let token = Token.shared.getToken() ?? ""
         for (key, value) in headers {
             afHeaders.add(name: key, value: value)
         }
+        afHeaders.add(.authorization(bearerToken: token))
         return afHeaders
     }
 }

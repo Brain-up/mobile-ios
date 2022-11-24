@@ -30,7 +30,9 @@ final class YearsStatisticViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.scrollToItem(at: viewModel.lastActiveSection, at: .centeredVertically, animated: false)
+        if viewModel.lastActiveSection.row >= 0 {
+            collectionView.scrollToItem(at: viewModel.lastActiveSection, at: .centeredVertically, animated: false)
+        }
         view.alpha = 1
     }
     

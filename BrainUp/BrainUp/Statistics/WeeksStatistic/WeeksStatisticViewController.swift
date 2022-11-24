@@ -31,7 +31,7 @@ final class WeeksStatisticViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.scrollToRow(at: viewModel.lastActiveCell, at: .top, animated: false)
+//        tableView.scrollToRow(at: viewModel.lastActiveCell, at: .top, animated: false)
         view.alpha = 1
     }
     
