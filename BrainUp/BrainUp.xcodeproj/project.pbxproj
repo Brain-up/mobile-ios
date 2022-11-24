@@ -27,6 +27,10 @@
 		082F5A2927DE24DE00D3ECA9 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */; };
 		08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */; };
 		08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */; };
+		0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */; };
+		0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */; };
+		0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476D2930047E004EBEF6 /* AnyCoordinator.swift */; };
+		0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -137,6 +141,10 @@
 		082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendViewModelTestCase.swift; sourceTree = "<group>"; };
 		08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemTestCase.swift; sourceTree = "<group>"; };
+		08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTestCase.swift; sourceTree = "<group>"; };
+		0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTestCase.swift; sourceTree = "<group>"; };
+		0888476D2930047E004EBEF6 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
+		0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTestCase.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -396,6 +404,10 @@
 				08884764292F9ED1004EBEF6 /* Statistic */,
 				08CC51E527BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift */,
 				08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */,
+				0888476D2930047E004EBEF6 /* AnyCoordinator.swift */,
+				08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */,
+				0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */,
+				0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */,
 			);
 			path = BrainUpTests;
 			sourceTree = "<group>";
@@ -752,10 +764,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */,
 				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
 				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
+				0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
+				0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */,
+				0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */,
 				08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

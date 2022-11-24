@@ -42,7 +42,7 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter({$0.type != childCoordinator.type})
+        childCoordinators = []
         switch childCoordinator.type {
         case .login:
             navigationController.viewControllers.removeAll()

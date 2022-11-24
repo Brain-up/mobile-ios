@@ -106,14 +106,6 @@ extension Date {
         return calendar.date(from: dateComponents) ?? self
     }
 
-    func currentMonth() -> Date {
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
-        var dateComponents = calendar.dateComponents([.year, .month], from: self)
-        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
-        return calendar.date(from: dateComponents) ?? self
-    }
-
     func europeanWeekDay() -> Int {
         var currentWeekday = Calendar.current.dateComponents([.weekday], from: self).weekday ?? 1
         if currentWeekday == 1 {
@@ -144,6 +136,14 @@ extension Date {
         let year = calendar.component(.year, from: self)
         let endOfYear = calendar.date(from: DateComponents(year: year, month: 1, day: 1)) ?? self
         var dateComponents = calendar.dateComponents([.year, .month, .day], from: endOfYear)
+        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
+        return calendar.date(from: dateComponents) ?? self
+    }
+
+    private func currentMonth() -> Date {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(secondsFromGMT: 0) ?? TimeZone.current
+        var dateComponents = calendar.dateComponents([.year, .month], from: self)
         dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
         return calendar.date(from: dateComponents) ?? self
     }
