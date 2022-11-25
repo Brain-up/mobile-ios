@@ -8,6 +8,7 @@
 import Foundation
 
 typealias DateRangeString = (startDate: String, endDate: String)
+
 struct DateRange: Equatable {
     var startDate: Date
     var endDate: Date
@@ -30,11 +31,9 @@ enum StatisticRequest: Request {
         "/v2/statistics/study/"
 //        "/statistics/study/"
     }
-
     private var fromKey: String {
         "from"
     }
-
     private var toKey: String {
         "to"
     }

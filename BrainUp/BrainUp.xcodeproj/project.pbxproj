@@ -31,6 +31,8 @@
 		0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */; };
 		0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476D2930047E004EBEF6 /* AnyCoordinator.swift */; };
 		0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */; };
+		08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884771293162BA004EBEF6 /* DateRangeTestCase.swift */; };
+		08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -145,6 +147,8 @@
 		0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTestCase.swift; sourceTree = "<group>"; };
 		0888476D2930047E004EBEF6 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
 		0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTestCase.swift; sourceTree = "<group>"; };
+		08884771293162BA004EBEF6 /* DateRangeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeTestCase.swift; sourceTree = "<group>"; };
+		08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticRequestTestCase.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */,
+				08884771293162BA004EBEF6 /* DateRangeTestCase.swift */,
+				08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */,
 				08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */,
 			);
 			path = Statistic;
@@ -769,6 +775,8 @@
 				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
 				0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */,
+				08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */,
+				08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
 				0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */,
 				0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */,
