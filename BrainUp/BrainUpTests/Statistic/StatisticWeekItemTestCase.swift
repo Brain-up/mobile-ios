@@ -52,3 +52,37 @@ final class StatisticWeekItemTestCase: XCTestCase {
         XCTAssertEqual(week.monthLabel, "")
     }
 }
+
+final class StatisticDayItemTestCase: XCTestCase {
+    private let fixedDateInPast = Date(timeIntervalSince1970: 0)
+
+    func testEmptyItem() {
+        let item = StatisticDayItem.emptyItem(for: fixedDateInPast) as? StatisticDayItem
+
+        XCTAssertEqual(item?.date, fixedDateInPast)
+        XCTAssertEqual(item?.exercisingTimeMinutes, "")
+        XCTAssertEqual(item?.exercisingTimeSeconds, 0)
+        XCTAssertEqual(item?.progress, .empty)
+    }
+}
+
+final class StatisticMonthItemTestCase: XCTestCase {
+    private let fixedDateInPast = Date(timeIntervalSince1970: 0)
+    private let fixedDateInFuture = Date(timeIntervalSince1970: 365 * 24 * 60 * 60 * 500)
+
+    func testEmptyItem() {
+        let item = StatisticMonthItem.emptyItem(for: fixedDateInPast) as? StatisticMonthItem
+
+        XCTAssertEqual(item?.date, fixedDateInPast)
+        XCTAssertEqual(item?.exercisingTimeHours, "")
+        XCTAssertEqual(item?.exercisingDays, 0)
+        XCTAssertEqual(item?.progress, .empty)
+
+        let itemInFuture = StatisticMonthItem.emptyItem(for: fixedDateInFuture) as? StatisticMonthItem
+
+        XCTAssertEqual(itemInFuture?.date, fixedDateInFuture)
+        XCTAssertEqual(itemInFuture?.exercisingTimeHours, "")
+        XCTAssertEqual(itemInFuture?.exercisingDays, 0)
+        XCTAssertEqual(itemInFuture?.progress, .future)
+    }
+}

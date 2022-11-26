@@ -5,7 +5,6 @@
 //  Created by Andrei Trukhan on 25/11/2022.
 //
 
-
 import Foundation
 @testable import BrainUp
 
@@ -177,4 +176,3 @@ class YearDataMock {
 "meta":[]}
 """
 }
-

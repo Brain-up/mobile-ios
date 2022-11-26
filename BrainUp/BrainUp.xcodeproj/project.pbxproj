@@ -34,7 +34,8 @@
 		08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884771293162BA004EBEF6 /* DateRangeTestCase.swift */; };
 		08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */; };
 		0888477629316933004EBEF6 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477529316933004EBEF6 /* NetworkServiceMock.swift */; };
-		0888477C2932B36B004EBEF6 /* StatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */; };
+		0888477C2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477B2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift */; };
+		0888477E2932BC44004EBEF6 /* TopTabViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477D2932BC44004EBEF6 /* TopTabViewModelTestCase.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -151,7 +152,8 @@
 		08884771293162BA004EBEF6 /* DateRangeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeTestCase.swift; sourceTree = "<group>"; };
 		08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticRequestTestCase.swift; sourceTree = "<group>"; };
 		0888477529316933004EBEF6 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
-		0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCoordinator.swift; sourceTree = "<group>"; };
+		0888477B2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCoordinatorTestCase.swift; sourceTree = "<group>"; };
+		0888477D2932BC44004EBEF6 /* TopTabViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabViewModelTestCase.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -285,7 +287,8 @@
 				08884771293162BA004EBEF6 /* DateRangeTestCase.swift */,
 				0888477529316933004EBEF6 /* NetworkServiceMock.swift */,
 				08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */,
-				0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */,
+				0888477B2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift */,
+				0888477D2932BC44004EBEF6 /* TopTabViewModelTestCase.swift */,
 				08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */,
 			);
 			path = Statistic;
@@ -777,7 +780,8 @@
 				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
 				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
-				0888477C2932B36B004EBEF6 /* StatisticCoordinator.swift in Sources */,
+				0888477E2932BC44004EBEF6 /* TopTabViewModelTestCase.swift in Sources */,
+				0888477C2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift in Sources */,
 				0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */,
 				08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */,
 				08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */,

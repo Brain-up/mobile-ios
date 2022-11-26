@@ -25,6 +25,7 @@ class TopTabViewModel {
     }
 
     func updateState(isActive: Bool) {
+        self.isActive = isActive
         updateState?(isActive)
     }
 }
@@ -66,7 +67,7 @@ class TopTabView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateState(isActive: Bool) {
+    private func updateState(isActive: Bool) {
         bottomView.alpha = isActive ? 1 : 0
     }
 
