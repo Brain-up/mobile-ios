@@ -29,4 +29,12 @@ final class StatisticRequestTestCase: XCTestCase {
         XCTAssertEqual(statisticRequest.encoding, .JSONEncoding)
         XCTAssertNil(statisticRequest.queryItems)
     }
+
+    func testBaseStuff() {
+        let statisticRequest = StatisticRequest.year(yearDateRange)
+        XCTAssertEqual(statisticRequest.baseURL, "https://brainup.site/api")
+
+        XCTAssertEqual(statisticRequest.headers, [:])
+        XCTAssertNil(statisticRequest.parameters)
+    }
 }

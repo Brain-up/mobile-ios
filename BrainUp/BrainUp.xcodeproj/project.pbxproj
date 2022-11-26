@@ -33,6 +33,8 @@
 		0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */; };
 		08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884771293162BA004EBEF6 /* DateRangeTestCase.swift */; };
 		08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */; };
+		0888477629316933004EBEF6 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477529316933004EBEF6 /* NetworkServiceMock.swift */; };
+		0888477C2932B36B004EBEF6 /* StatisticCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */; };
 		08890C6E27C52BB50089804E /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6D27C52BB50089804E /* LegendView.swift */; };
 		08890C7027C57BE40089804E /* ChartCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C6F27C57BE40089804E /* ChartCellViewModel.swift */; };
 		08890C7227C57C080089804E /* WeeksStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */; };
@@ -42,7 +44,6 @@
 		08890C7B27C832110089804E /* StatisticDayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7A27C832110089804E /* StatisticDayItem.swift */; };
 		08890C7E27C8365C0089804E /* StatisticDateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7D27C8365C0089804E /* StatisticDateHelper.swift */; };
 		08890C8027C8C6E10089804E /* StatisticItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C7F27C8C6E10089804E /* StatisticItemsMapper.swift */; };
-		08890C8427C96D4A0089804E /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8327C96D4A0089804E /* NetworkServiceMock.swift */; };
 		08890C8627C977150089804E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8527C977150089804E /* Array.swift */; };
 		08890C8827C977B40089804E /* StatisticWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8727C977B40089804E /* StatisticWeekItem.swift */; };
 		08890C8A27CA69790089804E /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8927CA69790089804E /* DashedView.swift */; };
@@ -149,6 +150,8 @@
 		0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsTestCase.swift; sourceTree = "<group>"; };
 		08884771293162BA004EBEF6 /* DateRangeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeTestCase.swift; sourceTree = "<group>"; };
 		08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticRequestTestCase.swift; sourceTree = "<group>"; };
+		0888477529316933004EBEF6 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCoordinator.swift; sourceTree = "<group>"; };
 		08890C6D27C52BB50089804E /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		08890C6F27C57BE40089804E /* ChartCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModel.swift; sourceTree = "<group>"; };
 		08890C7127C57C080089804E /* WeeksStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksStatisticViewModel.swift; sourceTree = "<group>"; };
@@ -158,7 +161,6 @@
 		08890C7A27C832110089804E /* StatisticDayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDayItem.swift; sourceTree = "<group>"; };
 		08890C7D27C8365C0089804E /* StatisticDateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDateHelper.swift; sourceTree = "<group>"; };
 		08890C7F27C8C6E10089804E /* StatisticItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticItemsMapper.swift; sourceTree = "<group>"; };
-		08890C8327C96D4A0089804E /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		08890C8527C977150089804E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		08890C8727C977B40089804E /* StatisticWeekItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItem.swift; sourceTree = "<group>"; };
 		08890C8927CA69790089804E /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
@@ -281,7 +283,9 @@
 			children = (
 				08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */,
 				08884771293162BA004EBEF6 /* DateRangeTestCase.swift */,
+				0888477529316933004EBEF6 /* NetworkServiceMock.swift */,
 				08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */,
+				0888477B2932B36B004EBEF6 /* StatisticCoordinator.swift */,
 				08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */,
 			);
 			path = Statistic;
@@ -468,7 +472,6 @@
 			isa = PBXGroup;
 			children = (
 				2C0824E827BE22F6007537CA /* StatisticsCoordinator.swift */,
-				08890C8327C96D4A0089804E /* NetworkServiceMock.swift */,
 				08890C7C27C836460089804E /* Helpers */,
 				08890C7327C81F1D0089804E /* Entity */,
 				08CC51D527BFB33300490375 /* EmptyStatistic */,
@@ -774,10 +777,12 @@
 				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
 				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
+				0888477C2932B36B004EBEF6 /* StatisticCoordinator.swift in Sources */,
 				0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */,
 				08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */,
 				08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
+				0888477629316933004EBEF6 /* NetworkServiceMock.swift in Sources */,
 				0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */,
 				0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */,
 				08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */,
@@ -834,7 +839,6 @@
 				08122DA727BE813D00F3EF9F /* TabBarItemViewController.swift in Sources */,
 				082AA33227C1868E00E2BA70 /* Date.swift in Sources */,
 				082F5A2927DE24DE00D3ECA9 /* PaddingLabel.swift in Sources */,
-				08890C8427C96D4A0089804E /* NetworkServiceMock.swift in Sources */,
 				08890C6E27C52BB50089804E /* LegendView.swift in Sources */,
 				08CC51C727BF965A00490375 /* WeeksStatisticCoordinator.swift in Sources */,
 				2C0824D827BD1928007537CA /* AuthCoordinator.swift in Sources */,

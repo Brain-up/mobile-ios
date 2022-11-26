@@ -1,11 +1,13 @@
 //
 //  NetworkServiceMock.swift
-//  BrainUp
+//  BrainUpTests
 //
-//  Created by Andrei Trukhan on 25/02/2022.
+//  Created by Andrei Trukhan on 25/11/2022.
 //
 
+
 import Foundation
+@testable import BrainUp
 
 class NetworkServiceMock: NetworkService {
     enum RequestType {
@@ -175,3 +177,4 @@ class YearDataMock {
 "meta":[]}
 """
 }
+

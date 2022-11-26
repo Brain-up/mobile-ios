@@ -33,13 +33,12 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     private var state: State = .emptyView
     private var currentIndex: Int = -1
     private var statisticViewController: TabBarItemViewController?
-//    private let networkService: NetworkService
     // consider to move NetworkService init to init method and property to private let.
     var networkService: NetworkService = AlamofireNetworkService()
 
-    private lazy var itemsTopView: [TopTabView] = {
+    private lazy var itemsTopViewModels: [TopTabViewModel] = {
         StatiscticType.allCases.enumerated().map { (index, element) in
-            TopTabView(with: element.rawValue.localized.uppercased(), isActive: index == 0) { [weak self] in
+            TopTabViewModel(title: element.rawValue.localized.uppercased(), isActive: index == 0) { [weak self] in
                 self?.action(for: index)
             }
         }
@@ -79,9 +78,9 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
 
     private func prepareViewModel() -> TabBarItemViewModelProtocol {
         let title = type.rawValue.localized.uppercased()
-        let topTabViews: [TopTabView] = state == .statisticValue ? itemsTopView : []
+        let topTabViewModels: [TopTabViewModel] = state == .statisticValue ? itemsTopViewModels : []
         let rightBarButtons = [UIImage(named: "helpIcon")]
-        var viewModel = TabBarItemViewModel(title: title, topTabViews: topTabViews, rightBarButtons: rightBarButtons)
+        var viewModel = TabBarItemViewModel(title: title, topTabViewModels: topTabViewModels, rightBarButtons: rightBarButtons)
 
         viewModel.rightBarbuttonAction = { [weak self] _ in
             // mock data
@@ -102,12 +101,12 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
             prepareCoordinators()
         } else {
             // hide bottom view for previos active topTab and stop coordinator
-            itemsTopView[currentIndex].updateState(isActive: false)
+            itemsTopViewModels[currentIndex].updateState(isActive: false)
             childCoordinators[currentIndex].finish()
         }
 
         // show bottom view for active topTab and start coordinator
-        itemsTopView[index].updateState(isActive: true)
+        itemsTopViewModels[index].updateState(isActive: true)
         childCoordinators[index].start()
 
         // save index to update state in future
@@ -129,7 +128,6 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
     private func prepareCoordinators() {
         // use data from server
         guard let statisticViewController = statisticViewController else { return }
-        // TODO: - replace mocks with service
         let weeksCoordinator = WeeksStatisticCoordinator(
             rootViewController: statisticViewController,
             containerView: statisticViewController.containerView, networkService: networkService)

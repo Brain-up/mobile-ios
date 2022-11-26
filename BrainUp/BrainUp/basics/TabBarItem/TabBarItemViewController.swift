@@ -41,8 +41,9 @@ final class TabBarItemViewController: UIViewController {
     func update(with viewModel: TabBarItemViewModelProtocol) {
         self.viewModel = viewModel
         let animator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) { [weak self] in
-            viewModel.topTabViews.forEach {
-                self?.stackView.addArrangedSubview($0)
+            viewModel.topTabViewModels.forEach {
+                let view = TopTabView(with: $0)
+                self?.stackView.addArrangedSubview(view)
             }
             self?.view.layoutSubviews()
         }
