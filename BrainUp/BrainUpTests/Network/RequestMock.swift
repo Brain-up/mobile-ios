@@ -9,6 +9,8 @@ import Foundation
 @testable import BrainUp
 
 class RequestMock: Request {
+    var queryItems: [String: Any]?
+    
     var baseURL: String = ""
     
     var path: String = ""

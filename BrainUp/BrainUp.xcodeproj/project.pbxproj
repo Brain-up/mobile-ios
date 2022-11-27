@@ -104,13 +104,7 @@
 		2C8DBEE827BF85F3002184BF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEE727BF85F3002184BF /* Request.swift */; };
 		2C8DBEEC27BF89B9002184BF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8DBEEB27BF89B9002184BF /* NetworkService.swift */; };
 		2CA0466627DB6C1E0048A5CF /* GoogleService-Info_release.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0466527DB6C1E0048A5CF /* GoogleService-Info_release.plist */; };
-		2CA0466A27DF5C340048A5CF /* BasicVCMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466927DF5C340048A5CF /* BasicVCMock.swift */; };
-		2CA0466C27DF5D4C0048A5CF /* BaseVCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */; };
-		2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466D27DF64B80048A5CF /* TokenMock.swift */; };
-		2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */; };
 		2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467127DF72830048A5CF /* TokenTestCase.swift */; };
-		2CA0467727E4849A0048A5CF /* UIFontTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */; };
-		2CA0467927E4898E0048A5CF /* UIColorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */; };
 		2CA0467C27E4ACBE0048A5CF /* RequestTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467B27E4ACBE0048A5CF /* RequestTestCase.swift */; };
 		2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0467D27E4AD3E0048A5CF /* RequestMock.swift */; };
 		2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0468027E4B07A0048A5CF /* LogoViewTestCase.swift */; };
@@ -234,13 +228,7 @@
 		2C8DBEE727BF85F3002184BF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2C8DBEEB27BF89B9002184BF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2CA0466527DB6C1E0048A5CF /* GoogleService-Info_release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_release.plist"; sourceTree = "<group>"; };
-		2CA0466927DF5C340048A5CF /* BasicVCMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVCMock.swift; sourceTree = "<group>"; };
-		2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVCTestCase.swift; sourceTree = "<group>"; };
-		2CA0466D27DF64B80048A5CF /* TokenMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenMock.swift; sourceTree = "<group>"; };
-		2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProtocolTestCase.swift; sourceTree = "<group>"; };
 		2CA0467127DF72830048A5CF /* TokenTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTestCase.swift; sourceTree = "<group>"; };
-		2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontTestCase.swift; sourceTree = "<group>"; };
-		2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTestCase.swift; sourceTree = "<group>"; };
 		2CA0467B27E4ACBE0048A5CF /* RequestTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTestCase.swift; sourceTree = "<group>"; };
 		2CA0467D27E4AD3E0048A5CF /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
 		2CA0468027E4B07A0048A5CF /* LogoViewTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewTestCase.swift; sourceTree = "<group>"; };
@@ -433,7 +421,6 @@
 		08CC51DD27BFBB4E00490375 /* BrainUpTests */ = {
 			isa = PBXGroup;
 			children = (
-				08CC51DE27BFBB4E00490375 /* BrainUpTests.swift */,
 				08884764292F9ED1004EBEF6 /* Statistic */,
 				2CA0467F27E4B0610048A5CF /* Auth */,
 				2CA0467A27E4ACA30048A5CF /* Network */,
@@ -443,7 +430,6 @@
 				08CC51E727BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift */,
 				0888476D2930047E004EBEF6 /* AnyCoordinator.swift */,
 				08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */,
-				0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */,
 				0888476B29300241004EBEF6 /* AppCoordinatorTestCase.swift */,
 			);
 			path = BrainUpTests;
@@ -605,8 +591,6 @@
 			isa = PBXGroup;
 			children = (
 				2CA0466827DF5C190048A5CF /* Mock */,
-				2CA0466B27DF5D4C0048A5CF /* BaseVCTestCase.swift */,
-				2CA0466F27DF65D60048A5CF /* TokenProtocolTestCase.swift */,
 				2CA0467127DF72830048A5CF /* TokenTestCase.swift */,
 			);
 			path = Basics;
@@ -615,8 +599,6 @@
 		2CA0466827DF5C190048A5CF /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0466927DF5C340048A5CF /* BasicVCMock.swift */,
-				2CA0466D27DF64B80048A5CF /* TokenMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -624,8 +606,7 @@
 		2CA0467527E47F4F0048A5CF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0467627E4849A0048A5CF /* UIFontTestCase.swift */,
-				2CA0467827E4898E0048A5CF /* UIColorTestCase.swift */,
+				0888476F29300B0B004EBEF6 /* ExtensionsTestCase.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -849,7 +830,6 @@
 			files = (
 				0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */,
 				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
-				08CC51DF27BFBB4E00490375 /* BrainUpTests.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
 				0888477E2932BC44004EBEF6 /* TopTabViewModelTestCase.swift in Sources */,
 				0888477C2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift in Sources */,
@@ -861,17 +841,11 @@
 				0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */,
 				0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */,
 				08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */,
-				2CA0467727E4849A0048A5CF /* UIFontTestCase.swift in Sources */,
 				2CA0467C27E4ACBE0048A5CF /* RequestTestCase.swift in Sources */,
 				2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */,
 				2CA0468327E4B30F0048A5CF /* LogoLabelTestCase.swift in Sources */,
-				2CA0467027DF65D60048A5CF /* TokenProtocolTestCase.swift in Sources */,
 				2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */,
-				2CA0466A27DF5C340048A5CF /* BasicVCMock.swift in Sources */,
-				2CA0466E27DF64B80048A5CF /* TokenMock.swift in Sources */,
 				2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */,
-				2CA0467927E4898E0048A5CF /* UIColorTestCase.swift in Sources */,
-				2CA0466C27DF5D4C0048A5CF /* BaseVCTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
