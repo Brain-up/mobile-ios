@@ -77,9 +77,11 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
     }
     /// expect to get the last day of the year
     static func calculateStartEndYearDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange) {
-        let currentDate = date.currentDayWithoutTime().addDays(count: 1)
-        let endDate = currentDate.lastDayOfCurrentYear()
-        let startDate = currentDate.firstDayOfCurrentYear()
+        assert(date.lastDayOfCurrentYear() == date, "Date should be last date of the year")
+
+        let nextYearFirstDate = date.currentDayWithoutTime().addDays(count: 1)
+        let endDate = nextYearFirstDate.lastDayOfCurrentYear()
+        let startDate = nextYearFirstDate.firstDayOfCurrentYear()
 
         let dateRange = DateRange(startDate: startDate, endDate: endDate)
         let dateRangeString = dateRangeString(from: dateRange)
@@ -87,6 +89,7 @@ class StatisticDateHelper: StatisticDateHelperProtocol {
         return (dateRangeString, dateRange)
     }
 
+    /// expect to get the first day of the week
     static func calculateStartEndDatesForFutureItems(for date: Date) -> (DateRangeString, DateRange) {
         let startDate = date.currentDayWithoutTime()
         let endDate = startDate.addDays(count: numberOfWeeksToAdd * weekLength - 1)

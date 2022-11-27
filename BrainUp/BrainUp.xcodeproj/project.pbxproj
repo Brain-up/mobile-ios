@@ -25,6 +25,7 @@
 		082ED54A27D6AD620056A560 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */; };
 		082F5A2727DD393500D3ECA9 /* YearsStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */; };
 		082F5A2927DE24DE00D3ECA9 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */; };
+		0882C71B29339F6300733A53 /* StatisticDateHelperTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */; };
 		08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */; };
 		08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */; };
 		0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */; };
@@ -147,6 +148,7 @@
 		082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsStatisticViewModel.swift; sourceTree = "<group>"; };
 		082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDateHelperTestCase.swift; sourceTree = "<group>"; };
 		08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendViewModelTestCase.swift; sourceTree = "<group>"; };
 		08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemTestCase.swift; sourceTree = "<group>"; };
 		08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTestCase.swift; sourceTree = "<group>"; };
@@ -288,12 +290,21 @@
 			path = Elements;
 			sourceTree = "<group>";
 		};
+		0882C71929339F2C00733A53 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0888477529316933004EBEF6 /* NetworkServiceMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		08884764292F9ED1004EBEF6 /* Statistic */ = {
 			isa = PBXGroup;
 			children = (
+				0882C71929339F2C00733A53 /* Mock */,
 				08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */,
+				0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */,
 				08884771293162BA004EBEF6 /* DateRangeTestCase.swift */,
-				0888477529316933004EBEF6 /* NetworkServiceMock.swift */,
 				08884773293164D9004EBEF6 /* StatisticRequestTestCase.swift */,
 				0888477B2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift */,
 				0888477D2932BC44004EBEF6 /* TopTabViewModelTestCase.swift */,
@@ -845,6 +856,7 @@
 				2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */,
 				2CA0468327E4B30F0048A5CF /* LogoLabelTestCase.swift in Sources */,
 				2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */,
+				0882C71B29339F6300733A53 /* StatisticDateHelperTestCase.swift in Sources */,
 				2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
