@@ -13,7 +13,7 @@
 		082AA33027C1435700E2BA70 /* StatisticWeekItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA32F27C1435700E2BA70 /* StatisticWeekItemsMapper.swift */; };
 		082AA33227C1868E00E2BA70 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33127C1868E00E2BA70 /* Date.swift */; };
 		082AA33427C18CD600E2BA70 /* StatisticYearItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33327C18CD600E2BA70 /* StatisticYearItemsMapper.swift */; };
-		082AA33627C2758B00E2BA70 /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33527C2758B00E2BA70 /* GraphicView.swift */; };
+		082AA33627C2758B00E2BA70 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33527C2758B00E2BA70 /* ChartView.swift */; };
 		082AA33827C2E12600E2BA70 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33727C2E12600E2BA70 /* UIView.swift */; };
 		082AA33A27C2E1DF00E2BA70 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33927C2E1DF00E2BA70 /* UITableView.swift */; };
 		082AA33D27C3808400E2BA70 /* ColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082AA33C27C3808400E2BA70 /* ColumnView.swift */; };
@@ -25,9 +25,12 @@
 		082ED54A27D6AD620056A560 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */; };
 		082F5A2727DD393500D3ECA9 /* YearsStatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */; };
 		082F5A2927DE24DE00D3ECA9 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */; };
+		086BFCF92936A41E009469EA /* WeekStatisticViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086BFCF82936A41E009469EA /* WeekStatisticViewModelTestCase.swift */; };
 		0882C71B29339F6300733A53 /* StatisticDateHelperTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */; };
 		0882C71D2934088D00733A53 /* StatisticProgressTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C71C2934088D00733A53 /* StatisticProgressTestCase.swift */; };
 		0882C71F29340A9B00733A53 /* StatisticItemsMapperTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C71E29340A9B00733A53 /* StatisticItemsMapperTestCase.swift */; };
+		0882C72129355EFC00733A53 /* ChartViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C72029355EFC00733A53 /* ChartViewModelTestCase.swift */; };
+		0882C7232936325800733A53 /* ChartCellViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882C7222936325800733A53 /* ChartCellViewModelTestCase.swift */; };
 		08884763292F9EBE004EBEF6 /* LegendViewModelTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */; };
 		08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */; };
 		0888476A292FA636004EBEF6 /* CoordinatorTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */; };
@@ -51,7 +54,7 @@
 		08890C8627C977150089804E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8527C977150089804E /* Array.swift */; };
 		08890C8827C977B40089804E /* StatisticWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8727C977B40089804E /* StatisticWeekItem.swift */; };
 		08890C8A27CA69790089804E /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8927CA69790089804E /* DashedView.swift */; };
-		08890C8C27CAD3710089804E /* GraphicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8B27CAD3710089804E /* GraphicViewModel.swift */; };
+		08890C8C27CAD3710089804E /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8B27CAD3710089804E /* ChartViewModel.swift */; };
 		08890C8E27CAD38B0089804E /* ColumnViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8D27CAD38B0089804E /* ColumnViewModel.swift */; };
 		08890C9027CAD3AF0089804E /* LegendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08890C8F27CAD3AE0089804E /* LegendViewModel.swift */; };
 		0890533F27BFDD4100BB27A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0890534127BFDD4100BB27A8 /* Localizable.strings */; };
@@ -138,7 +141,7 @@
 		082AA32F27C1435700E2BA70 /* StatisticWeekItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemsMapper.swift; sourceTree = "<group>"; };
 		082AA33127C1868E00E2BA70 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		082AA33327C18CD600E2BA70 /* StatisticYearItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticYearItemsMapper.swift; sourceTree = "<group>"; };
-		082AA33527C2758B00E2BA70 /* GraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
+		082AA33527C2758B00E2BA70 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		082AA33727C2E12600E2BA70 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		082AA33927C2E1DF00E2BA70 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		082AA33C27C3808400E2BA70 /* ColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnView.swift; sourceTree = "<group>"; };
@@ -150,9 +153,12 @@
 		082ED54927D6A01F0056A560 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		082F5A2627DD393500D3ECA9 /* YearsStatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsStatisticViewModel.swift; sourceTree = "<group>"; };
 		082F5A2827DE24DE00D3ECA9 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		086BFCF82936A41E009469EA /* WeekStatisticViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStatisticViewModelTestCase.swift; sourceTree = "<group>"; };
 		0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDateHelperTestCase.swift; sourceTree = "<group>"; };
 		0882C71C2934088D00733A53 /* StatisticProgressTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticProgressTestCase.swift; sourceTree = "<group>"; };
 		0882C71E29340A9B00733A53 /* StatisticItemsMapperTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticItemsMapperTestCase.swift; sourceTree = "<group>"; };
+		0882C72029355EFC00733A53 /* ChartViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelTestCase.swift; sourceTree = "<group>"; };
+		0882C7222936325800733A53 /* ChartCellViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCellViewModelTestCase.swift; sourceTree = "<group>"; };
 		08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendViewModelTestCase.swift; sourceTree = "<group>"; };
 		08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItemTestCase.swift; sourceTree = "<group>"; };
 		08884769292FA636004EBEF6 /* CoordinatorTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTestCase.swift; sourceTree = "<group>"; };
@@ -176,7 +182,7 @@
 		08890C8527C977150089804E /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		08890C8727C977B40089804E /* StatisticWeekItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticWeekItem.swift; sourceTree = "<group>"; };
 		08890C8927CA69790089804E /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
-		08890C8B27CAD3710089804E /* GraphicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicViewModel.swift; sourceTree = "<group>"; };
+		08890C8B27CAD3710089804E /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		08890C8D27CAD38B0089804E /* ColumnViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnViewModel.swift; sourceTree = "<group>"; };
 		08890C8F27CAD3AE0089804E /* LegendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendViewModel.swift; sourceTree = "<group>"; };
 		0890534027BFDD4100BB27A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -275,8 +281,8 @@
 		082AA33B27C37EF700E2BA70 /* chart */ = {
 			isa = PBXGroup;
 			children = (
-				082AA33527C2758B00E2BA70 /* GraphicView.swift */,
-				08890C8B27CAD3710089804E /* GraphicViewModel.swift */,
+				082AA33527C2758B00E2BA70 /* ChartView.swift */,
+				08890C8B27CAD3710089804E /* ChartViewModel.swift */,
 				08890C9127CAD4F40089804E /* column */,
 				08890C8927CA69790089804E /* DashedView.swift */,
 			);
@@ -307,6 +313,8 @@
 			children = (
 				0882C71929339F2C00733A53 /* Mock */,
 				08884762292F9EBE004EBEF6 /* LegendViewModelTestCase.swift */,
+				0882C72029355EFC00733A53 /* ChartViewModelTestCase.swift */,
+				0882C7222936325800733A53 /* ChartCellViewModelTestCase.swift */,
 				0882C71A29339F6300733A53 /* StatisticDateHelperTestCase.swift */,
 				0882C71C2934088D00733A53 /* StatisticProgressTestCase.swift */,
 				0882C71E29340A9B00733A53 /* StatisticItemsMapperTestCase.swift */,
@@ -315,6 +323,7 @@
 				0888477B2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift */,
 				0888477D2932BC44004EBEF6 /* TopTabViewModelTestCase.swift */,
 				08884765292FA293004EBEF6 /* StatisticWeekItemTestCase.swift */,
+				086BFCF82936A41E009469EA /* WeekStatisticViewModelTestCase.swift */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -848,12 +857,14 @@
 				0888477029300B0B004EBEF6 /* ExtensionsTestCase.swift in Sources */,
 				08884766292FA293004EBEF6 /* StatisticWeekItemTestCase.swift in Sources */,
 				08CC51E627BFC0CE00490375 /* EmptyStatisticCoordinatorTestCase.swift in Sources */,
+				086BFCF92936A41E009469EA /* WeekStatisticViewModelTestCase.swift in Sources */,
 				0888477E2932BC44004EBEF6 /* TopTabViewModelTestCase.swift in Sources */,
 				0888477C2932B36B004EBEF6 /* StatisticCoordinatorTestCase.swift in Sources */,
 				0888476E2930047E004EBEF6 /* AnyCoordinator.swift in Sources */,
 				08884774293164D9004EBEF6 /* StatisticRequestTestCase.swift in Sources */,
 				0882C71D2934088D00733A53 /* StatisticProgressTestCase.swift in Sources */,
 				08884772293162BA004EBEF6 /* DateRangeTestCase.swift in Sources */,
+				0882C7232936325800733A53 /* ChartCellViewModelTestCase.swift in Sources */,
 				08CC51E827BFC65A00490375 /* TopTabItemCoordinatorTestCases.swift in Sources */,
 				0888477629316933004EBEF6 /* NetworkServiceMock.swift in Sources */,
 				0888476C29300241004EBEF6 /* AppCoordinatorTestCase.swift in Sources */,
@@ -862,6 +873,7 @@
 				2CA0467C27E4ACBE0048A5CF /* RequestTestCase.swift in Sources */,
 				2CA0467227DF72830048A5CF /* TokenTestCase.swift in Sources */,
 				2CA0468327E4B30F0048A5CF /* LogoLabelTestCase.swift in Sources */,
+				0882C72129355EFC00733A53 /* ChartViewModelTestCase.swift in Sources */,
 				2CA0467E27E4AD3E0048A5CF /* RequestMock.swift in Sources */,
 				0882C71B29339F6300733A53 /* StatisticDateHelperTestCase.swift in Sources */,
 				2CA0468127E4B07A0048A5CF /* LogoViewTestCase.swift in Sources */,
@@ -891,8 +903,8 @@
 				2CE7DC3927C5063A003404C7 /* AppTextField.swift in Sources */,
 				2C1DF6F327D8C377000717F7 /* LogoView.swift in Sources */,
 				2C0824E127BD2DB4007537CA /* TabBarCoordinator.swift in Sources */,
-				082AA33627C2758B00E2BA70 /* GraphicView.swift in Sources */,
-				08890C8C27CAD3710089804E /* GraphicViewModel.swift in Sources */,
+				082AA33627C2758B00E2BA70 /* ChartView.swift in Sources */,
+				08890C8C27CAD3710089804E /* ChartViewModel.swift in Sources */,
 				08CC51D727BFB89D00490375 /* ExerciseOpener.swift in Sources */,
 				08CC51D027BFADEA00490375 /* WeeksStatisticViewController.swift in Sources */,
 				082AA33027C1435700E2BA70 /* StatisticWeekItemsMapper.swift in Sources */,

@@ -10,31 +10,14 @@ import XCTest
 
 final class LegendViewModelTestCase: XCTestCase {
     func testInit() {
-        let pastDayItem = StatisticDayItem(
-            date: Date(timeIntervalSince1970: 0),
-            exercisingTimeMinutes: "10",
-            exercisingTimeSeconds: 100,
-            progress: .good)
-
-        let currentDayItem = StatisticDayItem(
-            date: Date(),
-            exercisingTimeMinutes: "1",
-            exercisingTimeSeconds: 1,
-            progress: .bad)
-
-        let futureDayItem = StatisticDayItem(
-            date: Date().addingTimeInterval(24 * 60 * 60 * 60),
-            exercisingTimeMinutes: "10",
-            exercisingTimeSeconds: 100,
-            progress: .good)
-
-        let week = StatisticWeekItem(days: [pastDayItem, currentDayItem, futureDayItem])
+        let days = StatisticDayItemFactory.prepareDates()
+        let week = StatisticWeekItem(days: days)
 
         let viewModel = LegendViewModel(week: week)
 
-        check(dayItem: pastDayItem, legendItem: viewModel.items[0])
-        check(dayItem: currentDayItem, legendItem: viewModel.items[1])
-        check(dayItem: futureDayItem, legendItem: viewModel.items[2])
+        check(dayItem: days[0], legendItem: viewModel.items[0])
+        check(dayItem: days[1], legendItem: viewModel.items[1])
+        check(dayItem: days[2], legendItem: viewModel.items[2])
     }
 
     private func check(dayItem: StatisticDayItem, legendItem: LegendItem, file: StaticString = #filePath, line: UInt = #line) {
@@ -42,5 +25,42 @@ final class LegendViewModelTestCase: XCTestCase {
         XCTAssertEqual(dayItem.date.dayNumber(), legendItem.date)
         XCTAssertEqual(dayItem.date.isFutureDay(), legendItem.isFutureDay)
         XCTAssertEqual(dayItem.date.isTheCurrentDay(), legendItem.isSelected)
+    }
+}
+
+class StatisticDayItemFactory {
+    static func prepareDates() -> [StatisticDayItem] {
+        let pastDayItem = StatisticDayItem(
+            date: Date(timeIntervalSince1970: 0),
+            exercisingTimeMinutes: "10",
+            exercisingTimeSeconds: 600,
+            progress: .good)
+
+        let currentDayItem = StatisticDayItem(
+            date: Date(),
+            exercisingTimeMinutes: "0",
+            exercisingTimeSeconds: 0,
+            progress: .bad)
+
+        let futureDayItem = StatisticDayItem(
+            date: Date().addingTimeInterval(24 * 60 * 60 * 60),
+            exercisingTimeMinutes: "100",
+            exercisingTimeSeconds: 6000,
+            progress: .great)
+
+        return [pastDayItem, currentDayItem, futureDayItem]
+    }
+
+    static func createWholeWeek(weekMultipiller: Int = 0) -> [StatisticDayItem] {
+        var week = [StatisticDayItem]()
+        for index in -1...5 {
+            let day = StatisticDayItem(
+                date: Date(timeIntervalSince1970: TimeInterval(24 * 60 * 60 * index + weekMultipiller * 24 * 60 * 60)),
+                exercisingTimeMinutes: "\(index * 10 * weekMultipiller)",
+                exercisingTimeSeconds: 60 * index * 10 * weekMultipiller,
+                progress: .good)
+            week.append(day)
+        }
+        return week
     }
 }

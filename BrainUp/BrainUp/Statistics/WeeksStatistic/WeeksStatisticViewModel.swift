@@ -16,7 +16,7 @@ protocol WeeksStatisticViewModelProtocol {
 
     func item(for indexPath: IndexPath) -> ChartCellViewModelProtocol
     func loadPastStatistic()
-    func loadFeatureStatistic()
+    func loadFutureStatistic()
     func saveState(for indexPath: IndexPath)
 }
 
@@ -27,7 +27,7 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
 
     // MARK: - Coordinator bindings
     var loadPastData: ((Date) -> Void)?
-    var loadFeatureData: ((Date) -> Void)?
+    var loadFutureData: ((Date) -> Void)?
 
     // MARK: - WeeksStatisticViewModelProtocol
     var reloadData: (() -> Void)?
@@ -46,7 +46,7 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
             return ChartCellViewModel(week: week, monthLabel: Date().monthLocalizedName())
         }
         if indexPath.row == items.count - 1 {
-            loadFeatureStatistic()
+            loadFutureStatistic()
         }
         return items[indexPath.row]
     }
@@ -59,8 +59,8 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
         loadPastData?(dateRangeOfLoadedData.startDate)
     }
 
-    func loadFeatureStatistic() {
-        loadFeatureData?(dateRangeOfLoadedData.endDate)
+    func loadFutureStatistic() {
+        loadFutureData?(dateRangeOfLoadedData.endDate)
     }
     // MARK: - Coordinator functions
     func insertItems(with weekItems: [StatisticWeekItem], dateRangeOfLoadedData: DateRange, showCellWith startDayOfWeek: Date?) {

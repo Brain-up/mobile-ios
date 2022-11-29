@@ -7,11 +7,11 @@
 
 import UIKit
 
-class GraphicView: UIView {
+class ChartView: UIView {
     private let stackView = UIStackView()
-    private let viewModel: GraphicViewModelProtocol
+    private let viewModel: ChartViewModelProtocol
 
-    init(with viewModel: GraphicViewModelProtocol) {
+    init(with viewModel: ChartViewModelProtocol) {
         self.viewModel = viewModel
 
         super.init(frame: .zero)

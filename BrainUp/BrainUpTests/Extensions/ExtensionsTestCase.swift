@@ -39,7 +39,7 @@ final class DateExtensionTestCase: XCTestCase {
 
     override func setUp() async throws {
         let language = Locale.preferredLanguages[0]
-        XCTAssertEqual(language, "en-US", "Please, set the device language to en-US")
+        XCTAssertEqual(language, "en-US", "Please, set the device language to en")
     }
 
     func testWeekdayLocalizedName() {

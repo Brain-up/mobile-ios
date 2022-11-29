@@ -35,7 +35,7 @@ class WeeksStatisticCoordinator: TopTabItemCoordinator {
             self.fetchStatistic(forDate: lastDayOfNewData)
         }
 
-        viewModel.loadFeatureData = { [weak self] lastDayOfLoadedData in
+        viewModel.loadFutureData = { [weak self] lastDayOfLoadedData in
             guard let self = self else { return }
             let firstDayOfNewData = lastDayOfLoadedData.addDays(count: 1)
             self.fetchStatistic(forDate: firstDayOfNewData)

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChartCellViewModelProtocol {
-    var chartViewModel: GraphicViewModelProtocol { get }
+    var chartViewModel: ChartViewModelProtocol { get }
     var legendViewModel: LegendViewModelProtocol { get }
     var monthLabel: String { get }
     var maxTimeValueInSec: Int { get }
@@ -21,7 +21,7 @@ struct ChartCellViewModel: ChartCellViewModelProtocol {
     private let minimumGreatTimeThreshold = 20 * 60 // 20 minutes in sec
     private let maxHeightOfBar: Double = 80
 
-    let chartViewModel: GraphicViewModelProtocol
+    let chartViewModel: ChartViewModelProtocol
     let legendViewModel: LegendViewModelProtocol
     let monthLabel: String
     let maxTimeValueInSec: Int
@@ -37,7 +37,7 @@ struct ChartCellViewModel: ChartCellViewModelProtocol {
 
     init(week: StatisticWeekItem, monthLabel: String) {
         self.monthLabel = monthLabel
-        self.chartViewModel = GraphicViewModel(week: week, maxHeightOfBar: maxHeightOfBar)
+        self.chartViewModel = ChartViewModel(week: week, maxHeightOfBar: maxHeightOfBar)
         self.legendViewModel = LegendViewModel(week: week)
         self.maxTimeValueInSec = week.maxTimeValue
         self.firstDayOfWeek = week.firstDayOfWeek

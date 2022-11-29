@@ -8,7 +8,7 @@
 import UIKit
 
 class ChartCell: UITableViewCell {
-    private var chartView: GraphicView!
+    private var chartView: ChartView!
     private var legendView: LegendView!
 
     private let monthLabel: UILabel = {
@@ -46,7 +46,7 @@ class ChartCell: UITableViewCell {
     func configure(with viewModel: ChartCellViewModelProtocol) {
         self.viewModel = viewModel
         selectionStyle = .none
-        chartView = GraphicView(with: viewModel.chartViewModel)
+        chartView = ChartView(with: viewModel.chartViewModel)
         legendView = LegendView(with: viewModel.legendViewModel)
         setupUI()
         setupConstraints()
