@@ -127,4 +127,66 @@ final class WeekStatisticViewModelTestCase: XCTestCase {
         viewModel.loadFutureStatistic()
         XCTAssertEqual(count, 1)
     }
+
+    func testItemForCorrectRow() {
+        let viewModel = WeeksStatisticViewModel()
+        let expectedItem = ChartCellViewModel(week: firstWeek, monthLabel: firstWeek.monthLabel)
+
+        viewModel.insertItems(with: [firstWeek, secondWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+
+        let receviedItem = viewModel.item(for: IndexPath(row: 0, section: 0))
+
+        XCTAssertEqual(expectedItem.monthLabel, receviedItem.monthLabel)
+        XCTAssertEqual(expectedItem.firstDayOfWeek, receviedItem.firstDayOfWeek)
+        XCTAssertEqual(expectedItem.shouldShowDashedLine, receviedItem.shouldShowDashedLine)
+        XCTAssertEqual(expectedItem.maxTimeValueInSec, receviedItem.maxTimeValueInSec)
+    }
+
+    func testItemForFutureRow() {
+        let viewModel = WeeksStatisticViewModel()
+        let expectedItem = ChartCellViewModel(week: secondWeek, monthLabel: secondWeek.monthLabel)
+        var count = 0
+
+        viewModel.loadFutureData = { _ in
+            count += 1
+        }
+
+        viewModel.insertItems(with: [firstWeek, secondWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+
+        let receviedItem = viewModel.item(for: IndexPath(row: 1, section: 0))
+
+        XCTAssertEqual(count, 1)
+        XCTAssertEqual(expectedItem.monthLabel, receviedItem.monthLabel)
+        XCTAssertEqual(expectedItem.firstDayOfWeek, receviedItem.firstDayOfWeek)
+        XCTAssertEqual(expectedItem.shouldShowDashedLine, receviedItem.shouldShowDashedLine)
+        XCTAssertEqual(expectedItem.maxTimeValueInSec, receviedItem.maxTimeValueInSec)
+    }
+
+    func testItemForincorrectRow() {
+        let viewModel = WeeksStatisticViewModel()
+        let week = StatisticWeekItem(days: [])
+        let expectedItem = ChartCellViewModel(week: week, monthLabel: Date().monthLocalizedName())
+        var count = 0
+
+        viewModel.loadFutureData = { _ in
+            count += 1
+        }
+
+        viewModel.insertItems(with: [firstWeek, secondWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+
+        let receviedItem = viewModel.item(for: IndexPath(row: 5, section: 0))
+
+        XCTAssertEqual(count, 0)
+        XCTAssertEqual(expectedItem.monthLabel, receviedItem.monthLabel)
+        XCTAssertEqual(expectedItem.shouldShowDashedLine, receviedItem.shouldShowDashedLine)
+        XCTAssertEqual(expectedItem.maxTimeValueInSec, receviedItem.maxTimeValueInSec)
+    }
+
+    func testUpdateItems() {
+        let viewModel = WeeksStatisticViewModel()
+        let endDate = viewModel.dateRangeOfLoadedData.endDate
+        let expectedItem = ChartCellViewModel(week: firstWeek, monthLabel: firstWeek.monthLabel)
+
+        viewModel.insertItems(with: [firstWeek, secondWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+    }
 }
