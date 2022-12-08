@@ -76,7 +76,7 @@ class WeeksStatisticViewModel: WeeksStatisticViewModelProtocol {
         updateUIState(with: startDayOfWeek)
     }
 
-    func updateItems(with weekItems: [StatisticWeekItem], dataRangeOfLoadedData: DateRange) {
+    func updateItems(with weekItems: [StatisticWeekItem]) {
         let index = items.firstIndex { item in
             item.firstDayOfWeek.isTheSameDay(with: weekItems.first?.firstDayOfWeek)
         }

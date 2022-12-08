@@ -24,12 +24,13 @@ struct DateRange: Equatable {
 }
 
 enum StatisticRequest: Request {
+    typealias UserID = String
     case week(DateRangeString)
     case year(DateRangeString)
+    case hasStatistic(UserID)
 
     private var mainPath: String {
         "/v2/statistics/study/"
-//        "/statistics/study/"
     }
     private var fromKey: String {
         "from"
@@ -50,6 +51,8 @@ extension StatisticRequest {
             return mainPath + "week" + queryItems(for: range)
         case let .year(range):
             return mainPath + "year" + queryItems(for: range)
+        case let .hasStatistic(userId):
+            return "/user/\(userId)/has/statistics"
         }
     }
 }

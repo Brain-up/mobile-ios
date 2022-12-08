@@ -8,9 +8,9 @@
 import Foundation
 
 struct StatisticWeekItem: Equatable {
-    let days: [StatisticDayItem]
-    let maxTimeValue: Int
-    let firstDayOfWeek: Date
+    var days: [StatisticDayItem]
+    var maxTimeValue: Int
+    var firstDayOfWeek: Date
 
     init(days: [StatisticDayItem]) {
         self.days = days

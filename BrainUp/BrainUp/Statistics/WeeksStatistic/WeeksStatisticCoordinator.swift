@@ -97,7 +97,7 @@ class WeeksStatisticCoordinator: TopTabItemCoordinator {
             switch result {
             case let .success(items):
                 if isUpdating {
-                    self?.viewModel.updateItems(with: items, dataRangeOfLoadedData: dateRange)
+                    self?.viewModel.updateItems(with: items)
                     return
                 }
                 self?.viewModel.insertItems(with: items, dateRangeOfLoadedData: dateRange, showCellWith: self?.startDayOfWeekForPresenting)

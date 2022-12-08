@@ -63,6 +63,21 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
         if state == .emptyView {
             startEmptyCoordinator()
         }
+        // TODO: currently there are some issues in server side with host. So this should be integrated after fix
+//        networkService.fetch(StatisticRequest.hasStatistic("userId"), model: Bool.self) { [weak self] result in
+//            guard let self = self else { return }
+//            switch result {
+//            case let .success(hasStatistic):
+//                if hasStatistic {
+//                    self.state = .statisticValue
+//                    let viewModel = self.prepareViewModel()
+//                    viewController.update(with: viewModel)
+//                    self.action(for: 0)
+//                }
+//            case let .failure(error):
+//                print(error.localizedDescription)
+//            }
+//        }
 
         // network API mock
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
@@ -72,7 +87,6 @@ class StatisticsCoordinator: Coordinator, ExerciseOpener {
             let viewModel = self.prepareViewModel()
             viewController.update(with: viewModel)
             self.action(for: 0)
-            // save data to use it in prepareCoordinators
         }
     }
 

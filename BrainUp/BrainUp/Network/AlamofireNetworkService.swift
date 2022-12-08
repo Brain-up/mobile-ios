@@ -18,8 +18,8 @@ class AlamofireNetworkService: NetworkService {
                 switch response.result {
                 case .success(let data):
                     do {
-                        let result1 = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
-                        print(result1)
+//                        let result1 = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]
+//                        print(result1)
                         let result = try JSONDecoder().decode(T.self, from: data ?? Data())
                         completion(Result.success(result))
                     } catch let error {

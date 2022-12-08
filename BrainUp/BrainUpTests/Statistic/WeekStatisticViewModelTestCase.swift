@@ -184,9 +184,46 @@ final class WeekStatisticViewModelTestCase: XCTestCase {
 
     func testUpdateItems() {
         let viewModel = WeeksStatisticViewModel()
-        let endDate = viewModel.dateRangeOfLoadedData.endDate
-        let expectedItem = ChartCellViewModel(week: firstWeek, monthLabel: firstWeek.monthLabel)
 
         viewModel.insertItems(with: [firstWeek, secondWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+
+        var newFirstWeek = firstWeek
+        newFirstWeek.maxTimeValue = 999999999999
+
+        let expectedItem = ChartCellViewModel(week: newFirstWeek, monthLabel: newFirstWeek.monthLabel)
+
+        viewModel.updateItems(with: [newFirstWeek])
+
+        let receviedItem = viewModel.item(for: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(expectedItem.maxTimeValueInSec, receviedItem.maxTimeValueInSec)
+    }
+
+    func testAddFutureItems() {
+        let viewModel = WeeksStatisticViewModel()
+        let endDate = Date().addDays(count: 10)
+        let futureDateRange = DateRange(startDate: sundayFirstWeek, endDate: endDate)
+
+        viewModel.insertItems(with: [firstWeek], dateRangeOfLoadedData: dateRange, showCellWith: nil)
+
+        let expectedItem = ChartCellViewModel(week: secondWeek, monthLabel: secondWeek.monthLabel)
+
+        var cellsUpdated = false
+        viewModel.updateAndShowCell = { _ in
+            cellsUpdated = true
+        }
+
+        viewModel.addFutureItems(with: [secondWeek], dateRangeOfLoadedData: futureDateRange, showCellWith: nil)
+
+        XCTAssertFalse(cellsUpdated)
+
+        let receviedItem = viewModel.item(for: IndexPath(row: 1, section: 0))
+
+        XCTAssertEqual(expectedItem.monthLabel, receviedItem.monthLabel)
+        XCTAssertEqual(expectedItem.shouldShowDashedLine, receviedItem.shouldShowDashedLine)
+        XCTAssertEqual(expectedItem.maxTimeValueInSec, receviedItem.maxTimeValueInSec)
+
+        viewModel.addFutureItems(with: [secondWeek], dateRangeOfLoadedData: futureDateRange, showCellWith: endDate)
+
+        XCTAssertTrue(cellsUpdated)
     }
 }
