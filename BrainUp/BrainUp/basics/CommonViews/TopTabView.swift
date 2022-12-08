@@ -7,10 +7,31 @@
 
 import UIKit
 
-class TopTabView: UIView {
-    private let title: String
+class TopTabViewModel {
+    let title: String
+    private(set) var isActive: Bool = false
     private var tabTappedAction: (() -> Void)?
-    private var isActive: Bool = false
+
+    var updateState: ((_ isActive: Bool) -> Void)?
+
+    init(title: String, isActive: Bool, tabTappedAction: (() -> Void)? = nil) {
+        self.title = title
+        self.tabTappedAction = tabTappedAction
+        self.isActive = isActive
+    }
+
+    func tabTapped() {
+        tabTappedAction?()
+    }
+
+    func updateState(isActive: Bool) {
+        self.isActive = isActive
+        updateState?(isActive)
+    }
+}
+
+class TopTabView: UIView {
+    private let viewModel: TopTabViewModel
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -29,12 +50,14 @@ class TopTabView: UIView {
         return view
     }()
 
-    init(with title: String, isActive: Bool, tabTappedAction: (() -> Void)?) {
-        self.isActive = isActive
-        self.title = title
-        self.tabTappedAction = tabTappedAction
+    init(with viewModel: TopTabViewModel) {
+        self.viewModel = viewModel
 
         super.init(frame: .zero)
+
+        self.viewModel.updateState = { [weak self] isActive in
+            self?.updateState(isActive: isActive)
+        }
 
         setupUI()
         setupConstraints()
@@ -44,22 +67,22 @@ class TopTabView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateState(isActive: Bool) {
+    private func updateState(isActive: Bool) {
         bottomView.alpha = isActive ? 1 : 0
     }
 
     @objc private func tabTapped() {
-        tabTappedAction?()
+        viewModel.tabTapped()
     }
 
     private func setupUI() {
-        titleLabel.text = title
+        titleLabel.text = viewModel.title
         isUserInteractionEnabled = true
 
         let gesture = UITapGestureRecognizer(target: self,
                                              action: #selector(tabTapped))
         addGestureRecognizer(gesture)
-        updateState(isActive: isActive)
+        updateState(isActive: viewModel.isActive)
     }
 
     private func setupConstraints() {

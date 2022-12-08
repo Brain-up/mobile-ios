@@ -41,8 +41,9 @@ final class TabBarItemViewController: UIViewController {
     func update(with viewModel: TabBarItemViewModelProtocol) {
         self.viewModel = viewModel
         let animator = UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) { [weak self] in
-            viewModel.topTabViews.forEach {
-                self?.stackView.addArrangedSubview($0)
+            viewModel.topTabViewModels.forEach {
+                let view = TopTabView(with: $0)
+                self?.stackView.addArrangedSubview(view)
             }
             self?.view.layoutSubviews()
         }
@@ -70,19 +71,20 @@ final class TabBarItemViewController: UIViewController {
 
     private func setupConstraints() {
         view.addSubview(containerView)
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
         view.addSubview(stackView)
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 14)
+        ])
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             stackView.bottomAnchor.constraint(equalTo: containerView.topAnchor)
         ])
     }

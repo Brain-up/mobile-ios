@@ -9,14 +9,14 @@ import UIKit
 
 protocol TabBarItemViewModelProtocol {
     var title: String { get }
-    var topTabViews: [TopTabView] { get }
+    var topTabViewModels: [TopTabViewModel] { get }
     var rightBarButtons: [UIImage?] { get }
     var rightBarbuttonAction: ((_ tag: Int) -> Void)? { get set }
 }
 
 struct TabBarItemViewModel: TabBarItemViewModelProtocol {
     let title: String
-    let topTabViews: [TopTabView]
+    let topTabViewModels: [TopTabViewModel]
     let rightBarButtons: [UIImage?]
     var rightBarbuttonAction: ((_ tag: Int) -> Void)?
 }

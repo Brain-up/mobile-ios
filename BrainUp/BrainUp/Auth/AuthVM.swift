@@ -38,8 +38,9 @@ class AuthVM: AuthVMProtocol {
     
     func auth(login: String, password: String) {
         view?.showLoading()
-        Auth.auth().signIn(withEmail: login, password: password) {[weak self] _, error in
+        Auth.auth().signIn(withEmail: login, password: password) {[weak self] data, error in
             self?.view?.hideLoading()
+            print(data)
             if error != nil {
                 self?.view?.showError(errorMessage: error?.localizedDescription)
             }

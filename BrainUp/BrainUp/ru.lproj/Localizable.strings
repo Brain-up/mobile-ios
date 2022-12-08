@@ -16,8 +16,27 @@
 "statiscticType.byWeeks" = "По неделям";
 "statiscticType.byYears" = "По годам";
 
+"statisctic.singular_day_spent" = "за {count} день";
+"statisctic.day_end_by_one_spent" = "за {count} день";
+"statisctic.two_trhee_four_days_spent" = "за {count} дня";
+"statisctic.plural_days_spent" = "за {count} дней";
+
 "emptyStatistic.message" = "Чтобы получить статистику, \nнужно начать выполнять упражнения";
 "emptyStatistic.startExercises.button" = "начать занятия";
+// MARK: - Month names in infinitive
+
+"monthName.january" = "Январь";
+"monthName.february" = "Февраль";
+"monthName.march" = "Март";
+"monthName.april" = "Апрель";
+"monthName.may" = "Май";
+"monthName.june" = "Июнь";
+"monthName.july" = "Июль";
+"monthName.august" = "Август";
+"monthName.september" = "Сентябрь";
+"monthName.october" = "Октябрь";
+"monthName.november" = "Ноябрь";
+"monthName.december" = "Декабрь";
 
 // MARK: - Auth Screen
 "auth.Username" = "Имя пользователя";
